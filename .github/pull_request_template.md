@@ -1,0 +1,5 @@
+- [ ] Merge is going to correct branch.
+- [ ] Code is well formated (readable)
+- [ ] Code uses sensible variable/method names (readable)
+- [ ] Peer Reviewed
+- [ ] Reviewed by Tadas
