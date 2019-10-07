@@ -24,13 +24,15 @@ object SignUp {
         .verifying("too many chars", s => lengthIsLessThanNCharacters(s, 30))
     )(SignUp.apply)(SignUp.unapply)
   )
-
+  //TODO Replace with mongoDB
   val signUps: ArrayBuffer[SignUp] = ArrayBuffer(
     SignUp("Fabian", "Lewis", "Fab", "password"),
     SignUp("Rameez", "J", "Rico", "password"),
     SignUp("Steven", "B", "Steve", "password")
   )
-
+  def addElement(signUp: SignUp):Unit={
+    SignUp.signUps.append(signUp)
+  }
   def validUsername(signUp: SignUp):Boolean={
     signUps.count(details => details.username.equals(signUp.username))==1
   }
