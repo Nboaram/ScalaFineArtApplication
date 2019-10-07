@@ -7,9 +7,8 @@ class UserController extends Controller {
   def login = Action {
     Ok(views.html.login())
   }
-
-  def register = Action {
-    Ok(views.html.register())
+  def showLoginForm = Action {
+    Ok(views.html.login())
   }
 
   def account = Action {
