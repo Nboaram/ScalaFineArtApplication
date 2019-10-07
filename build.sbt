@@ -14,6 +14,8 @@ libraryDependencies ++= Seq( jdbc , cache , ws , specs2 % Test,
   "org.scalatest" %% "scalatest" % "3.0.8" % Test,
   "org.mockito" % "mockito-core" % "2.7.22" % Test,
   "org.reactivemongo" %% "play2-reactivemongo" % "0.12.5-play25"
+
+
 )
 
 unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
