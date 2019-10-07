@@ -33,11 +33,12 @@ class SignUpController @Inject()(val messagesApi: MessagesApi, val materializer:
       }
     }
     else{
+      //TODO mongoDB
       SignUp.signUps.append(signUpDetails)
       println(Constants.signUp.toString + " " + Constants.signUpInvalid.toString)
       Future{Redirect(routes.Application.index())
         .withSession(Constants.username.toString -> signUpDetails.username)
-        .flashing(Constants.signUp.toString -> Constants.signUpMessage.toString)
+        .flashing(Constants.login.toString -> Constants.signUpMessage.toString)
       }
     }
   }

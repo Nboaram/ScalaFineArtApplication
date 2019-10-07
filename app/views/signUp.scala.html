@@ -1,4 +1,5 @@
-@(form: Form[models.SignUp])(implicit messages: Messages, request: Request[AnyContent])
+@import helpers.Constants
+@(form: Form[models.SignUp])(implicit messages: Messages, request: Request[AnyContent], flash: Flash)
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,6 +40,7 @@
                         'placeholder -> "username",
                         'size -> 60
                     )
+                    @flash.get(Constants.signUp.toString).getOrElse(Constants.emptyString.toString)
                     @helper.inputPassword(
                         form("password"),
                         '_label -> "Password",
