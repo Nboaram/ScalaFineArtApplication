@@ -9,5 +9,4 @@ object Encryption {
 
   def encrypt: String => String = Crypto.encryptAES
   def decrypt: String => String = Crypto.decryptAES
-
 }
