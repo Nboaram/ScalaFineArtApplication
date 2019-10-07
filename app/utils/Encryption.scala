@@ -1,6 +1,8 @@
 package utils
 
+import org.mindrot.jbcrypt.BCrypt
+
 object Encryption {
-  def hashPassword = ???
-  def checkPassword(candidate: String): Boolean = ???
+  def hashPassword(pw: String): String = BCrypt.hashpw(pw, BCrypt.gensalt())
+  def checkPassword(candidate: String, hashedPassword: String): Boolean = BCrypt.checkpw(candidate, hashedPassword)
 }
