@@ -6,6 +6,8 @@
 GET        /                    controllers.Application.index
 
 GET        /login               controllers.UserController.login
+GET        /register            controllers.UserController.register
+GET        /gallery             controllers.GalleryController.gallery
 
 
 # Map static resources from the /public folder to the /assets URL path
