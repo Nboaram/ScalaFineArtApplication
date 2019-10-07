@@ -18,6 +18,9 @@ object Constants extends Enumeration {
   val created: Value = Value("created")
   val login: Value = Value("login")
   val loginMessage: Value = Value("You have successfully logged in")
+  val signUp: Value = Value("login")
+  val signUpMessage: Value = Value("You have successfully signed up")
+  val signUpInvalid: Value = Value("Username is taken")
   val id: Value = Value("id")
 
 }

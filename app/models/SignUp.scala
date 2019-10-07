@@ -6,8 +6,8 @@ import play.api.data.Forms._
 import scala.collection.mutable.ArrayBuffer
 
 case class SignUp(firstName:String, lastName:String, username: String, password: String)
-object SignUp {
 
+object SignUp {
   val signUpForm: Form[SignUp] = Form (
     mapping(
       Constants.firstName.toString -> nonEmptyText
@@ -24,11 +24,17 @@ object SignUp {
         .verifying("too many chars", s => lengthIsLessThanNCharacters(s, 30))
     )(SignUp.apply)(SignUp.unapply)
   )
+
   val signUps: ArrayBuffer[SignUp] = ArrayBuffer(
     SignUp("Fabian", "Lewis", "Fab", "password"),
     SignUp("Rameez", "J", "Rico", "password"),
     SignUp("Steven", "B", "Steve", "password")
   )
+
+  def validUsername(signUp: SignUp):Boolean={
+    signUps.count(details => details.username.equals(signUp.username))==1
+  }
+
   private def lengthIsGreaterThanNCharacters(s: String, n: Int): Boolean = {
     if (s.length > n) true else false
   }

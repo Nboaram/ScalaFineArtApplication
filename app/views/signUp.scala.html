@@ -1,4 +1,4 @@
-@(form: Form[models.SignUp])(implicit request: Request[AnyContent])
+@(form: Form[models.SignUp])(implicit messages: Messages, request: Request[AnyContent])
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,18 +20,16 @@
                 @helper.form(routes.SignUpController.signUpSubmit()){
                     @helper.inputText(
                         form("firstName"),
-                        '_label -> "firstName",
+                        '_label -> "First name",
                         '_showConstraints -> false,
-                        'placeholder -> "firstName",
-                        'id -> "firstName",
+                        'placeholder -> "First name",
                         'size -> 60
                     )
                     @helper.inputText(
                         form("lastName"),
-                        '_label -> "lastName",
+                        '_label -> "Last name",
                         '_showConstraints -> false,
-                        'placeholder -> "lastName",
-                        'id -> "lastName",
+                        'placeholder -> "Last name",
                         'size -> 60
                     )
                     @helper.inputText(
@@ -39,14 +37,13 @@
                         '_label -> "Username",
                         '_showConstraints -> false,
                         'placeholder -> "username",
-                        'id -> "username",
                         'size -> 60
                     )
                     @helper.inputPassword(
                         form("password"),
                         '_label -> "Password",
                         'placeholder -> "password",
-                        'id -> "password",
+                        '_showConstraints -> false,
                         'size -> 60
                     )
                     <button type="submit">Sign up</button>
