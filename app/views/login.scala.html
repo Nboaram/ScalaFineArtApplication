@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Login</title>
-    </head>
-    <body>
+@(form: Form[LoginDetails])(implicit messages: Messages, request: Request[AnyContent])
 
-    </body>
-</html>
+@main("Login") {
+
+    <div>
+        <h2>Please log in</h2>
+    </div>
+
+    <div>
+    @helper.form(routes.LoginController.loginSubmit()){
+        @helper.inputText(form("username"), '_label -> "Login", '_showConstraints -> false)
+        @helper.inputPassword(form("password"), '_label -> "Password", '_showConstraints -> false)
+        <button type="submit">Log In</button>
+        <a href="/signUp"><button type="button">Sign Up</button></a>
+    }
+    </div>
+
+}

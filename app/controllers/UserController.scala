@@ -1,11 +1,24 @@
 package controllers
 
-import play.api.mvc.{Action, Controller}
+import akka.stream.Materializer
+import helpers.Constants
+import models.LoginDetails
+import play.api.i18n.{I18nSupport, MessagesApi}
 
-class UserController extends Controller {
+import javax.inject.Inject
+import play.api.mvc.{Action, AnyContent, Controller}
+import play.api.libs.concurrent.Execution.Implicits.defaultContext
 
-  def login = Action {
-    Ok(views.html.login())
+import scala.concurrent.Future
+
+class UserController @Inject()
+(val messagesApi: MessagesApi, val materializer: Materializer) extends Controller
+  with I18nSupport {
+
+  def login: Action[AnyContent] = Action.async { implicit request =>
+    Future{
+      Ok(views.html.login(LoginDetails.loginForm))
+    }
   }
 
   def register = Action {
