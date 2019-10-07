@@ -1,4 +1,6 @@
-@(title: String)
+@(title: String)(loggedIn:Boolean = false)
+
+<!-- TODO use correct authentication ^^^^^^^^^ -->
 
 <!DOCTYPE html>
 
@@ -21,17 +23,31 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/gallery">Gallery </a>
+                    <a class="nav-link" href="/gallery">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/appraisal">Appraisal </a>
+                    <a class="nav-link" href="/appraisal">Appraisal</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/account">Account</a>
-                </li>
+<!-- TO BE SHOWN IF LOGGED IN -->
+                @if(loggedIn==true) {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/account">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="/login">Log Out</a>
+                    </li>
+                } else {
+                        <!-- TO BE SHOWN IF NOT LOGGED IN -->
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="/login">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="/register">Register</a>
+                    </li>
+                }
 
             </ul>
         </div>
