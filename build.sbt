@@ -10,6 +10,10 @@ scalaVersion := "2.11.11"
 
 libraryDependencies ++= Seq( jdbc , cache , ws , specs2 % Test )
 
-unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
+unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )
+
+// https://mvnrepository.com/artifact/org.mindrot/jbcrypt
+libraryDependencies += "org.mindrot" % "jbcrypt" % "0.4"
+
 
       
