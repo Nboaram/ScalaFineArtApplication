@@ -22,21 +22,28 @@
                     @helper.inputText(
                         form("firstName"),
                         '_label -> "First name",
-                        '_showConstraints -> false,
+                        '_showConstraints -> true,
                         'placeholder -> "First name",
                         'size -> 60
                     )
                     @helper.inputText(
                         form("lastName"),
                         '_label -> "Last name",
-                        '_showConstraints -> false,
+                        '_showConstraints -> true,
                         'placeholder -> "Last name",
+                        'size -> 60
+                    )
+                    @helper.inputText(
+                        form("email"),
+                        '_label -> "Email",
+                        '_showConstraints -> true,
+                        'placeholder -> "Email@domain",
                         'size -> 60
                     )
                     @helper.inputText(
                         form("username"),
                         '_label -> "Username",
-                        '_showConstraints -> false,
+                        '_showConstraints -> true,
                         'placeholder -> "username",
                         'size -> 60
                     )
@@ -45,7 +52,7 @@
                         form("password"),
                         '_label -> "Password",
                         'placeholder -> "password",
-                        '_showConstraints -> false,
+                        '_showConstraints -> true,
                         'size -> 60
                     )
                     <button type="submit">Sign up</button>

@@ -20,7 +20,7 @@ class SignUpController @Inject()(val messagesApi: MessagesApi, val materializer:
 
   def signUpSubmit: Action[AnyContent] = Action.async { implicit request =>
     var signUpDetails = SignUp(Constants.emptyString.toString, Constants.emptyString.toString,
-      Constants.emptyString.toString, Constants.emptyString.toString)
+      Constants.emptyString.toString, Constants.emptyString.toString, Constants.emptyString.toString)
 
     SignUp.signUpForm.bindFromRequest.fold({ formWithErrors =>
       Future {
@@ -31,21 +31,12 @@ class SignUpController @Inject()(val messagesApi: MessagesApi, val materializer:
       signUpDetails = details
     })
 
-    if (SignUp.validUsername(signUpDetails)) {
-      println(Constants.signUp.toString + " " + Constants.signUpInvalid.toString)
-      Future {
-        Redirect(routes.SignUpController.signUp())
-          .flashing(Constants.signUp.toString -> Constants.signUpInvalid.toString)
-      }
-    }
-    else {
-      SignUp.addElement(signUpDetails)
-      println(Constants.signUp.toString + " " + Constants.signUpInvalid.toString)
-      Future {
-        Redirect(routes.Application.index())
-          .withSession(Constants.username.toString -> signUpDetails.username)
-          .flashing(Constants.login.toString -> Constants.signUpMessage.toString)
-      }
+    SignUp.addElement(signUpDetails)
+    println(Constants.signUp.toString + " " + Constants.signUpInvalid.toString)
+    Future {
+      Redirect(routes.Application.index())
+        .withSession(Constants.username.toString -> signUpDetails.username)
+        .flashing(Constants.login.toString -> Constants.signUpMessage.toString)
     }
   }
 }
