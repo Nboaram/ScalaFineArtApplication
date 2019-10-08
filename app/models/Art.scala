@@ -1,12 +1,12 @@
 package models
 
-import java.awt.image.BufferedImage
-
 import helpers.GenerateId
+
+import scala.reflect.io.File
 
 case class Art(
                 id: Int,
-                image: BufferedImage,
+                image: BsonBinary,
                 title: String,
                 artist: String,
                 description: String,
@@ -14,7 +14,7 @@ case class Art(
                 original: Boolean
               ) {
   def this (
-             image: BufferedImage,
+             image: File,
              title: String,
              artist: String,
              description: String,
