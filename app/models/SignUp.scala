@@ -20,18 +20,18 @@ object SignUp {
     )(SignUp.apply)(SignUp.unapply)
   )
   //TODO Replace with mongoDB
-  val signUps: ArrayBuffer[SignUp] = ArrayBuffer(
+  val users: ArrayBuffer[SignUp] = ArrayBuffer(
     SignUp("Fabian", "Lewis","abc@123.uk",  "Fab", "password"),
     SignUp("Rameez", "J","abcd@123.uk", "Rico", "password"),
     SignUp("Steven", "B","abcde@123.uk", "Steve", "password")
   )
 
   def addElement(signUp: SignUp): Unit = {
-    SignUp.signUps.append(signUp)
+    SignUp.users.append(signUp)
   }
 
   def usernameConstraint: Constraint[String] = Constraint(Constants.signUpInvalid.toString)({ username =>
-    if (signUps.map(details => details.username).contains(username))
+    if (users.map(details => details.username).contains(username))
       Invalid(ValidationError(Constants.signUpInvalid.toString))
     else Valid
   })
