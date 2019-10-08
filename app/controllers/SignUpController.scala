@@ -5,9 +5,9 @@ import helpers.Constants
 import javax.inject.Inject
 import models.SignUp
 import play.api.i18n.{I18nSupport, MessagesApi}
-import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.mvc.{Action, AnyContent, Controller}
-
+import helpers.JsonFormats._
+import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import scala.concurrent.Future
 class SignUpController @Inject()(val messagesApi: MessagesApi, val materializer: Materializer) extends Controller with I18nSupport {
 

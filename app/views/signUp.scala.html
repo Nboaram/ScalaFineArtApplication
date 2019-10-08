@@ -1,54 +1,62 @@
 @import helpers.Constants
 @(form: Form[models.SignUp])(implicit messages: Messages, request: Request[AnyContent], flash: Flash)
-@main("Sign-up") {
-    <div id="user-registration-form">
-        <h1>User Registration</h1>
-        @* Global errors are not tied to any particular form field *@
-        @if(form.hasGlobalErrors) {
-            @form.globalErrors.map { error: FormError =>
-                <div>
-                    Error: @error.key: @error.message
-                </div>
-            }
-        }
-        @helper.form(routes.SignUpController.signUpSubmit()) {
-            @helper.inputText(
-                form("firstName"),
-                '_label -> "First name",
-                '_showConstraints -> false,
-                'placeholder -> "First name",
-                'size -> 60
-            )
-            @helper.inputText(
-                form("lastName"),
-                '_label -> "Last name",
-                '_showConstraints -> false,
-                'placeholder -> "Last name",
-                'size -> 60
-            )
-            @helper.inputText(
-                form("email"),
-                '_label -> "Email",
-                '_showConstraints -> false,
-                'placeholder -> "Email@domain",
-                'size -> 60
-            )
-            @helper.inputText(
-                form("username"),
-                '_label -> "Username",
-                '_showConstraints -> false,
-                'placeholder -> "username",
-                'size -> 60
-            )
-            @helper.inputPassword(
-                form("password"),
-                '_label -> "Password",
-                'placeholder -> "password",
-                '_showConstraints -> false,
-                'size -> 60
-            )
-            <button type="submit">Sign up</button>
-        }
-    </div>
-}
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register</title>
+    </head>
+    <body id="user-registration">
+        <div id="content">
+            <div id="user-registration-form">
+                <h1>User Registration</h1>
+                @* Global errors are not tied to any particular form field *@
+                @if(form.hasGlobalErrors) {
+                    @form.globalErrors.map { error: FormError =>
+                        <div>
+                            Error: @error.key: @error.message
+                        </div>
+                    }
+                }
+                @helper.form(routes.SignUpController.signUpSubmit()){
+                    @helper.inputText(
+                        form("firstName"),
+                        '_label -> "First name",
+                        '_showConstraints -> false,
+                        'placeholder -> "First name",
+                        'size -> 60
+                    )
+                    @helper.inputText(
+                        form("lastName"),
+                        '_label -> "Last name",
+                        '_showConstraints -> false,
+                        'placeholder -> "Last name",
+                        'size -> 60
+                    )
+                    @helper.inputText(
+                        form("email"),
+                        '_label -> "Email",
+                        '_showConstraints -> false,
+                        'placeholder -> "Email@domain",
+                        'size -> 60
+                    )
+                    @helper.inputText(
+                        form("username"),
+                        '_label -> "Username",
+                        '_showConstraints -> false,
+                        'placeholder -> "username",
+                        'size -> 60
+                    )
+                    @helper.inputPassword(
+                        form("password"),
+                        '_label -> "Password",
+                        'placeholder -> "password",
+                        '_showConstraints -> false,
+                        'size -> 60
+                    )
+                    <button type="submit">Sign up</button>
+                }
+            </div>
+        </div>
+    </body>
+</html>
