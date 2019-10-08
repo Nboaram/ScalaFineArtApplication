@@ -1,5 +1,66 @@
 @main("Gallery") {
+    <head>
+        <title>Gallery</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/gallery.css")">
+    </head>
+    <body>
+        <div class="container gallery-container">
+
+            <h1>Gallery Test</h1>
+
+            <p class="page-description text-center">Thumbnails With Title And Description</p>
+
+            <div class="tz-gallery">
+
+                <div class="row">
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="@routes.Assets.at("images/park.jpg")">
+                                <img src="@routes.Assets.at("images/park.jpg")" alt="Park">
+                            </a>
+                            <div class="caption">
+                                <h3>Thumbnail label</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="@routes.Assets.at("images/bridge.jpg")">
+                                <img src="@routes.Assets.at("images/bridge.jpg")" alt="Bridge">
+                            </a>
+                            <div class="caption">
+                                <h3>Thumbnail label</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="@routes.Assets.at("images/tunnel.jpg")">
+                                <img src="@routes.Assets.at("images/tunnel.jpg")" alt="Tunnel">
+                            </a>
+                            <div class="caption">
+                                <h3>Thumbnail label</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
 
 
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+        <script>
+                baguetteBox.run('.tz-gallery');
+        </script>
+    </body>
 }

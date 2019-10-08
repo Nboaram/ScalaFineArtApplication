@@ -4,13 +4,6 @@ body {
     font: normal 16px sans-serif;
 }
 
-.navbar-nav {
-    float: none;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-}
-
 .gallery-container h1 {
     text-align: center;
     margin-top: 70px;
