@@ -1,0 +1,17 @@
+.navbar-nav {
+    float: none;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .navbar-nav > li {
+        display: inline-block;
+        float: none;
+        padding-left: 2em;
+        padding-right: 2em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}

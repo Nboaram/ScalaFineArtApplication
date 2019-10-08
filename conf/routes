@@ -5,6 +5,11 @@
 # Home page
 GET         /                    controllers.Application.index
 
+
+#HEADER TEST
+GET        /header              controllers.navigation.Header.header()
+
+
 GET         /login               controllers.UserController.login
 
 
