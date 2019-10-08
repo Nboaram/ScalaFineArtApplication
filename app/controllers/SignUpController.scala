@@ -9,7 +9,6 @@ import play.api.mvc.{Action, AnyContent, Controller}
 import helpers.JsonFormats._
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import scala.concurrent.Future
-
 class SignUpController @Inject()(val messagesApi: MessagesApi, val materializer: Materializer) extends Controller with I18nSupport {
 
   def signUp: Action[AnyContent] = Action.async { implicit request =>
@@ -19,24 +18,22 @@ class SignUpController @Inject()(val messagesApi: MessagesApi, val materializer:
   }
 
   def signUpSubmit: Action[AnyContent] = Action.async { implicit request =>
-    var signUpDetails = SignUp(Constants.emptyString.toString, Constants.emptyString.toString,
-      Constants.emptyString.toString, Constants.emptyString.toString, Constants.emptyString.toString)
-
     SignUp.signUpForm.bindFromRequest.fold({ formWithErrors =>
       Future {
         BadRequest(views.html.signUp(formWithErrors))
       }
-    }, { details =>
-      println(details.username + " " + details.password)
-      signUpDetails = details
+    }, { signUpDetails =>
+      println(signUpDetails.username + " " + signUpDetails.password)
+
+      SignUp.addElement(signUpDetails)
+      println(Constants.signUp.toString + " " + Constants.signUpMessage.toString)
+      Future {
+        Redirect(routes.Application.index())
+          .withSession(Constants.username.toString -> signUpDetails.username)
+          .flashing(Constants.login.toString -> Constants.signUpMessage.toString)
+      }
     })
 
-    SignUp.addElement(signUpDetails)
-    println(Constants.signUp.toString + " " + Constants.signUpInvalid.toString)
-    Future {
-      Redirect(routes.Application.index())
-        .withSession(Constants.username.toString -> signUpDetails.username)
-        .flashing(Constants.login.toString -> Constants.signUpMessage.toString)
-    }
+
   }
 }

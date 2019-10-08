@@ -18,41 +18,40 @@
                         </div>
                     }
                 }
-                @helper.form(routes.SignUpController.signUpSubmit()) {
+                @helper.form(routes.SignUpController.signUpSubmit()){
                     @helper.inputText(
                         form("firstName"),
                         '_label -> "First name",
-                        '_showConstraints -> true,
+                        '_showConstraints -> false,
                         'placeholder -> "First name",
                         'size -> 60
                     )
                     @helper.inputText(
                         form("lastName"),
                         '_label -> "Last name",
-                        '_showConstraints -> true,
+                        '_showConstraints -> false,
                         'placeholder -> "Last name",
                         'size -> 60
                     )
                     @helper.inputText(
                         form("email"),
                         '_label -> "Email",
-                        '_showConstraints -> true,
+                        '_showConstraints -> false,
                         'placeholder -> "Email@domain",
                         'size -> 60
                     )
                     @helper.inputText(
                         form("username"),
                         '_label -> "Username",
-                        '_showConstraints -> true,
+                        '_showConstraints -> false,
                         'placeholder -> "username",
                         'size -> 60
                     )
-                    @flash.get(Constants.signUp.toString).getOrElse(Constants.emptyString.toString)
                     @helper.inputPassword(
                         form("password"),
                         '_label -> "Password",
                         'placeholder -> "password",
-                        '_showConstraints -> true,
+                        '_showConstraints -> false,
                         'size -> 60
                     )
                     <button type="submit">Sign up</button>
