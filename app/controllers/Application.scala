@@ -8,7 +8,7 @@ class Application extends Controller {
 
   def index: Action[AnyContent] = Action {
     request => request.flash.get(Constants.login.toString).map(welcomeMessage => Ok(views.html.index(welcomeMessage)))
-      .getOrElse(Ok(views.html.index("Your new application is ready.")))
+      .getOrElse(Ok(views.html.index(Constants.indexString.toString)))
   }
 
 }
