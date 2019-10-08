@@ -3,17 +3,14 @@
 @main("Login") {
 
     <div>
-        <h2>Please log in</h2>
-    </div>
-
-    <div>
-    @helper.form(routes.LoginController.loginSubmit()){
+        <h3>Please log in</h3>
+        @helper.form(routes.LoginController.loginSubmit()){
         @flash.get("failed").getOrElse("")
         @helper.inputText(form("username"), '_label -> "Username", '_showConstraints -> false)
         @helper.inputPassword(form("password"), '_label -> "Password", '_showConstraints -> false)
         <button type="submit">Log In</button>
-        <a href="/signUp"><button type="button">Sign Up</button></a>
-    }
+        <a href="/sign-up"><button type="button">Sign Up</button></a>
+        }
     </div>
 
 }
