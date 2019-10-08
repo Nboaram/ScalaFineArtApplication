@@ -1,9 +1,7 @@
-import controllers.ExampleController
 import implementation.MongoServicesImpl
 import org.specs2.mutable._
 import org.specs2.runner._
 import org.junit.runner._
-import play.modules.reactivemongo.ReactiveMongoApi
 import org.specs2.mock.Mockito
 import play.api.mvc.{Result, _}
 import play.api.test._
@@ -16,14 +14,6 @@ import play.api.test.Helpers._
  */
 @RunWith(classOf[JUnitRunner])
 class ApplicationSpec extends Specification with Results with Mockito {
-
-  val mockExampleController=mock[ExampleController]
-  val reactiveMongoApi = mock[ReactiveMongoApi]
-
-/*  class TestController() extends ExampleController(reactiveMongoApi){
-    overide def [REPO OF CONTROLLER]: [CONTROLLER]= [MOCK OF CONTROLLER]
-  }*/
-
 
   "Application" should {
 
