@@ -3,11 +3,13 @@
 # ~~~~
 
 # Home page
-GET        /                    controllers.Application.index
+GET         /                    controllers.Application.index
 
 GET        /login               controllers.UserController.login
 GET        /register            controllers.RegisterController.register
 GET        /account             controllers.UserController.account
+GET         /sign-up              controllers.SignUpController.signUp
+POST        /sign-up              controllers.SignUpController.signUpSubmit
 
 GET        /gallery             controllers.GalleryController.gallery
 GET        /view                controllers.GalleryController.view
