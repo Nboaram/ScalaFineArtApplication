@@ -8,5 +8,4 @@ class Header extends Controller{
     Ok(views.html.header("Header")(false))
   }
 
-
 }

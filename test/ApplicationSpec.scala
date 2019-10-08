@@ -4,12 +4,6 @@ import org.junit.runner._
 import play.api.test.{WithApplication, _}
 import play.api.test.Helpers._
 import helpers.Constants
-import play.api.mvc.Result
-
-import scala.concurrent.{Await, Future}
-import scala.util.{Failure, Success}
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.duration.Duration
 
 /**
  * Add your spec here.
@@ -22,8 +16,7 @@ class ApplicationSpec extends Specification {
   "Application" should {
 
     "send 404 on a bad request" in new WithApplication {
-      val badRequest = route(FakeRequest(GET, "/boum")).get
-      status(badRequest) must equalTo(404)
+      route(FakeRequest(GET, "/boum")) must beNone
     }
 
     "render the index page" in new WithApplication {
@@ -31,7 +24,7 @@ class ApplicationSpec extends Specification {
 
       status(home) must equalTo(OK)
       contentType(home) must beSome.which(_ == Constants.text_html.toString)
-      contentAsString(home) must contain("Your new application is ready")
+      contentAsString(home) must contain("Your new application is ready.")
     }
 
     "render the contact page" in new WithApplication {

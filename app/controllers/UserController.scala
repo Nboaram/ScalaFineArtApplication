@@ -1,19 +1,21 @@
 package controllers
 
-import play.api.mvc.{Action, Controller}
+import akka.stream.Materializer
+import authentication.AuthenticatedAction
+import helpers.Constants
+import javax.inject.Inject
+import play.api.i18n.{I18nSupport, MessagesApi}
+import play.api.mvc.{Action, AnyContent, Controller}
 
-class UserController extends Controller {
+class UserController @Inject()
+(val messagesApi: MessagesApi, val materializer: Materializer) extends Controller
+  with I18nSupport {
 
-  def login = Action {
-    Ok(views.html.login())
+  def account: Action[AnyContent] = AuthenticatedAction { request =>
+    Ok(views.html.account(request.session.get(Constants.username.toString).getOrElse(Constants.emptyString.toString)))
+
+
   }
-
-  def account = Action {
-    Ok(views.html.account())
-  }
-
-
-
-
 
 }
+//s"Hello ${request.session.get("username").getOrElse(Constants.emptyString.toString)}")
