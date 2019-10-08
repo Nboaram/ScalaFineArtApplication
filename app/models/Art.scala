@@ -39,5 +39,5 @@ case class Art(
 }
 
 object Art extends GenerateId {
-  var idCount = 0
+  var idCount:Int = 0
 }
