@@ -31,7 +31,7 @@ class ApplicationSpec extends Specification {
 
       status(home) must equalTo(OK)
       contentType(home) must beSome.which(_ == Constants.text_html.toString)
-      contentAsString(home) must contain("Your new application is ready.")
+      contentAsString(home) must contain("Your new application is ready")
     }
 
     "render the contact page" in new WithApplication {
