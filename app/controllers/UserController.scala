@@ -13,9 +13,6 @@ class UserController @Inject()
 
   def account: Action[AnyContent] = AuthenticatedAction { request =>
     Ok(views.html.account(request.session.get(Constants.username.toString).getOrElse(Constants.emptyString.toString)))
-
-
   }
 
 }
-//s"Hello ${request.session.get("username").getOrElse(Constants.emptyString.toString)}")

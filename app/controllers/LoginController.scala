@@ -7,7 +7,6 @@ import models.LoginDetails
 import play.api.i18n.{I18nSupport, MessagesApi}
 import javax.inject.Inject
 import play.api.mvc.{Action, AnyContent, Controller}
-
 import scala.concurrent.Future
 
 class LoginController @Inject()
@@ -25,7 +24,7 @@ class LoginController @Inject()
 
     LoginDetails.loginForm.bindFromRequest.fold({
       _ => {
-        Future(Redirect(routes.LoginController.login()).flashing("failed" -> "Incorrect username or password"))
+        Future(Redirect(routes.LoginController.login()).flashing(Constants.failed.toString -> Constants.incorrectUsernameOrPassword.toString))
       }
     },
       {

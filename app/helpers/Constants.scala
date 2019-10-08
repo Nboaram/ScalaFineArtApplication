@@ -10,14 +10,14 @@ object Constants extends Enumeration {
   val loginUrl: Value = Value("/login")
   val registerUrl: Value = Value("/register")
   val viewUrl: Value = Value("/view")
-
   val text_html: Value = Value("text/html")
-
   val localHost: Value = Value("localhost")
   val username: Value = Value("username")
   val firstName: Value = Value("firstName")
   val lastName: Value = Value("lastName")
   val password: Value = Value("password")
+  val failed: Value = Value("failed")
+  val incorrectUsernameOrPassword: Value = Value("Incorrect username or password")
   val emptyString: Value = Value("")
   val admin: Value = Value("admin")
   val title: Value = Value("title")
