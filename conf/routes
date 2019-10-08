@@ -5,21 +5,20 @@
 # Home page
 GET         /                    controllers.Application.index
 
-GET        /login               controllers.UserController.login
-GET        /register            controllers.RegisterController.register
-GET        /account             controllers.UserController.account
-GET         /sign-up              controllers.SignUpController.signUp
-POST        /sign-up              controllers.SignUpController.signUpSubmit
+GET         /login               controllers.UserController.login
+GET         /account             controllers.UserController.account
+GET         /sign-up             controllers.SignUpController.signUp
+POST        /sign-up             controllers.SignUpController.signUpSubmit
 
-GET        /gallery             controllers.GalleryController.gallery
-GET        /view                controllers.GalleryController.view
-GET        /appraisal           controllers.GalleryController.appraisal
+GET         /gallery             controllers.GalleryController.gallery
+GET         /view                controllers.GalleryController.view
+GET         /appraisal           controllers.GalleryController.appraisal
 
-GET        /checkout            controllers.PaymentController.checkout
+GET         /checkout            controllers.PaymentController.checkout
 
-GET        /contact             controllers.Application.contact
+GET         /contact             controllers.Application.contact
 
-GET        /header              controllers.navigation.Header.header()
+GET         /header              controllers.navigation.Header.header()
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file        controllers.Assets.at(path="/public", file)
+GET         /assets/*file        controllers.Assets.at(path="/public", file)

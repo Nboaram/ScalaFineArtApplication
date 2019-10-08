@@ -8,10 +8,6 @@ class UserController extends Controller {
     Ok(views.html.login())
   }
 
-  def register = Action {
-    Ok(views.html.register())
-  }
-
   def account = Action {
     Ok(views.html.account())
   }
