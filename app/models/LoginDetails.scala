@@ -1,7 +1,7 @@
 package models
 
 import helpers.Constants
-import models.SignUp.signUps
+import models.SignUp.users
 import play.api.data.Forms._
 import play.api.data._
 import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
@@ -26,7 +26,7 @@ object LoginDetails {
   })
 
   def validUser(loginDetails: LoginDetails): Boolean = {
-    signUps.exists(result =>
+    users.exists(result =>
       result.username.equals(loginDetails.username) && result.password.equals(loginDetails.password)
     )
   }
