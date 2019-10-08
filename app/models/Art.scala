@@ -2,6 +2,8 @@ package models
 
 import java.awt.image.BufferedImage
 
+import helpers.GenerateId
+
 case class Art(
                 id: Int,
                 image: BufferedImage,
@@ -19,7 +21,7 @@ case class Art(
              category: String,
              original: Boolean
            ) = this (
-    Art.generateID(), //TODO create object and trait for generate ID functionality
+    Art.generateId(), //TODO create object and trait for generate ID functionality
     image,
     title,
     artist,
@@ -34,4 +36,9 @@ case class Art(
        |$category
        |$original""".stripMargin
 
+}
+
+object Art extends GenerateId {
+  var idCount = 0
+  generateId()
 }
