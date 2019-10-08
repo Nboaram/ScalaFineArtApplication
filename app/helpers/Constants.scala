@@ -15,5 +15,10 @@ object Constants extends Enumeration {
   val login: Value = Value("login")
   val loginMessage: Value = Value("You have successfully logged in")
   val id: Value = Value("id")
+  val signUp: Value = Value("signUp")
+  val signUpMessage: Value = Value("You have successfully signed up")
+  val signUpConstraint: Value = Value("Unique username")
+  val signUpInvalid: Value = Value("Username is taken")
+  val indexString: Value = Value("Your new application is ready.")
 
 }

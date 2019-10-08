@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET         /                    controllers.Application.index
+GET        /                    controllers.Application.index
 
 GET         /login               controllers.LoginController.login
 POST        /login               controllers.LoginController.loginSubmit
@@ -15,6 +15,8 @@ GET         /account             controllers.UserController.account
 #HEADER TEST
 GET         /header              controllers.navigation.Header.header()
 
+GET         /sign-up              controllers.SignUpController.signUp
+POST        /sign-up              controllers.SignUpController.signUpSubmit
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file        controllers.Assets.at(path="/public", file)
+GET        /assets/*file        controllers.Assets.at(path="/public", file)
