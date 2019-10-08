@@ -30,7 +30,7 @@ object SignUp {
     SignUp.users.append(signUp)
   }
 
-  def usernameConstraint: Constraint[String] = Constraint(Constants.signUpInvalid.toString)({ username =>
+  def usernameConstraint: Constraint[String] = Constraint(Constants.signUpConstraint.toString)({ username =>
     if (users.map(details => details.username).contains(username))
       Invalid(ValidationError(Constants.signUpInvalid.toString))
     else Valid

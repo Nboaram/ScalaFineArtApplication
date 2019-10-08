@@ -19,9 +19,7 @@ class SignUpController @Inject()(val messagesApi: MessagesApi, val materializer:
 
   def signUpSubmit: Action[AnyContent] = Action.async { implicit request =>
     SignUp.signUpForm.bindFromRequest.fold({ formWithErrors =>
-      Future {
-        BadRequest(views.html.signUp(formWithErrors))
-      }
+      Future(BadRequest(views.html.signUp(formWithErrors)))
     }, { signUpDetails =>
       println(signUpDetails.username + " " + signUpDetails.password)
 
