@@ -9,10 +9,6 @@ GET         /                    controllers.Application.index
 #HEADER TEST
 GET        /header              controllers.navigation.Header.header()
 
-
-GET         /login               controllers.UserController.login
-
-
 GET         /sign-up              controllers.SignUpController.signUp
 POST        /sign-up              controllers.SignUpController.signUpSubmit
 
