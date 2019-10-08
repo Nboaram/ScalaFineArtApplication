@@ -12,9 +12,6 @@ import scala.concurrent.Future
 
 class ExampleController @Inject()(val mongoServicesImpl: MongoServicesImpl) extends Controller {
 
-  def recipeSubmit: Action[AnyContent] = Action.async { implicit request =>
-
-  }
 
 
 }
