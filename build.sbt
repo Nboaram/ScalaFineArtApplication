@@ -8,10 +8,8 @@ resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
       
 scalaVersion := "2.11.11"
 
-libraryDependencies ++= Seq( jdbc , cache , ws , specs2 % Test,
-  "org.slf4j" % "slf4j-log4j12" % "1.7.25",
-  "org.reactivemongo" %% "play2-reactivemongo" % "0.12.5-play25"
-)
+libraryDependencies ++= Seq( jdbc , cache , ws , specs2 % Test )
+
 // https://mvnrepository.com/artifact/com.typesafe.play/play
 libraryDependencies += "com.typesafe.play" %% "play" % "2.5.19"
 

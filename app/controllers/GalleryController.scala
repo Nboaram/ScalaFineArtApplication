@@ -4,8 +4,9 @@ import play.api.mvc.{Action, Controller}
 
 class GalleryController extends Controller {
 
-  def gallery = Action {
-    Ok(views.html.gallery())
+  def gallery  = Action {
+    val images = "Placeholder to get images from DB"
+    Ok(views.html.gallery(images))
   }
 
   def view = Action {
