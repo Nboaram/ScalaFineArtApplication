@@ -13,7 +13,7 @@ class LogoutController @Inject()(val messagesApi: MessagesApi, val materializer:
 
   def logout: Action[AnyContent] = Action.async { implicit request =>
     Future{
-      Redirect(routes.Application.index()).withSession()
+      Redirect(routes.Application.index()).withNewSession
     }
   }
 

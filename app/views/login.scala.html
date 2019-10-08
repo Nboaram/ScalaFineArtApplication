@@ -9,7 +9,7 @@
     <div>
     @helper.form(routes.LoginController.loginSubmit()){
         @flash.get("failed").getOrElse("")
-        @helper.inputText(form("username"), '_label -> "Login", '_showConstraints -> false)
+        @helper.inputText(form("username"), '_label -> "Username", '_showConstraints -> false)
         @helper.inputPassword(form("password"), '_label -> "Password", '_showConstraints -> false)
         <button type="submit">Log In</button>
         <a href="/signUp"><button type="button">Sign Up</button></a>

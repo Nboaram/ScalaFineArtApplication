@@ -24,7 +24,7 @@ class LoginController @Inject()
     var loginDetails = LoginDetails(Constants.emptyString.toString, Constants.emptyString.toString)
 
     LoginDetails.loginForm.bindFromRequest.fold({
-      formWithErrors => {
+      _ => {
         Future(Redirect(routes.LoginController.login()).flashing("failed" -> "Incorrect username or password"))
       }
     },

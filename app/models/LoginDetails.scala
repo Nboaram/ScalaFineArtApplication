@@ -26,14 +26,9 @@ object LoginDetails {
   })
 
   def validUser(loginDetails: LoginDetails): Boolean = {
-    signUps.count(result =>
-      if (result.username.equals(loginDetails.username) && result.password.equals(loginDetails.password)) {
-        true
-      }
-      else {
-        false
-      }
-    )==1
+    signUps.exists(result =>
+      result.username.equals(loginDetails.username) && result.password.equals(loginDetails.password)
+    )
   }
 
 }
