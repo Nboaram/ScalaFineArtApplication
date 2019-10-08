@@ -3,7 +3,7 @@ package controllers
 import scala.concurrent.ExecutionContext.Implicits.global
 import akka.stream.Materializer
 import helpers.Constants
-import models.{LoginDetails, SignUp}
+import models.LoginDetails
 import play.api.i18n.{I18nSupport, MessagesApi}
 import javax.inject.Inject
 import play.api.mvc.{Action, AnyContent, Controller}
@@ -22,27 +22,19 @@ class LoginController @Inject()
 
   def loginSubmit: Action[AnyContent] = Action.async { implicit request =>
     var loginDetails = LoginDetails(Constants.emptyString.toString, Constants.emptyString.toString)
+
     LoginDetails.loginForm.bindFromRequest.fold({
-      formWithErrors =>
-      BadRequest(views.html.login(formWithErrors))
+      formWithErrors => {
+        Future(Redirect(routes.LoginController.login()).flashing("failed" -> "Incorrect username or password"))
+      }
     },
       {
         details =>
-      println(details.username + " " + details.password)
-      loginDetails = details
+          loginDetails = details
+          Future{Redirect(routes.Application.index())
+            .withSession(request.session + (Constants.username.toString -> loginDetails.username))
+            .flashing(Constants.login.toString -> Constants.loginMessage.toString)}
     })
-
-    {
-      if (LoginDetails.validUser(loginDetails)) {
-        println("Valid user")
-      Future{Redirect(routes.Application.index())
-          .withSession(request.session + (Constants.username.toString -> loginDetails.username))
-          .flashing(Constants.login.toString -> Constants.loginMessage.toString)}
-      } else {
-        println("Invalid user")
-        Future{Redirect(routes.LoginController.login())}
-      }
-    }
   }
 
 }
