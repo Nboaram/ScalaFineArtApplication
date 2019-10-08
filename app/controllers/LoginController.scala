@@ -33,7 +33,7 @@ class LoginController @Inject()
     })
 
     {
-      if (SignUp.validUser(loginDetails)) {
+      if (LoginDetails.validUser(loginDetails)) {
         println("Valid user")
       Future{Redirect(routes.Application.index())
           .withSession(request.session + (Constants.username.toString -> loginDetails.username))

@@ -1,6 +1,7 @@
 package models
 
 import helpers.Constants
+import models.SignUp.signUps
 import play.api.data.Forms._
 import play.api.data._
 
@@ -14,19 +15,18 @@ object LoginDetails {
       Constants.password.toString -> nonEmptyText
     )(LoginDetails.apply)(LoginDetails.unapply)
   )
-
-  def checkCredentials(loginDetails: LoginDetails): Boolean = {
-    if (loginDetails.username == Constants.admin.toString && loginDetails.password == Constants.password.toString)
-      true
-    else
-      false
-  }
-
-  def checkUser(loginDetails: String): String = {
-    if (loginDetails == Constants.admin.toString)
-      Constants.admin.toString
-    else
-      Constants.emptyString.toString
+  
+  def validUser(loginDetails: LoginDetails): Boolean = {
+    signUps.count(result =>
+      if (result.username.equals(loginDetails.username) && result.password.equals(loginDetails.password)) {
+        println("USERNAME: " + result.username + " " + loginDetails.username)
+        println("PASSWORD: " + result.password + " " + loginDetails.password)
+        true
+      }
+      else {
+        false
+      }
+    )==1
   }
 
 }

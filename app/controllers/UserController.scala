@@ -1,10 +1,10 @@
 package controllers
 
 import akka.stream.Materializer
+import authentication.AuthenticatedAction
 import helpers.Constants
 import models.LoginDetails
 import play.api.i18n.{I18nSupport, MessagesApi}
-
 import javax.inject.Inject
 import play.api.mvc.{Action, AnyContent, Controller}
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
@@ -21,16 +21,12 @@ class UserController @Inject()
     }
   }
 
-  def register = Action {
+  def register: Action[AnyContent] = Action {
     Ok(views.html.register())
   }
 
-  def account = Action {
-    Ok(views.html.account())
+  def account: Action[AnyContent] = AuthenticatedAction { request =>
+    Ok(s"Hello ${request.session.get("username").getOrElse("")}")
   }
-
-
-
-
 
 }

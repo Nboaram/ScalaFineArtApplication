@@ -36,17 +36,4 @@ object SignUp {
     if (s.length < n) true else false
   }
 
-  def validUser(loginDetails: LoginDetails) = {
-    signUps.count(result =>
-      if (result.username.equals(loginDetails.username) && result.password.equals(loginDetails.password)) {
-        println("USERNAME: " + result.username + " " + loginDetails.username)
-        println("PASSWORD: " + result.password + " " + loginDetails.password)
-        true
-      }
-      else {
-      false
-      }
-    )==1
-  }
-
 }
