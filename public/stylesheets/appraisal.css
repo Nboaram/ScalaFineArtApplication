@@ -1,0 +1,23 @@
+.image-placeholder {
+    min-height: 400px;
+    background-color: #eee;
+}
+
+.field-title {
+    display: flex;
+    align-items: center;
+}
+
+.field-button {
+    display: flex;
+    align-items: flex-end;
+}
+
+.artpiece-type-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.artpiece-type-container>div {
+    text-align: center;
+}
