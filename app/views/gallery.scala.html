@@ -3,7 +3,6 @@
 @main("Gallery") {
     <head>
         <title>Gallery</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
         <link rel="stylesheet" href="@routes.Assets.at("stylesheets/gallery.css")">
@@ -17,6 +16,21 @@
             <div class="tz-gallery">
 
                 <div class="row">
+
+                        <!-- TODO Connect Images from DB ^^^^^^^^^ -->
+@*                    @for(image <- images){*@
+@*                        <div class="col-sm-6 col-md-4">*@
+@*                            <div class="thumbnail">*@
+@*                                <a class="lightbox" href="@routes.Assets.at(@image.location)">*@
+@*                                    <img src="@routes.Assets.at(@image.location)" alt="@image.title">*@
+@*                                </a>*@
+@*                                <div class="caption">*@
+@*                                    <h3>@image.name</h3>*@
+@*                                    <p>@image.description</p>*@
+@*                                </div>*@
+@*                            </div>*@
+@*                        </div>*@
+@*                    }*@
 
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
