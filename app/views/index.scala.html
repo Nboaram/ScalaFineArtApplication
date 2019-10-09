@@ -2,13 +2,11 @@
 
     @main("Welcome to Play") {
 
+        <a href="@routes.LanguageController.switchToLanguage("/","en")"> English </a>
 
-            <a href="@routes.LanguageController.switchToLanguage("/","en")"> English </a>
+        <a href="@routes.LanguageController.switchToLanguage("/","cy")"> Welsh </a>
 
-            <a href="@routes.LanguageController.switchToLanguage("/","cy")"> Welsh </a>
-
-
-        <h2>@messages.messages("header.gallery")</h2>
+        <h2>@messages.messages("index.gallery")</h2>
         Your
         new application is ready
 

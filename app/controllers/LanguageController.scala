@@ -9,4 +9,5 @@ class LanguageController @Inject()(val messagesApi: MessagesApi) extends Control
   def switchToLanguage(url: String,language: String) = Action { implicit request =>
     Redirect(url).withLang(Lang(language))
   }
+
 }

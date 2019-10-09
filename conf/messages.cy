@@ -1,2 +1,1 @@
-header.gallery=Oriel
-default.message = WELSH
+index.gallery=Oriel
