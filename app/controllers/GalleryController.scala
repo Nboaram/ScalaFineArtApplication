@@ -1,5 +1,6 @@
 package controllers
 
+import authentication.AuthenticatedAction
 import helpers.Constants
 import play.api.mvc.{Action, Controller}
 
@@ -13,8 +14,8 @@ class GalleryController extends Controller {
     Ok(views.html.view())
   }
 
-  def appraisal = Action {
-    Ok(views.html.appraisal())
+  def appraisal = AuthenticatedAction {
+    Ok(views.html.main("Appraisal")(views.html.appraisal()))
   }
 
   def appraisalHandler = TODO
