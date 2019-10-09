@@ -1,16 +1,26 @@
-@(form: Form[LoginDetails])(implicit messages: Messages, request: Request[AnyContent],flash: Flash)
+@(form: Form[LoginDetails])(implicit messages: Messages, request: Request[AnyContent], flash: Flash)
 
 @main("Login") {
 
-    <div>
-        <h3>Please log in</h3>
-        @helper.form(routes.LoginController.loginSubmit()){
-        @flash.get("failed").getOrElse("")
-        @helper.inputText(form("username"), '_label -> "Username", '_showConstraints -> false)
-        @helper.inputPassword(form("password"), '_label -> "Password", '_showConstraints -> false)
-        <button type="submit">Log In</button>
-        <a href="/sign-up"><button type="button">Sign Up</button></a>
-        }
-    </div>
+    <div class="container login-container">
+
+        <div class="login-form-1">
+            <h3>Please log in</h3>
+            @helper.form(routes.LoginController.loginSubmit()) {
+                @flash.get("failed").getOrElse("")
+                <div class="form-group">
+                @helper.inputText(form("username"), '_label -> "Username", '_showConstraints -> false)
+                </div>
+                <div class="form-group">
+                @helper.inputPassword(form("password"), '_label -> "Password", '_showConstraints -> false)
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btnSubmit" value="Login" />
+                </div>
+                <div class="form-group">
+                    <a href="/sign-up" class="ForgetPwd">Register?</a>
+
+                </div>
+}
 
 }
