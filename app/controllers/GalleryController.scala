@@ -1,12 +1,12 @@
 package controllers
 
+import helpers.Constants
 import play.api.mvc.{Action, Controller}
 
 class GalleryController extends Controller {
 
   def gallery  = Action {
-    val images = "Placeholder to get images from DB"
-    Ok(views.html.gallery(images))
+    Ok(views.html.gallery(Constants.imagesPlaceholder.toString))
   }
 
   def view = Action {
