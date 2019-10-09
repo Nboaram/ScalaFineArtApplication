@@ -1,1 +1,10 @@
 header.gallery=Gallery
+header.appraisals=Appraisals
+header.contact=Contact
+header.myAccount=My Account
+header.login=login
+header.logOut=Log Out
+header.register=Register
+footer.termsOfUse=Terms of Use
+footer.privacyPolicy=Privacy Policy
+footer.conditionsOfSale=Conditions of Sale
