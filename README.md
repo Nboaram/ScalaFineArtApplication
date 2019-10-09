@@ -17,8 +17,9 @@ and in the `messages.cy` file we would need
 ```
 hiworld.hello=Helo, Byd!
 ```
-This value `hiworld.hello` would be referenced to in a hiworld.scala.html file with `@messages.messages(hiworld.hello)` where the text should be (i.e in a div tag). This 
-hiworld file would need `@()(implicit messages: Messages, lang: Lang)` at the top. The Messages API is put into the @Inject of the controller where the page is loaded
+This value `hiworld.hello` would be referenced to in a hiworld.scala.html file with `@messages.messages(hiworld.hello)` where the text should be (i.e in a div tag). Be careful when using punctionation, as there are errors with this.
+
+The hiworld file would need `@()(implicit messages: Messages, lang: Lang)` at the top. The Messages API is put into the @Inject of the controller where the page is loaded
 `messagesApi: MessagesApi` and needs a `wtih I18nSupport` extension. The lang is also put into the inject of the controller `langs: Lang`.
 
 The controller used to generate the page would also need would need a `implicit request => request...` (see conroller application.index) (**NOT SURE ABOUT THIS**)
