@@ -10,8 +10,7 @@ import play.api.mvc.{Action, AnyContent, Controller}
 
 import scala.concurrent.Future
 
-class LoginController @Inject()
-(val messagesApi: MessagesApi, val materializer: Materializer) extends Controller
+class LoginController @Inject()(implicit val messagesApi: MessagesApi, val materializer: Materializer) extends Controller
   with I18nSupport {
 
   def login: Action[AnyContent] = Action.async { implicit request =>
