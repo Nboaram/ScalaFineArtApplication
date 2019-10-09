@@ -7,7 +7,7 @@ play.i18n.langs=["en","cy"]
 here we have selected English and Welsh.
 
 In the `conf` package you will see two files, one called `messages.cy` and another called `messages.en`. In each file you will
-see a value called `index.gallery`, from here on this type of value will be referred to as a message val. In the `en` file it is the word Gallery while in the `cy` file it is the word Gallery translated
+see a value called `header.gallery`, from here on this type of value will be referred to as a message val. In the `en` file it is the word Gallery while in the `cy` file it is the word Gallery translated
 into Welsh. To do **ANY TRANSLATION** you need the original value in a message value and the translated version in a message value. For example, say
 we have a page hiworld, in the `messages.en` file we would need
 ```
