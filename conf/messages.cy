@@ -1,1 +1,1 @@
-index.gallery=Oriel
+header.gallery=Oriel
