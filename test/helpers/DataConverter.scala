@@ -1,8 +1,7 @@
 package helpers
 
+import java.awt.image.BufferedImage
 import java.io.ByteArrayOutputStream
-
-import scalaz.std.effect.outputStream
 
 import scala.reflect.io.File
 
@@ -10,7 +9,9 @@ class DataConverter {
 
   def imageToBinaryData(file:File): Unit = {
 
-    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    image : BufferedImage
+
+    val byteArray:ByteArrayOutputStream = new ByteArrayOutputStream()
 
 
   }
