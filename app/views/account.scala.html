@@ -1,6 +1,5 @@
-@(user: String)
+@(user: String)(implicit request: Request[AnyContent])
 @main("Account") {
-
    <div>
        <br>
         <h1>Welcome @user</h1>

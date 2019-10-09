@@ -1,6 +1,6 @@
-@(message: String)
+@(title:String)(implicit request: Request[AnyContent])
 
-@main("Welcome to Play") {
+@main(title) {
 
         Your new application is ready
 

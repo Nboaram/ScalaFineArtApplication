@@ -11,7 +11,7 @@ class UserController @Inject()
 (val messagesApi: MessagesApi, val materializer: Materializer) extends Controller
   with I18nSupport {
 
-  def account: Action[AnyContent] = AuthenticatedAction { request =>
+  def account: Action[AnyContent] = AuthenticatedAction { implicit request =>
     Ok(views.html.account(request.session.get(Constants.username.toString).getOrElse(Constants.emptyString.toString)))
   }
 
