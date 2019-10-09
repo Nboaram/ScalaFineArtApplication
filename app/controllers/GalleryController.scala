@@ -15,7 +15,7 @@ class GalleryController extends Controller {
   }
 
   def appraisal = AuthenticatedAction {
-    Ok(views.html.main("Appraisal")(views.html.appraisal()))
+    Ok(views.html.main(Constants.appraisal.toString)(views.html.appraisal()))
   }
 
   def appraisalHandler = TODO
