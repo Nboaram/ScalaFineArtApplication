@@ -1,5 +1,5 @@
 @import helpers.Constants
-@(form: Form[models.SignUp])(implicit messages: Messages, request: Request[AnyContent], flash: Flash,lang: Lang)
+@(form: Form[models.SignUp])(implicit messages: Messages,langs: Lang, request: Request[AnyContent], flash: Flash)
 @main("Sign-up") {
     <div id="user-registration-form">
         <h1>User Registration</h1>

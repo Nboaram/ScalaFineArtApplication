@@ -1,4 +1,4 @@
-@(message: String)(implicit messages: Messages, lang: Lang, request: Request[AnyContent])
+@(message: String)(implicit messages: Messages, langs: Lang, request: Request[AnyContent])
 
     @main("Welcome to Play") {
         <h2>@messages.messages("header.gallery")</h2>
