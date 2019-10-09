@@ -9,7 +9,7 @@ import play.api.mvc._
 import services.MongoServices
 import akka.stream.Materializer
 
-class Application @Inject() (val messagesApi: MessagesApi, langs: Langs) extends Controller
+class Application @Inject()(implicit val messagesApi: MessagesApi, langs: Langs) extends Controller
   with I18nSupport {
 
   def index: Action[AnyContent] = Action { implicit request =>
