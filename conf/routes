@@ -13,6 +13,7 @@ POST        /sign-up             controllers.SignUpController.signUpSubmit
 GET         /gallery             controllers.GalleryController.gallery
 GET         /view                controllers.GalleryController.view
 GET         /appraisal           controllers.GalleryController.appraisal
+POST        /appraisal-handler   controllers.GalleryController.appraisalHandler
 
 GET         /checkout            controllers.PaymentController.checkout
 

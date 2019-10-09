@@ -16,4 +16,6 @@ class GalleryController extends Controller {
     Ok(views.html.appraisal())
   }
 
+  def appraisalHandler = TODO
+
 }

@@ -1,21 +1,33 @@
 @views.html.header("Appraisal")()
 <div class="container">
-    <div class="row">
+    <div class="row mt-5 mb-5">
         <div class="col-12">
-            <h1 class="text-center mt-5 mb-5">Appraisal</h1>
+            <h1 class="text-center">Appraisal</h1>
         </div>
     </div>
+    <div class="row mt-5 mb-5">
+        <div class="col">
+            <h5 class="text-center">Upload a piece of art for appraisal.</h5>
+        </div>
+    </div>
+    <form method="post" action="@routes.GalleryController.appraisalHandler()" enctype="multipart/form-data">
+        @* <div class="row mb-2">*@
+        @* <div class="col-2 field-title">*@
+        @* <h4>Image:</h4>*@
+        @* </div>*@
+        @* <div class="col-8">*@
+        @* <div id="image-preview-container">&nbsp;*@
+        @* </div>*@
+        @* </div>*@
+        @* </div>*@
     <div class="row mb-5">
         <div class="col-2 field-title">
             <h4>Image:</h4>
         </div>
         <div class="col-8">
-            <div class="image-placeholder"></div>
-        </div>
-        <div class="col-2 field-button">
-            <button type="button" class="btn btn-light">
-                Upload
-            </button>
+            <div class="input-group">
+                <input id="file-input" type="file" accept="image/*" class="form-control" aria-label="Upload" aria-describedby="addon-wrapping">
+            </div>
         </div>
     </div>
     <div class="row mb-5">
@@ -67,12 +79,12 @@
         <div class="col-8 offset-2">
             <div class="input-group artpiece-type-container">
                 <div>
-                   <input id="artpiece-type-original" name="artpiece-type" type="radio" aria-label="Original">
-                        <p> <label for="artpiece-type-original">Original</label></p>
+                    <input id="artpiece-type-original" name="artpiece-type" type="radio" aria-label="Original">
+                    <p> <label for="artpiece-type-original">Original</label></p>
                 </div>
                 <div>
-                   <input id="artpiece-type-print" name="artpiece-type" type="radio" aria-label="Print">
-                        <p><label for="artpiece-type-print">Print </label></p>
+                    <input id="artpiece-type-print" name="artpiece-type" type="radio" aria-label="Print">
+                    <p><label for="artpiece-type-print">Print </label></p>
 
                 </div>
             </div>
@@ -80,9 +92,11 @@
     </div>
     <div class="row mb-5">
         <div class="col-1 offset-9">
-            <button type="button" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary">
                 Submit
             </button>
         </div>
     </div>
+    </form>
 </div>
+@*<script src="@routes.Assets.at("javascripts/appraisal.js")"></script>*@
