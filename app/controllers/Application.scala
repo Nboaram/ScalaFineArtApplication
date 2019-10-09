@@ -1,7 +1,6 @@
 package controllers
 
 import helpers.Constants
-import play.api._
 import play.api.mvc._
 
 class Application extends Controller {
@@ -17,5 +16,6 @@ class Application extends Controller {
   def contact = Action {
     Ok(views.html.contact())
   }
+
 
 }
