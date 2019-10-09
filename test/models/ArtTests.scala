@@ -17,7 +17,9 @@ class ArtTests extends BaseTestingClass {
       "Test Art",
       "Test Artist",
       "This is a test description",
-      "Test Category",
+      "Test Genre",
+      "Test Type",
+      "Test Movement",
       true)
 
     println(artTest)

@@ -12,7 +12,9 @@ case class Art(
                 title: String,
                 artist: String,
                 description: String,
-                category: String, //TODO create enum list for different categories
+                genre: String,  //TODO create enum list for different categories
+                artType: String,  //TODO create enum list for different categories
+                movement:String,  //TODO create enum list for different categories
                 original: Boolean
               ) {
   def this (
@@ -20,7 +22,9 @@ case class Art(
              title: String,
              artist: String,
              description: String,
-             category: String,
+             genre: String,
+             artType: String,
+             movement:String,
              original: Boolean
            ) = this (
     Art.generateId(), //TODO create object and trait for generate ID functionality
@@ -28,7 +32,9 @@ case class Art(
     title,
     artist,
     description,
-    category,
+    genre,
+    artType,
+    movement,
     original
   )
   override def toString: String =
@@ -36,7 +42,9 @@ case class Art(
        |$image
        |$title $artist
        |$description
-       |$category
+       |$artType
+       |$genre
+       |$movement
        |$original""".stripMargin
 
 }
