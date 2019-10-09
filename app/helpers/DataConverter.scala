@@ -15,11 +15,13 @@ class DataConverter {
     outputStream.toByteArray
   }
 
-  def binaryDataToImage(binaryData: Array[Byte], filename: String) = {
+  def binaryDataToImage(binaryData: Array[Byte], filename: String):Boolean = {
+
+    val imageLocation = "C:/Users/Admin/IdeaProjects/ScalaFineArtApplication/test/scala/resources/testImages/"
 
     val byteArrayInputStream :ByteArrayInputStream = new ByteArrayInputStream(binaryData)
     val bufferedImage :BufferedImage = ImageIO.read(byteArrayInputStream)
-    ImageIO.write(bufferedImage, filename.slice(filename.length - 3, filename.length), new File(filename))
+    ImageIO.write(bufferedImage, filename.slice(filename.length - 3, filename.length), new File(imageLocation + filename))
   }
 
 }

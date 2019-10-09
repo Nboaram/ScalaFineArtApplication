@@ -23,4 +23,12 @@ class DataConverterTests extends BaseTestingClass{
 
   }
 
+  "binaryDataToImage" should "return an image file" in {
+    val image = "C:/Users/Admin/IdeaProjects/ScalaFineArtApplication/public/images/favicon.png"
+    val binData = dataConverter.imageToBinaryData(image)
+
+    assert(dataConverter.binaryDataToImage(binData, "test1.png") == true)
+
+  }
+
 }
