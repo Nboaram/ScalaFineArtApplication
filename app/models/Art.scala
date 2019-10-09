@@ -8,7 +8,7 @@ import scala.reflect.io.File
 
 case class Art(
                 id: Int,
-                image: BsonBinary,
+                image: File,
                 title: String,
                 artist: String,
                 description: String,
