@@ -10,9 +10,8 @@ object Constants extends Enumeration {
   val loginUrl: Value = Value("/login")
   val registerUrl: Value = Value("/register")
   val viewUrl: Value = Value("/view")
-
   val text_html: Value = Value("text/html")
-
+  val space: Value = Value(" ")
   val localHost: Value = Value("localhost")
   val username: Value = Value("username")
   val firstName: Value = Value("firstName")
@@ -32,5 +31,7 @@ object Constants extends Enumeration {
   val signUpConstraint: Value = Value("Unique username")
   val signUpInvalid: Value = Value("Username is taken")
   val indexString: Value = Value("Your new application is ready")
+  val failed: Value = Value("failed")
+  val incorrectUsername: Value = Value("Incorrect username or password")
 
 }

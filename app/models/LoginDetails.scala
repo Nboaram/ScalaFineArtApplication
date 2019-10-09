@@ -16,12 +16,12 @@ object LoginDetails {
       Constants.password.toString -> nonEmptyText
     )(LoginDetails.apply)(LoginDetails.unapply).verifying(userConstraint)
   )
-  def userConstraint: Constraint[LoginDetails] = Constraint("")({ loginDetails =>
+  def userConstraint: Constraint[LoginDetails] = Constraint(Constants.emptyString.toString)({ loginDetails =>
     if (validUser(loginDetails)) {
       Valid
     }
     else {
-      Invalid(ValidationError(""))
+      Invalid(ValidationError(Constants.emptyString.toString))
     }
   })
 
