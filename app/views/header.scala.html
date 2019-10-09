@@ -9,42 +9,53 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/gallery">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    @if(user.length>2) {
-                        <a class="nav-link" href= "/appraisal">Appraisal</a>
-                    } else {
-                        <a class="nav-link" href= "/login">Appraisal</a>
-                    }
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
-                </li>
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/gallery">@messages("header.gallery")</a>
+            </li>
+            <li class="nav-item">
+            @if(user.length>2) {
+                <a class="nav-link" href= "@routes.GalleryController.appraisal">Appraisal</a>
+            } else {
+                <a class="nav-link" href= "@routes.LoginController.login">Appraisal</a>
+            }
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
 <!-- TO BE SHOWN IF LOGGED IN -->
-                @if(user.length>2) {
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user"></i> Profile </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                            <a class="dropdown-item" href="/account">My account</a>
-                            <a class="dropdown-item" href="/logout">Log out</a>
-                        </div>
-                    </li>
-                } else {
-                        <!-- TO BE SHOWN IF NOT LOGGED IN -->
-                    <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="/login">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="/sign-up">Register</a>
-                    </li>
-                }
-            </ul>
-        </div>
-        </div>
-    </nav>
+            @if(user.length>2) {
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> Profile </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                        <a class="dropdown-item" href="/account">My account</a>
+                        <a class="dropdown-item" href="/logout">Log out</a>
+                    </div>
+                </li>
+            } else {
+
+                    <!-- TO BE SHOWN IF NOT LOGGED IN -->
+
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="/login">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="/sign-up">Register</a>
+                </li>
+            }
+
+            <li>
+                <a href="@routes.LanguageController.switchToLanguage(request.uri,"en")"/> English </a>
+            </li>
+            <li>
+                <a href="@routes.LanguageController.switchToLanguage(request.uri,"cy")"> Welsh </a>
+            </li>
+
+        </ul>
+    </div>
+    </div>
+</nav>
+

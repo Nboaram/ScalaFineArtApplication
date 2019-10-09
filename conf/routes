@@ -3,26 +3,27 @@
 # ~~~~
 
 # Home page
-GET         /                    controllers.Application.index
+GET         /                         controllers.Application.index
 
-GET         /sign-up              controllers.SignUpController.signUp
-POST        /sign-up              controllers.SignUpController.signUpSubmit
+GET         /sign-up                  controllers.SignUpController.signUp
+POST        /sign-up                  controllers.SignUpController.signUpSubmit
 
-GET         /login               controllers.LoginController.login
-POST        /login               controllers.LoginController.loginSubmit
-GET         /logout              controllers.LogoutController.logout
+GET         /login                    controllers.LoginController.login
+POST        /login                    controllers.LoginController.loginSubmit
+GET         /logout                   controllers.LogoutController.logout
 
-GET         /account             controllers.UserController.account
-GET         /gallery             controllers.GalleryController.gallery
-GET         /view                controllers.GalleryController.view
-GET         /appraisal           controllers.GalleryController.appraisal
+GET         /account                  controllers.UserController.account
+GET         /gallery                  controllers.GalleryController.gallery
+GET         /view                     controllers.GalleryController.view
+GET         /appraisal                controllers.GalleryController.appraisal
+POST        /appraisal-handler        controllers.GalleryController.appraisalHandler
 
-GET         /checkout            controllers.PaymentController.checkout
+GET         /checkout                 controllers.PaymentController.checkout
 
-GET         /contact             controllers.Application.contact
+GET         /contact                  controllers.Application.contact
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file        controllers.Assets.at(path="/public", file)
+GET         /assets/*file             controllers.Assets.at(path="/public", file)
 
-GET     /lang/:lang          controllers.LanguageController.switchToLanguage(url: String,lang: String)
+GET         /lang/:lang               controllers.LanguageController.switchToLanguage(url: String,lang: String)
