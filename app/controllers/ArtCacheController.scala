@@ -6,9 +6,15 @@ import play.api.cache._
 import play.api.mvc._
 import javax.inject.Inject
 
-class ArtCacheController @Inject() (@NamedCache("art-cache") artCache: CacheApi) extends Controller{
+class ArtCacheController @Inject() (@NamedCache("art-cache") artCache: CacheApi) extends Controller {
 
   def imageToCache(imageId: String, imageFile: File) = Action {
-    Ok(artCache.set(imageId, imageFile ))
+    Ok(artCache.set(imageId, imageFile))
+  }
+
+  def getImageFromCache(imageId: String): File = Action {
+    OK(artCache.getOrElse(imageId) {
+      Art.findById(imageId)
+    })
   }
 }

@@ -1,0 +1,3 @@
+class ArtCacheControllerTests extends{
+
+}
