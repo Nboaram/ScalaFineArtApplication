@@ -19,8 +19,10 @@ class ArtTests extends BaseTestingClass {
       "This is a test description",
       "Test Category",
       true)
+
+    println(artTest)
   }
-  println artTest
+
 
 
 }
