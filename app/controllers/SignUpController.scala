@@ -9,7 +9,7 @@ import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.mvc.{Action, AnyContent, Controller}
 
 import scala.concurrent.Future
-class SignUpController @Inject()(val messagesApi: MessagesApi, val materializer: Materializer) extends Controller with I18nSupport {
+class SignUpController @Inject()(implicit val messagesApi: MessagesApi, val materializer: Materializer) extends Controller with I18nSupport {
 
   def signUp: Action[AnyContent] = Action.async { implicit request =>
     Future {

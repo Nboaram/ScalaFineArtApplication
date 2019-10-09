@@ -1,7 +1,9 @@
-@(user: String)(implicit request: Request[AnyContent])
+@(user: String)( implicit messages: Messages, request: Request[AnyContent])
+
 @main("Account") {
    <div>
        <br>
         <h1>Welcome @user</h1>
    </div>
+
 }
