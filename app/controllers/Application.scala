@@ -13,14 +13,18 @@ class Application @Inject()(implicit val messagesApi: MessagesApi, langs: Langs)
   with I18nSupport {
 
   def index: Action[AnyContent] = Action { implicit request =>
-    request.session.get(Constants.username.toString).map{ user =>
+    request.session.get(Constants.username.toString).map { user =>
       Ok(views.html.index(Constants.indexString.toString + Constants.space.toString + user))
-    }.getOrElse{
+    }.getOrElse {
       Ok(views.html.index(Constants.indexString.toString))
     }
   }
 
   def contact = Action { implicit request =>
     Ok(views.html.contact())
+  }
+
+  def termsOfUse: Action[AnyContent]  = Action { implicit request =>
+    Ok(views.html.termsOfUse())
   }
 }
