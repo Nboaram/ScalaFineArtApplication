@@ -14,9 +14,9 @@
     </head>
     <body>
         @request.session.get("username").map { user =>
-            @header("title")(user)
+            @header(user)
         }.getOrElse{
-            @header("title")("")
+            @header("")
         }
 
        <div class="d-flex justify-content-center">
