@@ -4,12 +4,6 @@ import org.junit.runner._
 import play.api.test.{WithApplication, _}
 import play.api.test.Helpers._
 import helpers.Constants
-import play.api.mvc.Result
-
-import scala.concurrent.{Await, Future}
-import scala.util.{Failure, Success}
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.duration.Duration
 
 /**
  * Add your spec here.
