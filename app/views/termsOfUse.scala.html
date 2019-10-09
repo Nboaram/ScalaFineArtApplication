@@ -1,4 +1,15 @@
-@()(implicit messages:Messages, request: Request[AnyContent])
+@()(implicit messages: Messages, request: Request[AnyContent])
 @main("Terms Of Use") {
-    Terms and Conditions
+
+    <head>
+        <title>  @messages("footer.termsOfUse")</title>
+        <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/termsOfUse.css")">
+    </head>
+            <body>
+                @messages("termsOfUse.firstParagraph")
+            </body>
+
+
 }
