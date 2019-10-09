@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
@@ -16,8 +16,11 @@
         @header(true)
         @content
 
+        @header(title)(true)
+       <div class="d-flex justify-content-center">
+            @content
+        </div>
         @footer.render()
     </body>
 
 </html>
-

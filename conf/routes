@@ -5,11 +5,14 @@
 # Home page
 GET         /                    controllers.Application.index
 
-GET         /login               controllers.UserController.login
-GET         /account             controllers.UserController.account
-GET         /sign-up             controllers.SignUpController.signUp
-POST        /sign-up             controllers.SignUpController.signUpSubmit
+GET         /sign-up              controllers.SignUpController.signUp
+POST        /sign-up              controllers.SignUpController.signUpSubmit
 
+GET         /login               controllers.LoginController.login
+POST        /login               controllers.LoginController.loginSubmit
+GET         /logout              controllers.LogoutController.logout
+
+GET         /account             controllers.UserController.account
 GET         /gallery             controllers.GalleryController.gallery
 GET         /view                controllers.GalleryController.view
 GET         /appraisal           controllers.GalleryController.appraisal
