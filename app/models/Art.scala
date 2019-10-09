@@ -4,7 +4,7 @@ import helpers.GenerateId
 
 import scala.reflect.io.File
 
-//TODO image to bindata conversion. Create an external function to do this https://medium.com/tech-and-the-city/from-image-to-bytes-and-back-again-563abc5c1412
+//TODO finalise filetype for image and link to file to data converter
 
 case class Art(
                 id: Int,
@@ -12,9 +12,9 @@ case class Art(
                 title: String,
                 artist: String,
                 description: String,
-                genre: String,  //TODO create enum list for different categories
-                artType: String,  //TODO create enum list for different categories
-                movement:String,  //TODO create enum list for different categories
+                genre: String,  //TODO link with enum list
+                artType: String,  //TODO link with enum list
+                movement:String,  //TODO link with enum list
                 original: Boolean
               ) {
   def this (
