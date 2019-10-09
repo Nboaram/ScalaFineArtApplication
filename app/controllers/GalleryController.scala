@@ -1,6 +1,7 @@
 package controllers
 
 import akka.stream.Materializer
+import authentication.AuthenticatedAction
 import helpers.Constants
 import javax.inject.Inject
 import play.api.i18n.{I18nSupport, Lang, MessagesApi}
@@ -16,8 +17,10 @@ class GalleryController @Inject()(implicit val messagesApi: MessagesApi) extends
     Ok(views.html.view())
   }
 
-  def appraisal = Action { implicit request =>
+  def appraisal = AuthenticatedAction { implicit request =>
     Ok(views.html.appraisal())
   }
+
+  def appraisalHandler = TODO
 
 }
