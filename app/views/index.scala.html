@@ -1,13 +1,6 @@
-@(message: String)(implicit messages: Messages, lang: Lang)
+@(message: String)(implicit messages: Messages, lang: Lang, request: RequestHeader)
 
     @main("Welcome to Play") {
-
-        <a href="@routes.LanguageController.switchToLanguage("/","en")"> English </a>
-
-        <a href="@routes.LanguageController.switchToLanguage("/","cy")"> Welsh </a>
-
         <h2>@messages.messages("index.gallery")</h2>
-        Your
-        new application is ready
-
+        Your new application is ready
     }

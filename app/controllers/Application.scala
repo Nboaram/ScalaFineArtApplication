@@ -20,7 +20,7 @@ class Application @Inject() (val messagesApi: MessagesApi, langs: Langs) extends
     }
   }
 
-  def contact = Action {
+  def contact = Action { implicit request =>
     Ok(views.html.contact())
   }
 }

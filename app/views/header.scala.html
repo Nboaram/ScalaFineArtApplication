@@ -1,4 +1,4 @@
-@(title: String)(loggedIn:Boolean)( implicit messages: Messages, lang: Lang)
+@(title: String)(loggedIn:Boolean)( implicit messages: Messages, lang: Lang, request: RequestHeader)
 
 <div class="container">
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
@@ -48,10 +48,10 @@
                 }
 
                 <li>
-                    <a href="@routes.LanguageController.switchToLanguage("/","en")"> English </a>
+                    <a href="@routes.LanguageController.switchToLanguage(request.uri,"en")"/> English </a>
                 </li>
                 <li>
-                    <a href="@routes.LanguageController.switchToLanguage("/","cy")"> Welsh </a>
+                    <a href="@routes.LanguageController.switchToLanguage(request.uri,"cy")"> Welsh </a>
                 </li>
 
             </ul>
