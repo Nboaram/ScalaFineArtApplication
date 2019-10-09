@@ -3,12 +3,14 @@ package controllers
 import akka.stream.Materializer
 import helpers.Constants
 import javax.inject.Inject
-import play.api.i18n.{I18nSupport, MessagesApi}
+import play.api.i18n.{I18nSupport, Lang, Langs, Messages, MessagesApi}
+import play.api.i18n.{I18nSupport, Lang, Langs, Messages, MessagesApi}
 import play.api.mvc._
 import services.MongoServices
 
+
 class Application @Inject()
-(val messagesApi: MessagesApi, val materializer: Materializer, val mongoServices: MongoServices) extends Controller
+(val messagesApi: MessagesApi, val materializer: Materializer, val mongoServices: MongoServices, langs: Langs) extends Controller
   with I18nSupport {
 
   def index: Action[AnyContent] = Action { implicit request =>
@@ -19,5 +21,4 @@ class Application @Inject()
   def contact = Action {
     Ok(views.html.contact())
   }
-
 }

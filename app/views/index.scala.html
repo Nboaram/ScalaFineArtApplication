@@ -1,7 +1,15 @@
-@(message: String)
+@(message: String)(implicit messages: Messages, lang: Lang)
 
-@main("Welcome to Play") {
+    @main("Welcome to Play") {
 
-        Your new application is ready
+        <p>Current = @lang</p>
+        <ul>
+            <li> <a href="@routes.LanguageController.switchToLanguage("en")"> English </a> </li>
+            <li> <a href="@routes.LanguageController.switchToLanguage("cy")"> Welsh </a> </li>
+        </ul>
 
-}
+        <h2>@messages.messages("header.gallery")</h2>
+        Your
+        new application is ready
+
+    }
