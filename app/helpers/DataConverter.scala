@@ -24,5 +24,4 @@ class DataConverter {
     val byteArrayInputStream :ByteArrayInputStream = new ByteArrayInputStream(binaryData)
     ImageIO.write(ImageIO.read(byteArrayInputStream), filename.slice(filename.length - 3, filename.length), new File(imageLocation + filename))
   }
-
 }
