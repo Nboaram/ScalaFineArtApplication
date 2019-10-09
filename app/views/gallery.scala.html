@@ -1,4 +1,4 @@
-@(images: String)(implicit messages:Messages, langs: Lang, request: RequestHeader)
+@(images: String)(implicit messages:Messages, langs: Lang, request: Request[AnyContent])
 @main("Gallery") {
     <head>
         <title>Gallery</title>

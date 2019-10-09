@@ -1,8 +1,10 @@
-@(user: String)( implicit messages: Messages, lang: Lang, request: RequestHeader)
+@(user: String)( implicit messages: Messages, lang: Lang, request: Request[AnyContent])
+
 @main("Account") {
 
    <div>
        <br>
         <h1>Welcome @user</h1>
    </div>
+
 }
