@@ -11,6 +11,7 @@ POST        /sign-up              controllers.SignUpController.signUpSubmit
 GET         /login               controllers.LoginController.login
 POST        /login               controllers.LoginController.loginSubmit
 GET         /logout              controllers.LogoutController.logout
+GET         /forgot-password     controllers.LoginController.forgotPassword
 
 GET         /account             controllers.UserController.account
 GET         /gallery             controllers.GalleryController.gallery

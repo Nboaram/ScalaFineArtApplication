@@ -53,3 +53,7 @@
 }
 
 .navbar-brand {float:none;}
+
+ol, ul, dl {
+    width: 100%;
+}

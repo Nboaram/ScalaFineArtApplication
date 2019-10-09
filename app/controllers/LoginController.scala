@@ -21,8 +21,6 @@ class LoginController @Inject()
   }
 
   def loginSubmit: Action[AnyContent] = Action.async { implicit request =>
-
-
     LoginDetails.loginForm.bindFromRequest.fold({
       _ => {
         Future(Redirect(routes.LoginController.login()).flashing(Constants.failed.toString ->
@@ -37,5 +35,7 @@ class LoginController @Inject()
             .flashing(Constants.login.toString -> Constants.loginMessage.toString)}
     })
   }
+
+  def forgotPassword = TODO
 
 }
