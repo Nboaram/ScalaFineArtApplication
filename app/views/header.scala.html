@@ -45,16 +45,13 @@
                 <li class="nav-item">
                     <a class="nav-link font-weight-bold" href="/sign-up">Register</a>
                 </li>
-            }
+            }    </ul>
+        <span class="navbar-text">
+                <a role="button" aria-disabled="true" class="btn btn-light" href="@routes.LanguageController.switchToLanguage(request.uri,"en")"/> English </a>
+                <a role="button" aria-disabled="true" class="btn btn-light" href="@routes.LanguageController.switchToLanguage(request.uri,"cy")"> Welsh </a>
+        </span>
 
-            <li>
-                <a href="@routes.LanguageController.switchToLanguage(request.uri,"en")"/> English </a>
-            </li>
-            <li>
-                <a href="@routes.LanguageController.switchToLanguage(request.uri,"cy")"> Welsh </a>
-            </li>
 
-        </ul>
     </div>
     </div>
 </nav>

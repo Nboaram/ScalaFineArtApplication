@@ -1,11 +1,8 @@
 @(images: String)(implicit messages:Messages, request: Request[AnyContent])
 @main("Gallery") {
-    <head>
-        <title>Gallery</title>
-        <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
         <link rel="stylesheet" href="@routes.Assets.at("stylesheets/gallery.css")">
-    </head>
     <body>
         <div class="container gallery-container">
 
