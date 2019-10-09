@@ -1,11 +1,7 @@
 @import helpers.Constants
 @(form: Form[models.SignUp])(implicit messages: Messages, request: Request[AnyContent], flash: Flash)
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Register</title>
-    </head>
+@main("Register") {
+
     <body id="user-registration">
         <div id="content">
             <div id="user-registration-form">
@@ -18,7 +14,7 @@
                         </div>
                     }
                 }
-                @helper.form(routes.SignUpController.signUpSubmit()){
+                @helper.form(routes.SignUpController.signUpSubmit()) {
                     @helper.inputText(
                         form("firstName"),
                         '_label -> "First name",
@@ -59,4 +55,4 @@
             </div>
         </div>
     </body>
-</html>
+}
