@@ -8,7 +8,7 @@ import play.api.libs.concurrent.Execution.Implicits.defaultContext
 
 import scala.concurrent.Future
 
-class LogoutController @Inject()(val messagesApi: MessagesApi, val materializer: Materializer) extends Controller
+class LogoutController @Inject()(implicit val messagesApi: MessagesApi, val materializer: Materializer) extends Controller
   with I18nSupport {
 
   def logout: Action[AnyContent] = Action.async { implicit request =>

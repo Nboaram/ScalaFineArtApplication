@@ -1,5 +1,4 @@
-@(images: String)
-
+@(images: String)(implicit messages:Messages, request: Request[AnyContent])
 @main("Gallery") {
     <head>
         <title>Gallery</title>

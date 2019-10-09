@@ -1,3 +1,5 @@
+@()(implicit messages:Messages, request: Request[AnyContent])
+@main("Appraisal"){
 <div class="container">
     <div class="row mt-5 mb-5">
         <div class="col-12">
@@ -75,17 +77,17 @@
                 <div>
                     <input id="artpiece-type-print" name="artpiece-type" type="radio" aria-label="Print">
                     <p><label for="artpiece-type-print">Print </label></p>
-
                 </div>
             </div>
         </div>
     </div>
-    <div class="row mb-5">
-        <div class="col-1 offset-9">
-            <button type="submit" class="btn btn-primary">
+        <div class="row mb-5">
+            <div class="col-1 offset-9">
+                <button type="submit" class="btn btn-primary">
                 Submit
-            </button>
+                </button>
+            </div>
         </div>
-    </div>
     </form>
 </div>
+}
