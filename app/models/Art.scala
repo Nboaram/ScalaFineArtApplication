@@ -33,6 +33,7 @@ case class Art(
   )
   override def toString: String =
     s"""$id
+       |$image
        |$title $artist
        |$description
        |$category
