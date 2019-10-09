@@ -3,7 +3,7 @@ package controllers
 import scala.concurrent.ExecutionContext.Implicits.global
 import akka.stream.Materializer
 import helpers.Constants
-import models.LoginDetails
+import models.{ForgotPassword, LoginDetails}
 import play.api.i18n.{I18nSupport, MessagesApi}
 import javax.inject.Inject
 import play.api.mvc.{Action, AnyContent, Controller}
@@ -35,6 +35,10 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
     })
   }
 
-  def forgotPassword = TODO
+  def forgotPassword: Action[AnyContent] = Action { implicit request =>
+    Ok(views.html.forgot_password(ForgotPassword.forgotPasswordForm))
+  }
+
+  def forgotPasswordHandler: Action[AnyContent] = TODO
 
 }

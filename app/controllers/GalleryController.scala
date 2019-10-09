@@ -4,6 +4,7 @@ import akka.stream.Materializer
 import authentication.AuthenticatedAction
 import helpers.Constants
 import javax.inject.Inject
+import models.ForgotPassword
 import play.api.i18n.{I18nSupport, Lang, MessagesApi}
 import play.api.mvc.{Action, Controller}
 
