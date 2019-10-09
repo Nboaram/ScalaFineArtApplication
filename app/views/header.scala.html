@@ -1,10 +1,9 @@
-@(title: String)(loggedIn:Boolean)
+@(loggedIn:Boolean)
 
-<div class="container">
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar sticky-top navbar-light bg-light justify-content-md-center navbar-expand-lg">
+        <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQO6fd0t6GrK8zHWbJyD1n1HrOP02T3GeDr2tXnA3sqoEOlykV6" width="50" height="50" class="d-inline-block align-center" alt="IMAGE PLACEHOLDER">
-            QArt
+            <img src="@routes.Assets.at("images/qart_logo.png")" width="100" height="50" class="d-inline-block align-center" alt="QArt Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,15 +24,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
-
-                    <!-- TO BE SHOWN IF LOGGED IN -->
-
-                @if(loggedIn) {
-                    <li class="nav-item">
-                        <a class="nav-link" href="/account">Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="/login">Log Out</a>
+<!-- TO BE SHOWN IF LOGGED IN -->
+                @if(loggedIn==true) {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i> Profile </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                            <a class="dropdown-item" href="#">My account</a>
+                            <a class="dropdown-item" href="#">Log out</a>
+                        </div>
                     </li>
                 } else {
 
@@ -43,11 +43,11 @@
                         <a class="nav-link font-weight-bold" href="/login">Log In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="/register">Register</a>
+                        <a class="nav-link font-weight-bold" href="/sign-up">Register</a>
                     </li>
                 }
-
             </ul>
         </div>
+        </div>
     </nav>
-</div>
+
