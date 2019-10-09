@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String)(content: Html)(implicit messages: Messages, request: Request[AnyContent])
 
 <!DOCTYPE html>
 
@@ -21,6 +21,6 @@
        <div class="d-flex justify-content-center">
             @content
         </div>
-        @footer.render()
+        @footer.apply()
     </body>
 </html>
