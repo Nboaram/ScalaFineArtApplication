@@ -2,11 +2,11 @@
 
     @main("Welcome to Play") {
 
-        <p>Current = @lang</p>
-        <ul>
-            <li> <a href="@routes.LanguageController.switchToLanguage("en")"> English </a> </li>
-            <li> <a href="@routes.LanguageController.switchToLanguage("cy")"> Welsh </a> </li>
-        </ul>
+
+            <a href="@routes.LanguageController.switchToLanguage("/","en")"> English </a>
+
+            <a href="@routes.LanguageController.switchToLanguage("/","cy")"> Welsh </a>
+
 
         <h2>@messages.messages("header.gallery")</h2>
         Your

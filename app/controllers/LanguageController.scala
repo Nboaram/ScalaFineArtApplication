@@ -6,7 +6,7 @@ import play.api.mvc._
 
 class LanguageController @Inject()(val messagesApi: MessagesApi) extends Controller with I18nSupport {
 
-  def switchToLanguage(language: String) = Action { implicit request =>
-    Redirect(routes.Application.index()).withLang(Lang(language))
+  def switchToLanguage(url: String,language: String) = Action { implicit request =>
+    Redirect(url).withLang(Lang(language))
   }
 }

@@ -3,8 +3,7 @@ package controllers
 import akka.stream.Materializer
 import helpers.Constants
 import javax.inject.Inject
-import play.api.i18n.{I18nSupport, Lang, Langs, Messages, MessagesApi}
-import play.api.i18n.{I18nSupport, Lang, Langs, Messages, MessagesApi}
+import play.api.i18n.{I18nSupport, Langs, MessagesApi}
 import play.api.mvc._
 import services.MongoServices
 

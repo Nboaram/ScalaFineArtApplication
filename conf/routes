@@ -23,4 +23,4 @@ GET         /header              controllers.navigation.Header.header()
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file        controllers.Assets.at(path="/public", file)
 
-GET     /lang/:lang          controllers.LanguageController.switchToLanguage(lang: String)
+GET     /lang/:lang          controllers.LanguageController.switchToLanguage(url: String,lang: String)
