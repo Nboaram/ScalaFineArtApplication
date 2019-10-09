@@ -1,11 +1,9 @@
 package helpers
 
 import scala.resources.BaseTestingClass
+import utils.constants.TestConstants._
 
 class DataConverterTests extends BaseTestingClass{
-
-  val imageJPEG = "test/scala/resources/testImages/test.jpg"
-  val imagePNG = "test/scala/resources/testImages/test1.png"
 
   var dataConverter: DataConverter = _
 
@@ -24,13 +22,8 @@ class DataConverterTests extends BaseTestingClass{
   }
 
   "binaryDataToImage" should "return an image file" in {
-    val binDataJPEG = dataConverter.imageToBinaryData(imageJPEG)
-    val filenameJPEG = "test.jpg"
-    val binDataPNG = dataConverter.imageToBinaryData(imageJPEG)
-    val filenamePNG = "test1.png"
-    assert(dataConverter.binaryDataToImage(binDataJPEG, filenameJPEG) == true)
-    assert(dataConverter.binaryDataToImage(binDataPNG, filenamePNG) == true)
-
+    assert(dataConverter.binaryDataToImage(dataConverter.imageToBinaryData(imageJPEG), "test.jpg") == true)
+    assert(dataConverter.binaryDataToImage(dataConverter.imageToBinaryData(imagePNG), "test1.png") == true)
 
   }
 

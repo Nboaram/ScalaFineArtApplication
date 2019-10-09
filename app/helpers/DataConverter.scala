@@ -1,6 +1,5 @@
 package helpers
 
-import java.awt.image.BufferedImage
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream, File}
 
 import javax.imageio.ImageIO
@@ -21,11 +20,9 @@ class DataConverter {
 
   def binaryDataToImage(binaryData: Array[Byte], filename: String):Boolean = {
 
-    val imageLocation = "C:/Users/Admin/IdeaProjects/ScalaFineArtApplication/test/scala/resources/testImages/"
-
+    val imageLocation = "test/utils/constants/testImages/"
     val byteArrayInputStream :ByteArrayInputStream = new ByteArrayInputStream(binaryData)
-    val bufferedImage :BufferedImage = ImageIO.read(byteArrayInputStream)
-    ImageIO.write(bufferedImage, filename.slice(filename.length - 3, filename.length), new File(imageLocation + filename))
+    ImageIO.write(ImageIO.read(byteArrayInputStream), filename.slice(filename.length - 3, filename.length), new File(imageLocation + filename))
   }
 
 }
