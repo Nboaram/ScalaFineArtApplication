@@ -1,0 +1,16 @@
+@import helpers.Constants
+@import models.Interests.ArtType
+@()(implicit messages: Messages, request: Request[AnyContent])
+
+    <div id="Interests">
+        <h1>Your Interests</h1>
+        @helper.form(routes.UserController.artGenresSubmit()) {
+            @for(value2 <- ArtType.values){
+                <input type="checkbox" value=@value2.toString>
+                    @value2.toString
+                </input><br>
+            }
+            <button type="submit">Submit</button>
+        }
+    </div>
+

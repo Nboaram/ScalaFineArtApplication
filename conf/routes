@@ -17,6 +17,10 @@ GET         /gallery             controllers.GalleryController.gallery
 GET         /view                controllers.GalleryController.view
 GET         /appraisal           controllers.GalleryController.appraisal
 
+GET        /art-types           controllers.UserController.artTypesSubmit
+POST        /art-genres          controllers.UserController.artGenresSubmit
+POST        /art-movements       controllers.UserController.artMovementsSubmit
+
 GET         /checkout            controllers.PaymentController.checkout
 
 GET         /contact             controllers.Application.contact

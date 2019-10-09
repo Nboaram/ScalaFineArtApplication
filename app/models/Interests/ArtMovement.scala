@@ -1,4 +1,4 @@
-package helpers
+package models.Interests
 
 object ArtMovement extends Enumeration {
   type ArtMovement = Value
@@ -12,4 +12,3 @@ object ArtMovement extends Enumeration {
     interests.foreach(interest => println(s"I like $interest"))
   }
 }
-

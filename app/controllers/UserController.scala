@@ -15,4 +15,16 @@ class UserController @Inject()
     Ok(views.html.account(request.session.get(Constants.username.toString).getOrElse(Constants.emptyString.toString)))
   }
 
+  def artTypesSubmit: Action[AnyContent] = AuthenticatedAction {implicit request =>
+    Ok(views.html.main("Interests")(views.html.interests()))
+  }
+
+  def artGenresSubmit: Action[AnyContent] = AuthenticatedAction {implicit request =>
+    Ok("hi")
+  }
+
+  def artMovementsSubmit: Action[AnyContent] = AuthenticatedAction {implicit request =>
+    Ok("hi")
+  }
+
 }

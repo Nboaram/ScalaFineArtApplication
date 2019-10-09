@@ -1,4 +1,4 @@
-package helpers
+package models.Interests
 
 object ArtGenre extends Enumeration {
   type ArtGenre = Value
