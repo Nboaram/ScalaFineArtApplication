@@ -67,6 +67,9 @@ ol, ul, dl {
 .large-icon {
     font-size: 14em;
     color: #CCC;
+}
+
+.tilt-icon {
     transform: rotate(20deg);
 }
 

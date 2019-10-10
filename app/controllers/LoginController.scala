@@ -55,6 +55,12 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
     Ok(views.html.reset_password(id, ResetPassword.resetPasswordForm))
   }
 
-  def resetPasswordHandler(id: String): Action[AnyContent] = TODO
+  def resetPasswordHandler(id: String): Action[AnyContent] = Action { implicit request =>
+    ResetPassword.resetPasswordForm.bindFromRequest.fold({ formHasErrors =>
+      BadRequest(views.html.reset_password(id, formHasErrors))
+    }, { success =>
+      Ok(views.html.password_successfully_reset())
+    })
+  }
 
 }
