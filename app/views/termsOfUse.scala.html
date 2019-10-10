@@ -1,15 +1,31 @@
 @()(implicit messages: Messages, request: Request[AnyContent])
 @main("Terms Of Use") {
-
     <head>
-        <title>  @messages("footer.termsOfUse")</title>
-        <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
         <link rel="stylesheet" href="@routes.Assets.at("stylesheets/termsOfUse.css")">
     </head>
-            <body>
-                @messages("termsOfUse.firstParagraph")
-            </body>
 
+    <div class="termsTextContainer">
+        <h2 class='termsHeader'>@messages("footer.termsOfUse")</h2>
+
+        <p class="firstPara" >
+        @messages("termsOfUse.firstParagraph")
+        </p>
+
+        <p class="secondPara">
+        @messages("termsOfUse.secondParagraph")
+        </p>
+
+        <ul class="bulletList">
+            <li>@messages("termsOfUse.bulletOne")</li>
+            <li>@messages("termsOfUse.bulletTwo")</li>
+            <li>@messages("termsOfUse.bulletThree")</li>
+            <li>@messages("termsOfUse.bulletFour")</li>
+            <li>@messages("termsOfUse.bulletFive")</li>
+            <li>@messages("termsOfUse.bulletSix")</li>
+            <li>@messages("termsOfUse.bulletSeven")</li>
+            <li>@messages("termsOfUse.bulletEight")</li>
+            <li>@messages("termsOfUse.bulletNine")</li>
+        </ul>
+    </div>
 
 }
