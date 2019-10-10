@@ -1,4 +1,4 @@
-header.gallery=Oriel
+# !---Terms Of Use---!
 termsOfUse.firstParagraph=Croeso i QArts. Os ydych chi'n parhau i bori a defnyddio'r wefan hon, rydych chi'n cytuno i gydymffurfio â'r telerau ac amodau defnyddio canlynol ac yn rhwym iddynt, sydd, ynghyd â'n polisi preifatrwydd, yn llywodraethu perthynas QArts â chi mewn perthynas â'r wefan hon. Os ydych chi'n anghytuno ag unrhyw ran o'r telerau ac amodau hyn, peidiwch â defnyddio ein gwefan.
 termsOfUse.secondParagraph=Mae defnyddio'r wefan hon yn ddarostyngedig i'r telerau defnyddio canlynol:
 termsOfUse.bulletOne=Mae cynnwys tudalennau'r wefan hon er eich gwybodaeth a'ch defnydd cyffredinol yn unig. Gall newid heb rybudd.
@@ -11,22 +11,37 @@ termsOfUse.bulletSeven=Gall defnyddio'r awdurdod hwn heb awdurdod arwain at hawl
 termsOfUse.bulletEight=O bryd i'w gilydd, gall y wefan hon hefyd gynnwys dolenni i wefannau eraill. Darperir y dolenni hyn er hwylustod ichi ddarparu gwybodaeth bellach. Nid ydynt yn dynodi ein bod yn cymeradwyo'r wefan (nau). Nid oes gennym unrhyw gyfrifoldeb am gynnwys y wefan (nau) cysylltiedig.
 termsOfUse.bulletNine=Mae eich defnydd o'r wefan hon ac unrhyw anghydfod sy'n codi o'r fath ddefnydd o'r wefan yn ddarostyngedig i gyfreithiau Lloegr, Gogledd Iwerddon, yr Alban a Chymru.
 
+# !---Header & Footer---!
+header.gallery=Oriel
 header.appraisals=Arfarniadau
 header.contact=Cyswllt
 header.myAccount=Fy nghyfrif
-header.login=Mewngofnodi
+header.login=Mewngofnodi 
 header.logOut=Allgofnodi
-header.register=CofrestrwchRegister
+header.register=Cofrestrwch
 footer.termsOfUse=Telerau Defnyddio
 footer.privacyPolicy=Polisi Preifatrwydd
 footer.conditionsOfSale=Amodau Gwerthu
-login.login=Mewngofnodi
-login.signUp=Cofrestru
-login.cancel=Canslo
-login.pleaseLogIn=Mewngofnodi
-login.username=Enw defnyddiwr
-login.password=Cyfrinair
 
+# !---Login---!
+login.welcome=Croeso nol!
+login.join=Ymunwch
+login.remember=Cofiwch gyfrinair
+login.submit=Mewngofnodi
+login.dont=Peidiwch â chael cyfrif?
+login.username=Enw defnyddiwr :
+login.password=Cyfrinair :
+
+# !---Register---!
+register.register=Cofrestrwch :
+register.button=Cofrestrwch
+register.already=Eisoes â chyfrif?
+register.login=Mewngofnodi 
+
+# !---Gallery---!
+gallery.gallery=Oriel QArt
+
+# !---Privacy Policy---!
 privacyPolicy.EffDate=Dyddiad dod i rym: 10fed Hydref, 2019
 privacyPolicy.whoWeAre=Pwy ydyn ni
 privacyPolicy.firstPara=Cyfeiriad ein gwefan yw: 
