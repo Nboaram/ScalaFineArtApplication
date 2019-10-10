@@ -32,4 +32,5 @@ object Constants extends Enumeration {
   val environmentEmailAddress: Value = Value("QA_FINE_ART_EMAIL_ADDRESS")
   val environmentEmailPassword: Value = Value("QA_FINE_ART_EMAIL_PASSWORD")
   val passwordRecoveryTitle: Value = Value("Password Recovery")
+  val zero: Value = Value("0")
 }

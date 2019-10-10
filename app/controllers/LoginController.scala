@@ -39,7 +39,6 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
   }
 
   def forgotPassword: Action[AnyContent] = Action { implicit request =>
-    println(routes.GalleryController.gallery().path())
     Ok(views.html.forgot_password(ForgotPassword.forgotPasswordForm))
   }
 
@@ -47,9 +46,13 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
     ForgotPassword.forgotPasswordForm.bindFromRequest.fold({ formHasErrors =>
       BadRequest(views.html.forgot_password(formHasErrors))
     }, { success =>
-      EmailClient.sendPasswordRecoveryEmail(success.email)
+      EmailClient.sendPasswordRecoveryEmail(success.email, System.currentTimeMillis().toString)
       Ok(views.html.recovery_email_sent())
     })
+  }
+
+  def resetPassword(id: String): Action[AnyContent] = Action { implicit request =>
+    Ok(views.html.reset_password(id))
   }
 
 }

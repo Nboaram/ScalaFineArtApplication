@@ -1,11 +1,12 @@
 package email
 
+import controllers.routes
 import courier.{Envelope, Mailer, Text}
 import helpers.Constants
 import javax.inject.Singleton
 import javax.mail.internet.InternetAddress
-import scala.concurrent.ExecutionContext.Implicits.global
 
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.{Failure, Success}
 
 
@@ -18,14 +19,22 @@ object EmailClient {
     .auth(true)
     .as(hostEmail, sys.env(Constants.environmentEmailPassword.toString))
     .startTls(true)()
-  def sendPasswordRecoveryEmail(userEmailAddress: String): Unit = {
+  def sendPasswordRecoveryEmail(userEmailAddress: String, passwordHash: String): Unit = {
+    // The reset link will be a long, unique value that will be saved in the database with the credentials
+    // of the user that has this email address.
+    val resetLink = routes.LoginController.resetPassword(passwordHash).path()
+    sendEmail(userEmailAddress, s"Copy this link into your address bar to reset your password: $resetLink")
+  }
+
+
+  def sendEmail(userEmailAddress: String, message: String): Unit = {
     val envelope = Envelope
       .from(createEmailAddress(hostEmail))
       .to(createEmailAddress(userEmailAddress))
       .subject(Constants.passwordRecoveryTitle.toString)
-      .content(Text("Copy this link to reset your password: <reset link>"))
+      .content(Text(message))
     mailer(envelope).onComplete{
-      case Success(value) => println("Email was sent!!!")
+      case Success(_) => println(s"Email was sent!")
       case Failure(exception) => println("Something went wrong...")
         println(exception.getMessage)
     }
