@@ -36,4 +36,4 @@ This is a compiler problem, not a programming problem. It is the way the files a
 
 In your ecclipse hit the keys `ctrl+s` buton. Go to Editor, then File Encodings. Change the property for `Default encoding for properties files` to UTF-8. This should solve the problem. See the following image
 
-[[https://github.com/Nboaram/ScalaFineArtApplication/blob/developer/readmeImages/changeSetEncod.png | alt=octocat]]
+[[https://github.com/Nboaram/ScalaFineArtApplication/blob/ISSUE-42/readmeImages/changeSetEncod.PNG | alt=octocat]]
