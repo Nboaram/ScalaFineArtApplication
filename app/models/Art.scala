@@ -8,6 +8,7 @@ import helpers.ImageHandler
 case class Art(
                 id: Int,
                 customerId: Int,
+                fileType: String,
                 image: Array[Byte],
                 title: String,
                 artist: String,
@@ -27,9 +28,10 @@ case class Art(
              movement:String,
              original: Boolean
            ) = this (
-    Art.generateId(), //TODO create object and trait for generate ID functionality
+    Art.generateId(),
     customerId: Int,
-    ImageHandler.returnTempImageAsByteArray(Art.idCount + "-" + title),
+    "png",      //TODO getFileType() from form,
+    ImageHandler.returnTempImageAsByteArray(Art.idCount + "-" + title + "." + fileType),
     title,
     artist,
     description,
