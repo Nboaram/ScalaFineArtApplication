@@ -1,54 +1,82 @@
 @import helpers.Constants
 @(form: Form[models.SignUp])(implicit messages: Messages, request: Request[AnyContent], flash: Flash)
-@main("Sign-up") {
-    <div id="user-registration-form">
-        <h1>User Registration</h1>
-        @* Global errors are not tied to any particular form field *@
-        @if(form.hasGlobalErrors) {
-            @form.globalErrors.map { error: FormError =>
-                <div>
-                    Error: @error.key: @error.message
+@main("Register") {
+
+    <head>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/forms.css")">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">@messages("login.login")</h5>
+                            <form class="form-signin">
+                                <div class="form-label-group">
+                                    @* Global errors are not tied to any particular form field *@
+                                    @if(form.hasGlobalErrors) {
+                                        @form.globalErrors.map { error: FormError =>
+                                            <div>
+                                                Error: @error.key: @error.message
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                                    @helper.form(routes.SignUpController.signUpSubmit()) {
+                                        <div class="form-label-group">
+                                        @helper.inputText(
+                                            form("firstName"),
+                                            '_label -> "First name",
+                                            '_showConstraints -> false,
+                                            'placeholder -> "First name",
+                                            'size -> 60, 'class-> "form-control")
+                                        </div>
+                                        <div class="form-label-group">
+                                        @helper.inputText(
+                                            form("lastName"),
+                                            '_label -> "Last name",
+                                            '_showConstraints -> false,
+                                            'placeholder -> "Last name",
+                                            'size -> 60, 'class-> "form-control")
+                                        </div>
+                                        <div class="form-label-group">
+                                        @helper.inputText(
+                                            form("email"),
+                                            '_label -> "Email",
+                                            '_showConstraints -> false,
+                                            'placeholder -> "Email@domain",
+                                            'size -> 60, 'class-> "form-control")
+                                        </div>
+                                        <div class="form-label-group">
+                                        @helper.inputText(
+                                            form("username"),
+                                            '_label -> "Username",
+                                            '_showConstraints -> false,
+                                            'placeholder -> "username",
+                                            'size -> 60, 'class-> "form-control")
+                                        </div>
+                                        <div class="form-label-group">
+                                        @helper.inputPassword(
+                                            form("password"),
+                                            '_label -> "Password",
+                                            'placeholder -> "password",
+                                            '_showConstraints -> false,
+                                            'size -> 60, 'class-> "form-control")
+                                        </div>
+                                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+                                            Register</button>
+                                        <hr class="my-4">
+                                        <div class="text-center">
+                                            Already have an account? <a class="small" href="/login">Login</a></div>
+                                    }
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            }
-        }
-        @helper.form(routes.SignUpController.signUpSubmit()) {
-            @helper.inputText(
-                form("firstName"),
-                '_label -> "First name",
-                '_showConstraints -> false,
-                'placeholder -> "First name",
-                'size -> 60
-            )
-            @helper.inputText(
-                form("lastName"),
-                '_label -> "Last name",
-                '_showConstraints -> false,
-                'placeholder -> "Last name",
-                'size -> 60
-            )
-            @helper.inputText(
-                form("email"),
-                '_label -> "Email",
-                '_showConstraints -> false,
-                'placeholder -> "Email@domain",
-                'size -> 60
-            )
-            @helper.inputText(
-                form("username"),
-                '_label -> "Username",
-                '_showConstraints -> false,
-                'placeholder -> "username",
-                'size -> 60
-            )
-            @helper.inputPassword(
-                form("password"),
-                '_label -> "Password",
-                'placeholder -> "password",
-                '_showConstraints -> false,
-                'size -> 60
-            )
-            <button type="submit">Sign up</button>
-        }
-    </div>
+            </div>
+        </div>
+    </body>
 }
 

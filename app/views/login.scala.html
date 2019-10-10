@@ -15,14 +15,11 @@
                                 <div class="form-label-group">
                                 @helper.form(routes.LoginController.loginSubmit()) {
                                     @flash.get("failed").getOrElse("")
-                                    @helper.inputText(form("username"), '_label -> "Username", '_showConstraints -> false)
-                                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                                    <label for="inputEmail">Email address</label>
+                                    @helper.inputText(form("username"), '_label -> "Username", '_showConstraints -> false, 'class-> "form-control")
                                 </div>
 
                                 <div class="form-label-group">
-                                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                                    <label for="inputPassword">Password</label>
+                                @helper.inputPassword(form("password"), '_label -> "Password", '_showConstraints -> false, 'class-> "form-control")
                                 </div>
 
                                 <div class="custom-control custom-checkbox mb-3">
@@ -31,6 +28,9 @@
                                 </div>
                                 <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
                                 <hr class="my-4">
+                                <div class="text-center">
+                                    Don't have an account? <a class="small" href="/sign-up">Join</a></div>
+                                }
                             </form>
                         </div>
                     </div>

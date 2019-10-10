@@ -1,64 +1,68 @@
 @import url("appraisal.css");
 
-.navbar-nav {
-     float: none;
-     margin: 0 auto;
-     display: block;
-     text-align: center;
- }
-
-@media (min-width: 992px) {
-    .navbar-nav > li {
-        display: inline-block;
-        float: none;
-        padding-left: 2em;
-        padding-right: 2em;
-        margin-left: 1em;
-        margin-right: 1em;
-    }
+* {
+    font-family: "Montserrat",Arial,Helvetica,sans-serif;
 }
 
-.navbar-expand {
-    float: none;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-}
+/*.navbar-nav {*/
+/*    float: none;*/
+/*    margin: 0 auto;*/
+/*    display: block;*/
+/*    text-align: center;*/
+/*}*/
 
-@media (min-width: 992px) {
-    .navbar-expand > li {
-        display: inline-block;
-        float: none;
-        padding-left: 2em;
-        padding-right: 2em;
-        margin-left: 1em;
-        margin-right: 1em;
-    }
-}
+/*@media (min-width: 992px) {*/
+/*    .navbar-nav > li {*/
+/*        display: inline-block;*/
+/*        float: none;*/
+/*        padding-left: 2em;*/
+/*        padding-right: 2em;*/
+/*        margin-left: 1em;*/
+/*        margin-right: 1em;*/
+/*    }*/
+/*}*/
 
-.navbar-expand {
-    float: none;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-}
+/*.navbar-expand {*/
+/*    float: none;*/
+/*    margin: 0 auto;*/
+/*    display: block;*/
+/*    text-align: center;*/
+/*}*/
 
-@media (min-width: 992px) {
-    .navbar-expand > li {
-        display: inline-block;
-        float: none;
-        padding-left: 2em;
-        padding-right: 2em;
-        margin-left: 1em;
-        margin-right: 1em;
-    }
-}
+/*@media (min-width: 992px) {*/
+/*    .navbar-expand > li {*/
+/*        display: inline-block;*/
+/*        float: none;*/
+/*        padding-left: 2em;*/
+/*        padding-right: 2em;*/
+/*        margin-left: 1em;*/
+/*        margin-right: 1em;*/
+/*    }*/
+/*}*/
+
+/*.navbar-expand {*/
+/*    float: none;*/
+/*    margin: 0 auto;*/
+/*    display: block;*/
+/*    text-align: center;*/
+/*}*/
+
+/*@media (min-width: 992px) {*/
+/*    .navbar-expand > li {*/
+/*        display: inline-block;*/
+/*        float: none;*/
+/*        padding-left: 2em;*/
+/*        padding-right: 2em;*/
+/*        margin-left: 1em;*/
+/*        margin-right: 1em;*/
+/*    }*/
+/*}*/
 
 .navbar-brand {float:none;}
 
 .login-container{
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     border-radius: 1rem;
 }
 
@@ -75,7 +79,6 @@
 
 .login-container form{
     padding: 10%;
-    text-align: center;
 }
 
 .btnSubmit
@@ -86,3 +89,39 @@
     border: none;
     cursor: pointer;
 }
+
+.login-form-1 .btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+}
+
+
+.login-form-1 .ForgetPwd{
+    color: #0062cc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/*LOGIN MODAL*/
+
+.form-elegant .font-small {
+    font-size: 0.8rem; }
+
+.form-elegant .z-depth-1a {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25); }
+
+.form-elegant .z-depth-1-half,
+.form-elegant .btn:hover {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15); }
+
+.form-elegant .modal-header {
+    border-bottom: none; }
+
+.modal-dialog .form-elegant .btn .fab {
+    color: #2196f3!important; }
+
+.form-elegant .modal-body, .form-elegant .modal-footer {
+    font-weight: 400; }

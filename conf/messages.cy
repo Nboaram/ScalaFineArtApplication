@@ -14,18 +14,18 @@ termsOfUse.bulletNine=Mae eich defnydd o'r wefan hon ac unrhyw anghydfod sy'n co
 header.appraisals=Arfarniadau
 header.contact=Cyswllt
 header.myAccount=Fy nghyfrif
-header.login=Mewngofnodi
+header.login=Mewngofnodi 
 header.logOut=Allgofnodi
-header.register=CofrestrwchRegister
+header.register=Cofrestrwch
 footer.termsOfUse=Telerau Defnyddio
 footer.privacyPolicy=Polisi Preifatrwydd
 footer.conditionsOfSale=Amodau Gwerthu
 login.signUp=Cofrestru
 login.cancel=Canslo
-login.pleaseLogIn=Mewngofnodi
+login.pleaseLogIn=Mewngofnodi 
 login.username=Enw defnyddiwr
 login.password=Cyfrinair
 
 gallery.gallery=Oriel QArt
 
-login.login=Mewngofnodwch
+login.login=Mewngofnodwch :
