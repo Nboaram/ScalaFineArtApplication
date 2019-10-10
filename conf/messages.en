@@ -1,4 +1,4 @@
-header.gallery=Gallery
+# !---Terms of Use---!
 termsOfUse.firstParagraph=Welcome to QArts. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern QArts relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.
 termsOfUse.secondParagraph=The use of this website is subject to the following terms of use:
 termsOfUse.bulletOne=The content of the pages of this website is for your general information and use only. It is subject to change without notice.
@@ -10,12 +10,20 @@ termsOfUse.bulletSix=All trademarks reproduced in this website, which are not th
 termsOfUse.bulletSeven=Unauthorised use of this website may give rise to a claim for damages and/or be a criminal offence.
 termsOfUse.bulletEight=From time to time, this website may also include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s).
 termsOfUse.bulletNine=Your use of this website and any dispute arising out of such use of the website is subject to the laws of England, Northern Ireland, Scotland and Wales.
+
+# !---Header---!
 header.appraisals=Appraisals
 header.contact=Contact
 header.myAccount=My Account
 header.login=Login
 header.logOut=Log Out
 header.register=Register
+header.gallery=Gallery
+header.profile=Profile
+header.english=English
+header.welsh=Welsh
+
+# !---Footer---!
 footer.termsOfUse=Terms of Use
 footer.privacyPolicy=Privacy Policy
 footer.conditionsOfSale=Conditions of Sale
@@ -35,6 +43,5 @@ register.button=Register
 register.already=Already have an account?
 register.login=Login
 
-
-
+# !---Gallery---!
 gallery.gallery=QArt Gallery
