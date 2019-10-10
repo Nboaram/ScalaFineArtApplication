@@ -1,1 +1,16 @@
 header.gallery=Gallery
+header.appraisal=Appraisal
+header.contact=Contact
+header.profile=Profile
+header.myaccount=My Account 
+header.logout=Log Out
+header.login=Log In
+header.register=Register
+footer.terms=Terms of Use
+footer.privacy=Privacy Policy
+footer.conditions=Conditions of Sale
+
+gallery.gallery=QArt Gallery
+
+login.login=Please log in
+
