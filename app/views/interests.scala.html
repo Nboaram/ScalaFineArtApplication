@@ -1,16 +1,29 @@
 @import helpers.Constants
-@import models.Interests.ArtType
+@import models.Interests.{ArtType, ArtGenre, ArtMovement}
 @()(implicit messages: Messages, request: Request[AnyContent])
 
-    <div id="Interests">
-        <h1>Your Interests</h1>
-        @helper.form(routes.UserController.artGenresSubmit()) {
-            @for(value2 <- ArtType.values){
-                <input type="checkbox" value=@value2.toString>
-                    @value2.toString
-                </input><br>
-            }
-            <button type="submit">Submit</button>
-        }
+<div id="Interests" class="container">
+    <h1>Your Interests</h1>
+    <div class="row">
+        <div class="col-6 col-sm"><h2>Art Types</h2>
+                    @for(artType <- ArtType.values) {
+                        <input type="checkbox" value=@artType.toString> @artType.toString</input>
+                        <br>
+                        }
+        </div>
+        <div class="col-6 col-sm"><h2>Art Genres</h2>
+                @for(artGenre <- ArtGenre.values) {
+                    <input type="checkbox" value=@artGenre.toString> @artGenre.toString</input>
+                    <br>
+                    }
+        </div>
+        <div class="col-auto"><h2>Art Movements</h2>
+            @for(artMovement <- ArtMovement.values) {
+                <input type="checkbox" value=@artMovement.toString> @artMovement.toString</input>
+                <br>
+                }
+            </div>
     </div>
+    <button type="submit" style="width: 100%">Submit</button>
+</div>
 
