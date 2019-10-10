@@ -15,6 +15,7 @@ import java.io.File
   }
 
   //submit artwork to database
+   //will be done on submit of apraisal form
 
   //delete file from temp/gallery
   def deleteTempImageFile(filename: String) = {

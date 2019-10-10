@@ -29,7 +29,7 @@ case class Art(
            ) = this (
     Art.generateId(), //TODO create object and trait for generate ID functionality
     customerId: Int,
-    ImageHandler.returnTempImageAsByteArray(title),
+    ImageHandler.returnTempImageAsByteArray(Art.idCount + "-" + title),
     title,
     artist,
     description,
