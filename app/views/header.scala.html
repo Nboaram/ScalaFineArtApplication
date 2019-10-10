@@ -1,8 +1,10 @@
-@(loggedIn:Boolean)( implicit messages: Messages, request: Request[AnyContent])
+@(user:String)( implicit messages: Messages, request: Request[AnyContent])
+
+@validUser = @{user.length>2}
 
 <nav class="navbar sticky-top navbar-light bg-light justify-content-md-center navbar-expand-lg">
     <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
         <img src="@routes.Assets.at("images/qart_logo.png")" width="100" height="50" class="d-inline-block align-center" alt="QArt Logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,24 +17,24 @@
                 <a class="nav-link" href="/gallery">@messages("header.gallery")</a>
             </li>
             <li class="nav-item">
-            @if(loggedIn) {
-                <a class="nav-link" href= "@routes.GalleryController.appraisal">Appraisal</a>
+            @if(validUser) {
+                <a class="nav-link" href= "@routes.GalleryController.appraisal">@messages("header.appraisals")</a>
             } else {
-                <a class="nav-link" href= "@routes.LoginController.login">Appraisal</a>
+                <a class="nav-link" href= "@routes.LoginController.login">@messages("header.appraisals")</a>
             }
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
+                <a class="nav-link" href="/contact">@messages("header.contact")</a>
             </li>
 <!-- TO BE SHOWN IF LOGGED IN -->
-            @if(loggedIn==true) {
+            @if(validUser) {
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user"></i> Profile </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                        <a class="dropdown-item" href="#">My account</a>
-                        <a class="dropdown-item" href="#">Log out</a>
+                        <a class="dropdown-item" href="/account">@messages("header.myAccount")</a>
+                        <a class="dropdown-item" href="/logout">@messages("header.logOut")</a>
                     </div>
                 </li>
             } else {
@@ -40,10 +42,10 @@
                     <!-- TO BE SHOWN IF NOT LOGGED IN -->
 
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="/login">Log In</a>
+                    <a class="nav-link font-weight-bold" href="/login">@messages("header.login")</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="/sign-up">Register</a>
+                    <a class="nav-link font-weight-bold" href="/sign-up">@messages("header.register")</a>
                 </li>
             }
 
