@@ -1,6 +1,4 @@
-* {
-    font-family: "Montserrat",Arial,Helvetica,sans-serif;
-}
+@import url("appraisal.css");
 
 .navbar-nav {
      float: none;

@@ -1,14 +1,18 @@
 header.gallery=Oriel
-header.appraisal=Gwerthuso
-header.contact=Cysylltwch
-header.profile=Proffil
-header.myaccount=Fy nghyfrif
-header.logout=Allgofnodi
+header.appraisals=Arfarniadau
+header.contact=Cyswllt
+header.myAccount=Fy nghyfrif
 header.login=Mewngofnodi
-header.register=Cofrestrwch
-footer.terms=Telerau Defnyddio
-footer.privacy=Polisi Preifatrwydd
-footer.conditions=Amodau Gwerthu
+header.logOut=Allgofnodi
+header.register=CofrestrwchRegister
+footer.termsOfUse=Telerau Defnyddio
+footer.privacyPolicy=Polisi Preifatrwydd
+footer.conditionsOfSale=Amodau Gwerthu
+login.signUp=Cofrestru
+login.cancel=Canslo
+login.pleaseLogIn=Mewngofnodi
+login.username=Enw defnyddiwr
+login.password=Cyfrinair
 
 gallery.gallery=Oriel QArt
 

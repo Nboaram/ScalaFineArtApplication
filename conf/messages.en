@@ -1,16 +1,17 @@
 header.gallery=Gallery
-header.appraisal=Appraisal
+header.appraisals=Appraisals
 header.contact=Contact
-header.profile=Profile
-header.myaccount=My Account 
-header.logout=Log Out
-header.login=Log In
+header.myAccount=My Account
+header.login=login
+header.logOut=Log Out
 header.register=Register
-footer.terms=Terms of Use
-footer.privacy=Privacy Policy
-footer.conditions=Conditions of Sale
-
+footer.termsOfUse=Terms of Use
+footer.privacyPolicy=Privacy Policy
+footer.conditionsOfSale=Conditions of Sale
+login.login=Login
+login.signUp=Sign up
+login.cancel=Cancel
+login.pleaseLogIn=Please Login
+login.username=Username
+login.password=password
 gallery.gallery=QArt Gallery
-
-login.login=Please log in
-

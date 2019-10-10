@@ -1,13 +1,15 @@
-@(loggedIn:Boolean)( implicit messages: Messages, request: Request[AnyContent])
+@(user:String)( implicit messages: Messages, request: Request[AnyContent])
 
-<nav class="navbar sticky-top navbar-light bg-light justify-content-md-center navbar-expand-lg">
-    <div class="container">
-    <a class="navbar-brand" href="#">
-        <img src="@routes.Assets.at("images/qart_logo.png")" width="100" height="50" class="d-inline-block align-center" alt="QArt Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+@validUser = @{user.length>2}
+
+    <nav class="navbar sticky-top navbar-light bg-light justify-content-md-center navbar-expand-lg">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="@routes.Assets.at("images/QArt_logo.png")" width="100" height="50" class="d-inline-block align-center" alt="QArt Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
     <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav">
@@ -15,24 +17,24 @@
                 <a class="nav-link" href="/gallery">@messages("header.gallery")</a>
             </li>
             <li class="nav-item">
-                @if(loggedIn) {
-                    <a class="nav-link" href= "/appraisal">@messages("header.appraisal")</a>
-                } else {
-                    <a class="nav-link" href= "/login">@messages("header.appraisal")</a>
-                }
+            @if(validUser) {
+                <a class="nav-link" href= "@routes.GalleryController.appraisal">@messages("header.appraisals")</a>
+            } else {
+                <a class="nav-link" href= "@routes.LoginController.login">@messages("header.appraisals")</a>
+            }
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/contact">@messages("header.contact")</a>
             </li>
 <!-- TO BE SHOWN IF LOGGED IN -->
-            @if(loggedIn==true) {
+            @if(validUser) {
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i> @messages("header.profile") </a>
+                        <i class="fas fa-user"></i> Profile </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                        <a class="dropdown-item" href="#">@messages("header.myaccount")</a>
-                        <a class="dropdown-item" href="#">@messages("header.logout")</a>
+                        <a class="dropdown-item" href="/account">@messages("header.myAccount")</a>
+                        <a class="dropdown-item" href="/logout">@messages("header.logOut")</a>
                     </div>
                 </li>
             } else {
@@ -45,13 +47,16 @@
                 <li class="nav-item">
                     <a class="nav-link font-weight-bold" href="/sign-up">@messages("header.register")</a>
                 </li>
-            }    </ul>
-        <span class="navbar-text">
-                <a role="button" aria-disabled="true" class="btn btn-light" href="@routes.LanguageController.switchToLanguage(request.uri,"en")"/> English </a>
-                <a role="button" aria-disabled="true" class="btn btn-light" href="@routes.LanguageController.switchToLanguage(request.uri,"cy")"> Welsh </a>
-        </span>
+            }
 
+            <li>
+                <a href="@routes.LanguageController.switchToLanguage(request.uri,"en")"/> English </a>
+            </li>
+            <li>
+                <a href="@routes.LanguageController.switchToLanguage(request.uri,"cy")"> Welsh </a>
+            </li>
 
+        </ul>
     </div>
     </div>
 </nav>
