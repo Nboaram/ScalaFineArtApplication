@@ -4,7 +4,7 @@ import java.io.{ByteArrayInputStream, ByteArrayOutputStream, File}
 
 import javax.imageio.ImageIO
 
-abstract class DataConverter {
+class DataConverter {
 
   //TODO finalise input type for imageToBinaryData
 

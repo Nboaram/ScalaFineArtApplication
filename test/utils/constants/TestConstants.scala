@@ -11,7 +11,8 @@ object TestConstants extends Enumeration {
   val imagePNGFilename = "test1.png"
   val TestArtwork = new Art(
     1,
-    "Test Title",
+    "png",
+    "QArt_logo",
     "Test Artist",
     "This is a test description",
     "Test Genre",

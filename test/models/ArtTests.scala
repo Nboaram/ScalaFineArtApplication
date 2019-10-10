@@ -1,5 +1,7 @@
 package models
 
+import utils.constants.TestConstants
+
 import scala.resources.BaseTestingClass
 
 class ArtTests extends BaseTestingClass {
@@ -13,7 +15,7 @@ class ArtTests extends BaseTestingClass {
 
   "A developer" should "be able to use the Art constructor to generate an Art Object" in {
 
-    //println(artTest)
+    println(TestConstants.TestArtwork)
   }
 
 

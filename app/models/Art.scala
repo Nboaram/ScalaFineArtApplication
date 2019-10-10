@@ -20,6 +20,7 @@ case class Art(
               ) {
   def this (
              customerId: Int,
+             fileType: String = "jpg",
              title: String,
              artist: String,
              description: String,
