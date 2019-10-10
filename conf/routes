@@ -20,7 +20,8 @@ POST        /appraisal-handler        controllers.GalleryController.appraisalHan
 
 GET         /checkout                 controllers.PaymentController.checkout
 
-GET         /contact                  controllers.Application.contact
+GET         /contact             controllers.Application.contact
+GET         /termsOfUse             controllers.Application.termsOfUse
 
 
 # Map static resources from the /public folder to the /assets URL path
