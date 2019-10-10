@@ -2,7 +2,7 @@ package helpers
 
 import java.io.File
 
-class ImageHandler extends DataConverter {
+ object ImageHandler extends DataConverter {
 
   //upload image to temp/gallery with name as just art.title
   //will be built into form

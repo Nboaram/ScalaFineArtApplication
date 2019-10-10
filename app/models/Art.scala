@@ -1,15 +1,14 @@
 package models
 
 import helpers.GenerateId
-
-import scala.reflect.io.File
+import helpers.ImageHandler
 
 //TODO finalise filetype for image and link to file to data converter
 
 case class Art(
                 id: Int,
                 customerId: Int,
-                image: File,
+                image: Array[Byte],
                 title: String,
                 artist: String,
                 description: String,
@@ -20,7 +19,6 @@ case class Art(
               ) {
   def this (
              customerId: Int,
-             image: File,
              title: String,
              artist: String,
              description: String,
@@ -31,7 +29,7 @@ case class Art(
            ) = this (
     Art.generateId(), //TODO create object and trait for generate ID functionality
     customerId: Int,
-    image,
+    ImageHandler.returnTempImageAsByteArray(title),
     title,
     artist,
     description,
