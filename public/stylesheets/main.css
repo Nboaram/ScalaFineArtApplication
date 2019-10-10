@@ -7,7 +7,7 @@ html {
 .navbar-nav {
      float: none;
      margin: 0 auto;
-     display: block;
+     /*display: block;*/
      text-align: center;
  }
 * {
@@ -102,7 +102,7 @@ html {
 
 .navbar-brand {float:none;}
 
-ol, ul, dl {
+dl {
     width: 100%;
 }
 
