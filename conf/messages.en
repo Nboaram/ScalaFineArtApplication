@@ -27,3 +27,7 @@ login.username=Username
 login.password=password
 
 privacyPolicy.EffDate=Effective Date: 10th October, 2019
+privacyPolicy.whoWeAre=Who we are
+privacyPolicy.firstPara=Our website address is: 
+privacyPolicy.whatData=What personal data we collect and why we collect it
+privacyPolicy.secondPara=Information a user gives us is encrypted and stored in a database. We also keep data regarding sales and appraisals of art. In accordance with legal requirements, personal data can be removed from our database if requested. Please allow a time window for this request. You can find contact information on the contact page. 

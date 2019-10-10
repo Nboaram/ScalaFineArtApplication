@@ -28,3 +28,7 @@ login.username=Enw defnyddiwr
 login.password=Cyfrinair
 
 privacyPolicy.EffDate=Dyddiad dod i rym: 10fed Hydref, 2019
+privacyPolicy.whoWeAre=Pwy ydyn ni
+privacyPolicy.firstPara=Cyfeiriad ein gwefan yw: 
+privacyPolicy.whatData=Pa ddata personol rydyn ni'n ei gasglu a pham rydyn ni'n ei gasglu
+privacyPolicy.secondPara=Mae gwybodaeth y mae defnyddiwr yn ei rhoi inni yn cael ei hamgryptio a'i storio mewn cronfa ddata. Rydym hefyd yn cadw data ynghylch gwerthiannau ac arfarniadau celf. Yn unol â gofynion cyfreithiol, gellir tynnu data personol o'n cronfa ddata os gofynnir am hynny. Caniatewch ffenestr amser ar gyfer y cais hwn. Gallwch ddod o hyd i wybodaeth gyswllt ar y dudalen gyswllt.
