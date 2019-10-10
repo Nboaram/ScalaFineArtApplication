@@ -1,9 +1,5 @@
 package models.Interests
 
-import ArtGenre.ArtGenre
-import ArtMovement.ArtMovement
-import ArtType.ArtType
-import helpers._
 import play.api.data.Form
 import play.api.data.Forms._
 

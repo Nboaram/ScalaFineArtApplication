@@ -19,12 +19,12 @@ GET         /appraisal                controllers.GalleryController.appraisal
 POST        /appraisal-handler        controllers.GalleryController.appraisalHandler
 
 GET         /interests                controllers.UserController.interests
-POST         /interestsSubmit          controllers.UserController.interestsSubmit
+GET         /interests2               controllers.UserController.interests2
+POST        /interestsSubmit          controllers.UserController.interestsSubmit
 POST        /art-types                controllers.UserController.artTypesSubmit
 POST        /art-genres               controllers.UserController.artGenresSubmit
 POST        /art-movements            controllers.UserController.artMovementsSubmit
 
-GET         /checkout                 controllers.PaymentController.checkout
 GET         /checkout                 controllers.PaymentController.checkout
 
 GET         /contact                  controllers.Application.contact

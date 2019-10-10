@@ -1,0 +1,16 @@
+@import helpers.Constants
+@import models.Interests.{Interests, ArtType, ArtGenre, ArtMovement}
+@(form: Form[models.Interests.Interests])(implicit messages: Messages, request: Request[AnyContent])
+
+<div id="Interests" class="container">
+    <h1>Your Interests</h1>
+    @helper.form(routes.UserController.artTypesSubmit()) {
+        @helper.repeat(form("artType"), min = 0) {artType =>@helper.checkbox(artType, '_label -> artType.value.get, 'value -> artType.value.get)}
+        @helper.repeat(form("artGenre"), min = 0) {artGenre =>@helper.checkbox(artGenre, '_label -> artGenre.value.get, 'value -> artGenre.value.get)}
+        @helper.repeat(form("artMovement"), min = 0) {artMovement =>@helper.checkbox(artMovement, '_label -> artMovement.value.get, 'value -> artMovement.value.get)}
+        <button type="submit" style="width: 100%">Submit</button>
+    }
+    <br>
+    <br>
+    <br>
+</div>
