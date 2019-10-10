@@ -15,4 +15,5 @@ libraryDependencies ++= Seq( jdbc , cache , ws , specs2 % Test,
   "org.scalactic" %% "scalactic" % "3.0.8",
   "org.mindrot" % "jbcrypt" % "0.4"
 )
+libraryDependencies += "net.kaliber" %% "play-mailer" % "6.0.0"
 unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )
