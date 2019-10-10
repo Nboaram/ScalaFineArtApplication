@@ -1,6 +1,24 @@
 @()(implicit messages:Messages, request: Request[AnyContent])
 @main("Contact") {
+<head>
+    <title>@messages("contact.contactUs")</title>
+</head>
+    <body>
+        <div class="centeredContent">
+            <h1>@messages("contact.contactUs")</h1>
 
-    PUT Contact HTML HERE
+            <p>
+                @messages("contact.phoneNumber"): 01234 567890
+            </p>
+@*                        *@
+@*            Google Maps*@
 
+@*            Your Message*@
+@*            Email*@
+
+
+
+
+        </div>
+    </body>
 }

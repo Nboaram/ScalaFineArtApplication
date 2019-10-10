@@ -14,3 +14,5 @@ login.cancel=Canslo
 login.pleaseLogIn=Mewngofnodi
 login.username=Enw defnyddiwr
 login.password=Cyfrinair
+contact.contactUs=Cysylltwch a Ni
+contact.phoneNumber=Rhif ffon
