@@ -18,10 +18,10 @@ class DataConverter {
 
   //TODO change location of created file to cache
 
-  def binaryDataToImage(binaryData: Array[Byte], filename: String):Boolean = {
+  def binaryDataToImage(binaryData: Array[Byte], fileLocation: String,  filename: String):Boolean = {
 
-    val imageLocation = "test/utils/constants/testImages/"
+    //val imageLocation = "test/utils/constants/testImages/"
     val byteArrayInputStream :ByteArrayInputStream = new ByteArrayInputStream(binaryData)
-    ImageIO.write(ImageIO.read(byteArrayInputStream), filename.slice(filename.length - 3, filename.length), new File(imageLocation + filename))
+    ImageIO.write(ImageIO.read(byteArrayInputStream), filename.slice(filename.length - 3, filename.length), new File(fileLocation + filename))
   }
 }
