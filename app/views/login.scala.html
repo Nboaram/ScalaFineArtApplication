@@ -10,26 +10,26 @@
                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                     <div class="card card-signin my-5">
                         <div class="card-body">
-                            <h5 class="card-title text-center">@messages("login.login")</h5>
+                            <h5 class="card-title text-center">@messages("login.welcome")</h5>
                             <form class="form-signin">
                                 <div class="form-label-group">
                                 @helper.form(routes.LoginController.loginSubmit()) {
                                     @flash.get("failed").getOrElse("")
-                                    @helper.inputText(form("username"), '_label -> "Username", '_showConstraints -> false, 'class-> "form-control")
+                                    @helper.inputText(form("username"), '_label -> "Username :", '_showConstraints -> false, 'class-> "form-control")
                                 </div>
 
                                 <div class="form-label-group">
-                                @helper.inputPassword(form("password"), '_label -> "Password", '_showConstraints -> false, 'class-> "form-control")
+                                @helper.inputPassword(form("password"), '_label -> "Password :", '_showConstraints -> false, 'class-> "form-control")
                                 </div>
 
                                 <div class="custom-control custom-checkbox mb-3">
                                     <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">Remember password</label>
+                                    <label class="custom-control-label" for="customCheck1">@messages("login.remember")</label>
                                 </div>
-                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">@messages("login.submit")</button>
                                 <hr class="my-4">
                                 <div class="text-center">
-                                    Don't have an account? <a class="small" href="/sign-up">Join</a></div>
+                                    @messages("login.dont") <a class="small" href="/sign-up">@messages("login.join")</a></div>
                                 }
                             </form>
                         </div>

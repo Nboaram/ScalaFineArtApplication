@@ -19,10 +19,14 @@ header.register=Register
 footer.termsOfUse=Terms of Use
 footer.privacyPolicy=Privacy Policy
 footer.conditionsOfSale=Conditions of Sale
-login.login=Login :
-login.signUp=Sign up
-login.cancel=Cancel
-login.pleaseLogIn=Please Login
-login.username=Username
-login.password=password
+
+# !---Login---!
+login.welcome=Welcome Back! 
+login.join=Join
+login.remember=Remember password
+login.submit=Sign In
+login.dont=Don't have an account?
+login.username=Username :
+login.password=Password :
+
 gallery.gallery=QArt Gallery

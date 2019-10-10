@@ -20,12 +20,15 @@ header.register=Cofrestrwch
 footer.termsOfUse=Telerau Defnyddio
 footer.privacyPolicy=Polisi Preifatrwydd
 footer.conditionsOfSale=Amodau Gwerthu
-login.signUp=Cofrestru
-login.cancel=Canslo
-login.pleaseLogIn=Mewngofnodi 
-login.username=Enw defnyddiwr
-login.password=Cyfrinair
+
+# !---Login---!
+login.welcome=Croeso nol!
+login.join=Ymunwch
+login.remember=Cofiwch gyfrinair
+login.submit=Mewngofnodi
+login.dont=Peidiwch â chael cyfrif?
+login.username=Enw defnyddiwr :
+login.password=Cyfrinair :
 
 gallery.gallery=Oriel QArt
 
-login.login=Mewngofnodwch :
