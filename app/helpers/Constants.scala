@@ -27,4 +27,9 @@ object Constants extends Enumeration {
   val incorrectUsername: Value = Value("Incorrect username or password")
   val imagesPlaceholder: Value = Value("Placeholder to get images from DB")
   val appraisal: Value = Value("Appraisal")
+  val emailUrl: Value = Value("smtp.gmail.com")
+  val emailPort: Value = Value("587")
+  val environmentEmailAddress: Value = Value("QA_FINE_ART_EMAIL_ADDRESS")
+  val environmentEmailPassword: Value = Value("QA_FINE_ART_EMAIL_PASSWORD")
+  val passwordRecoveryTitle: Value = Value("Password Recovery")
 }
