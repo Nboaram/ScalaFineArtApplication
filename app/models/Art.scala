@@ -8,6 +8,7 @@ import helpers.ImageHandler
 case class Art(
                 id: Int,
                 customerId: Int,
+                originalFilename: String,
                 fileType: String,
                 image: Array[Byte],
                 title: String,
@@ -20,6 +21,7 @@ case class Art(
               ) {
   def this (
              customerId: Int,
+             originalFilename: String,
              fileType: String = "jpg",
              title: String,
              artist: String,
@@ -31,8 +33,16 @@ case class Art(
            ) = this (
     Art.generateId(),
     customerId: Int,
-    "png",      //TODO getFileType() from form,
-    ImageHandler.returnTempImageAsByteArray(Art.idCount + "-" + title + "." + fileType),
+
+    originalFilename: String,
+
+    // file type -->    getFilenameFromAppraisalForm.slice(getFilenameFromAppraisalForm.length-3, getFilenameFromAppraisalForm.length),      //TODO getFileType() from form,
+    originalFilename.slice(originalFilename.length-3, originalFilename.length),
+
+    ImageHandler.returnTempImageAsByteArray( filename =originalFilename),
+    //    ImageHandler.returnTempImageAsByteArray( filename = Art.idCount + "-" + title + "." + fileType),
+    // file name -->    ImageHandler.returnTempImageAsByteArray(filename = getFilenameFromAppraisalForm ), //TODO getFilenameFromAppraisalForm
+
     title,
     artist,
     description,
@@ -45,7 +55,7 @@ case class Art(
     s"""$id
        |$customerId
        |$image
-       |$title $artist
+       |Title: $title, Artist: $artist
        |$description
        |$artType
        |$genre

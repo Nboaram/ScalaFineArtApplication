@@ -36,5 +36,5 @@ object Constants extends Enumeration {
   val qaArt: Value = Value("QArt")
   val imagesPlaceholder: Value = Value("Placeholder to get images from DB")
   val appraisal: Value = Value("Appraisal")
-  val tempImageGalleryLocation: Value = Value("app/public/temp/gallery")
+  val tempImageGalleryLocation: Value = Value("public/temp/gallery/")
 }
