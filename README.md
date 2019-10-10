@@ -29,3 +29,11 @@ The language is changed via a method in the `LanguageController` file given by
   def switchToLanguage(url: String,language: String)
 ```
 This will REDIRECT the page to the given URL and set the language as the string provided (should be '"cy"' for Welsh and `"en"` for english).
+
+#### CONCERNING THE Â SYMBOL IN WELSH
+
+This is a compiler problem, not a programming problem. It is the way the files are encoded.
+
+In your ecclipse hit the keys `ctrl+s` buton. Go to Editor, then File Encodings. Change the property for `Default encoding for properties files` to UTF-8. This should solve the problem. See the following image
+
+![Alt Text](/readmeImages/changeSetEncod.PNG)

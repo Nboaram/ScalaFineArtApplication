@@ -2,30 +2,17 @@
 
 @main("Login") {
 
-    <div class="container">
-        <div class="row mt-5 mb-3">
-            <div class="col">
-                <h3 class="text-center">Please log in</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-8 offset-2">
-                @helper.form(routes.LoginController.loginSubmit()){
-                    <p class="text-center">&nbsp;@flash.get("failed").getOrElse("")</p>
-                    <div class="input-group">
-                        @helper.inputText(form("username"), '_label -> "Username", '_showConstraints -> false,
-                                          'class -> "form-control")
-                    </div>
-                    <div class="input-group">
-                        @helper.inputPassword(form("password"), '_label -> "Password", '_showConstraints -> false,
-                                            'class -> "form-control")
-                    </div>
-                            <p class="mb-4"><a href="@routes.LoginController.forgotPassword()">Forgot Password?</a></p>
-                    <button type="submit">Log In</button>
-                            <a href="/sign-up"><button type="button">Sign Up</button></a>
-                }
-            </div>
-        </div>
+    <div>
+        <h3>@messages("login.pleaseLogIn")</h3>
+        @helper.form(routes.LoginController.loginSubmit()){
+        @flash.get("failed").getOrElse("")
+        @helper.inputText(form("username"), '_label -> messages("login.username"), '_showConstraints -> false)
+        @helper.inputPassword(form("password"), '_label -> messages("login.password"), '_showConstraints -> false)
+        <p class="mb-4"><a href="@routes.LoginController.forgotPassword()">Forgot Password?</a></p>
+        <button type="submit">@messages("login.login")</button>
+        <a href="/sign-up"><button type="button">@messages("login.signUp")</button></a>
+        <a href="/"><button type="button">@messages("login.cancel")</button></a>
+        }
     </div>
 
 }

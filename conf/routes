@@ -21,12 +21,13 @@ GET         /view                         controllers.GalleryController.view
 GET         /appraisal                    controllers.GalleryController.appraisal
 POST        /appraisal-handler            controllers.GalleryController.appraisalHandler
 
-GET         /checkout                     controllers.PaymentController.checkout
+GET         /checkout                 controllers.PaymentController.checkout
 
-GET         /contact                      controllers.Application.contact
+GET         /contact             controllers.Application.contact
+GET         /termsOfUse             controllers.Application.termsOfUse
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file                 controllers.Assets.at(path="/public", file)
+GET         /assets/*file             controllers.Assets.at(path="/public", file)
 
-GET         /lang/:lang                   controllers.LanguageController.switchToLanguage(url: String,lang: String)
+GET         /lang/:lang               controllers.LanguageController.switchToLanguage(url: String,lang: String)
