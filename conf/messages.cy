@@ -14,15 +14,28 @@ termsOfUse.bulletNine=Mae eich defnydd o'r wefan hon ac unrhyw anghydfod sy'n co
 header.appraisals=Arfarniadau
 header.contact=Cyswllt
 header.myAccount=Fy nghyfrif
-header.login=Mewngofnodi
+header.login=Mewngofnodi 
 header.logOut=Allgofnodi
-header.register=CofrestrwchRegister
+header.register=Cofrestrwch
 footer.termsOfUse=Telerau Defnyddio
 footer.privacyPolicy=Polisi Preifatrwydd
 footer.conditionsOfSale=Amodau Gwerthu
-login.login=Mewngofnodi
-login.signUp=Cofrestru
-login.cancel=Canslo
-login.pleaseLogIn=Mewngofnodi
-login.username=Enw defnyddiwr
-login.password=Cyfrinair
+
+# !---Login---!
+login.welcome=Croeso nol!
+login.join=Ymunwch
+login.remember=Cofiwch gyfrinair
+login.submit=Mewngofnodi
+login.dont=Peidiwch â chael cyfrif?
+login.username=Enw defnyddiwr :
+login.password=Cyfrinair :
+
+# !---Register---!
+register.register=Cofrestrwch :
+register.button=Cofrestrwch
+register.already=Eisoes â chyfrif?
+register.login=Mewngofnodi 
+
+
+gallery.gallery=Oriel QArt
+
