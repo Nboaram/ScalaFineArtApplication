@@ -30,5 +30,12 @@ login.dont=Peidiwch â chael cyfrif?
 login.username=Enw defnyddiwr :
 login.password=Cyfrinair :
 
+# !---Register---!
+register.register=Cofrestrwch :
+register.button=Cofrestrwch
+register.already=Eisoes â chyfrif?
+register.login=Mewngofnodi 
+
+
 gallery.gallery=Oriel QArt
 

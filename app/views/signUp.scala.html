@@ -12,7 +12,7 @@
                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                     <div class="card card-signin my-5">
                         <div class="card-body">
-                            <h5 class="card-title text-center">@messages("login.login")</h5>
+                            <h5 class="card-title text-center">@messages("register.register")</h5>
                             <form class="form-signin">
                                 <div class="form-label-group">
                                     @* Global errors are not tied to any particular form field *@
@@ -66,10 +66,10 @@
                                             'size -> 60, 'class-> "form-control")
                                         </div>
                                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
-                                            Register</button>
+                                            @messages("register.button")</button>
                                         <hr class="my-4">
                                         <div class="text-center">
-                                            Already have an account? <a class="small" href="/login">Login</a></div>
+                                            @messages("register.already")<a class="small" href="/login"> @messages("register.login")</a></div>
                                     }
                             </form>
                         </div>

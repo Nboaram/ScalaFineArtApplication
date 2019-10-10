@@ -29,4 +29,12 @@ login.dont=Don't have an account?
 login.username=Username :
 login.password=Password :
 
+# !---Register---!
+register.register=Register :
+register.button=Register
+register.already=Already have an account?
+register.login=Login
+
+
+
 gallery.gallery=QArt Gallery
