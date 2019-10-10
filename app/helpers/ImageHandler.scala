@@ -1,5 +1,7 @@
 package helpers
 
+import java.io.File
+
 class ImageHandler extends DataConverter {
 
   //upload image to temp/gallery with name as just art.title
@@ -15,6 +17,12 @@ class ImageHandler extends DataConverter {
   //submit artwork to database
 
   //delete file from temp/gallery
+  def deleteTempImageFile(filename: String) = {
+    new File(Constants.tempImageGalleryLocation.toString + filename).delete()
+  }
+
+  //get artwork from database and save to public/gallery as (art.id + art title)
+
 
 
 
