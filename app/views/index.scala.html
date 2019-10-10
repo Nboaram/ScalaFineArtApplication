@@ -1,7 +1,5 @@
-@(message: String)
+@(message: String)(implicit messages: Messages, request: Request[AnyContent])
 
 @main("Welcome to Play") {
-
-        Your new application is ready
-
+    Your new application is ready
 }
