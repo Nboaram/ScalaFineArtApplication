@@ -33,7 +33,7 @@ case class Art(
            ) = this (
     Art.generateId(),
     customerId: Int,
-
+//TODO get originalFilename directly from appraisal form
     originalFilename: String,
 
     // file type -->    getFilenameFromAppraisalForm.slice(getFilenameFromAppraisalForm.length-3, getFilenameFromAppraisalForm.length),      //TODO getFileType() from form,
