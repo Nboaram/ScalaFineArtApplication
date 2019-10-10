@@ -1,5 +1,9 @@
 @import url("appraisal.css");
 
+html {
+    margin-bottom: 4em;
+}
+
 .navbar-nav {
      float: none;
      margin: 0 auto;
@@ -65,3 +69,4 @@ ol, ul, dl {
     color: #CCC;
     transform: rotate(20deg);
 }
+
