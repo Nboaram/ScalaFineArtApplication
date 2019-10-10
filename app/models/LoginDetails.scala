@@ -26,8 +26,11 @@ object LoginDetails {
   })
 
   def validUser(loginDetails: LoginDetails): Boolean = {
-    users.exists(result =>
-      result.username.equals(loginDetails.username) && result.password.equals(loginDetails.password)
+    println(SignUp.users)
+    users.exists(result => {
+      println("should be hashed pw: " + result.password)
+      result.username.equals(loginDetails.username) && utils.encryption.Encryption.checkPassword(loginDetails.password,result.password)
+    }
     )
   }
 

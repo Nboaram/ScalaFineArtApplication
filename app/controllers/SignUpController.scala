@@ -21,7 +21,7 @@ class SignUpController @Inject()(implicit val messagesApi: MessagesApi, val mate
     SignUp.signUpForm.bindFromRequest.fold({ formWithErrors =>
       Future(BadRequest(views.html.signUp(formWithErrors)))
     }, { signUpDetails =>
-      SignUp.addElement(signUpDetails)
+      SignUp.addElement(signUpDetails.copy(password = utils.encryption.Encryption.encrypt(signUpDetails.password)))
       Future {
         Redirect(routes.Application.index())
           .withSession(Constants.username.toString -> signUpDetails.username)
