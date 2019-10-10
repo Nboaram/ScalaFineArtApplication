@@ -4,6 +4,11 @@ html {
     margin-bottom: 4em;
 }
 
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 * {
     font-family: "Montserrat",Arial,Helvetica,sans-serif;
 }

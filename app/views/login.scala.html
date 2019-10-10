@@ -27,6 +27,7 @@
                                     <label class="custom-control-label" for="customCheck1">@messages("login.remember")</label>
                                 </div>
                                 <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">@messages("login.submit")</button>
+                                <div class="text-center mt-4"><a class="small" href="@routes.LoginController.forgotPassword()">@messages("login.reset_password")</a></div>
                                 <hr class="my-4">
                                 <div class="text-center">
                                     @messages("login.dont") <a class="small" href="/sign-up">@messages("login.join")</a></div>

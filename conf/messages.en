@@ -28,6 +28,7 @@ login.submit=Sign In
 login.dont=Don't have an account?
 login.username=Username :
 login.password=Password :
+login.reset_password=Reset Password
 
 # !---Register---!
 register.register=Register :
