@@ -5,6 +5,7 @@ import models.SignUp.users
 import play.api.data.Forms._
 import play.api.data._
 import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
+import utils.encryption.Encryption._
 
 case class LoginDetails(username: String, password: String)
 
@@ -27,7 +28,7 @@ object LoginDetails {
 
   def validUser(loginDetails: LoginDetails): Boolean = {
     users.exists(result =>
-      result.username.equals(loginDetails.username) && result.password.equals(loginDetails.password)
+      result.username.equals(loginDetails.username) && checkPassword(loginDetails.password, result.password)
     )
   }
 

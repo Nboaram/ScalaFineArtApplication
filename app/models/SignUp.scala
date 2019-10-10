@@ -5,6 +5,7 @@ import play.api.data.Form
 import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
 import play.api.data.Forms._
 import scala.collection.mutable.ArrayBuffer
+import utils.encryption.Encryption._
 
 
 case class SignUp(firstName: String, lastName: String,email:String, username: String, password: String)
@@ -27,7 +28,9 @@ object SignUp {
   )
 
   def addElement(signUp: SignUp): Unit = {
-    SignUp.users.append(signUp)
+    SignUp.users.append(
+      SignUp(signUp.firstName, signUp.lastName, signUp.email, signUp.username, hashPassword(signUp.password))
+    )
   }
 
   def usernameConstraint: Constraint[String] = Constraint(Constants.signUpConstraint.toString)({ username =>
