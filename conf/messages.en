@@ -40,3 +40,19 @@ reset_password.new_password=New Password
 reset_password.confirm_password=Confirm Password
 
 gallery.gallery=QArt Gallery
+
+# !---Forgot Password---!
+forgot_password.title=Please enter your email
+forgot_password.submit=Submit
+
+# !---Recovery Email Sent---!
+recovery_email_sent.title=Recovery email has been sent.
+recovery_email_sent.verification=A verification link has been sent to your email address.
+
+# !---Reset Password---!
+reset_password.title=Reset your password
+reset_password.submit=Submit
+
+# !---Password Successfully Reset---!
+password_successfully_reset.title=Password successfully reset.
+password_successfully_reset.back=Back to Login
