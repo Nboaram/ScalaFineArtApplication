@@ -39,6 +39,7 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
   }
 
   def forgotPassword: Action[AnyContent] = Action { implicit request =>
+    println(routes.GalleryController.gallery().path())
     Ok(views.html.forgot_password(ForgotPassword.forgotPasswordForm))
   }
 
