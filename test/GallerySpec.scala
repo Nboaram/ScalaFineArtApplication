@@ -23,7 +23,7 @@ class GallerySpec extends Specification {
     }
 
     "render the appraisal page" in new WithApplication {
-      val appraisal = route(FakeRequest(GET, Constants.appraisalUrl.toString)).get
+      val appraisal = route(FakeRequest(GET, Constants.appraisalUrl.toString).withSession("username" -> "user")).get //TODO make this a better test
 
       status(appraisal) must equalTo(OK)
       contentType(appraisal) must beSome.which(_ == Constants.text_html.toString)
