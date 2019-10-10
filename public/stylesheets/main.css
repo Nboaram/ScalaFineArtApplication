@@ -4,12 +4,6 @@ html {
     margin-bottom: 4em;
 }
 
-.navbar-nav {
-     float: none;
-     margin: 0 auto;
-     /*display: block;*/
-     text-align: center;
- }
 * {
     font-family: "Montserrat",Arial,Helvetica,sans-serif;
 }
@@ -99,8 +93,6 @@ html {
         margin-right: 1em;
     }
 }
-
-.navbar-brand {float:none;}
 
 dl {
     width: 100%;
