@@ -34,4 +34,6 @@ This will REDIRECT the page to the given URL and set the language as the string 
 
 This is a compiler problem, not a programming problem. It is the way the files are encoded.
 
-In your ecclipse hit the keys `ctrl+s` buton. Go to Editor, then File Encodings. Change the property for `Default encoding for properties files` to UTF-8. This should solve the problem.
+In your ecclipse hit the keys `ctrl+s` buton. Go to Editor, then File Encodings. Change the property for `Default encoding for properties files` to UTF-8. This should solve the problem. See the following image
+
+[[https://github.com/Nboaram/ScalaFineArtApplication/blob/developer/readmeImages/changeSetEncod.png | alt=octocat]]
