@@ -1,28 +1,34 @@
-@()(implicit messages: Messages, request: Request[AnyContent])
-@main("View") {
-<head>
-    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/view.css")">
-</head>
+@(image: String)(implicit messages: Messages, request: Request[AnyContent])
+    @main("View") {
+        <head>
+            <link rel="stylesheet" href="@routes.Assets.at("stylesheets/view.css")">
+        </head>
 
 
-    <!-- First Half -->
+            <!-- First Half -->
 
-            <div class="col-md-6 p-0">
-                <div class="text-white d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
-                    <div class="d-flex">
-                        <img src="@routes.Assets.at("images/bridge.jpg")" class="img-fluid" alt="Responsive image">
+        <div class="col-md-6 p-0">
+            <div class="text-white d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
+                <div class="d-flex">
+                    <img src="@routes.Assets.at("images/bridge.jpg")" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
+
+            <!-- Second Half -->
+
+        <div class="col-md-6 p-0 bg-white">
+            <div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
+                <div class="card bg-light h-100 border-0 shadow justify-content-center">
+                    <div class="card-header">Header</div>
+                    <div class="card-body mx-auto mr-auto">
+                        <p>
+                            <br/>
+                            @image </p>
                     </div>
-                </div>
             </div>
-
-    <!-- Second Half -->
-
-            <div class="col-md-6 p-0 bg-white">
-                <div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
-                    DETAILS GO HERE
-                </div>
             </div>
+        </div>
 
 
-
-}
+    }

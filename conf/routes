@@ -14,14 +14,14 @@ GET         /logout                   controllers.LogoutController.logout
 
 GET         /account                  controllers.UserController.account
 GET         /gallery                  controllers.GalleryController.gallery
-GET         /view                     controllers.GalleryController.view
+GET         /view/:image              controllers.GalleryController.view(image: String)
 GET         /appraisal                controllers.GalleryController.appraisal
 POST        /appraisal-handler        controllers.GalleryController.appraisalHandler
 
 GET         /checkout                 controllers.PaymentController.checkout
 
-GET         /contact             controllers.Application.contact
-GET         /termsOfUse             controllers.Application.termsOfUse
+GET         /contact                  controllers.Application.contact
+GET         /termsOfUse               controllers.Application.termsOfUse
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file             controllers.Assets.at(path="/public", file)

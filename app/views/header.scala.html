@@ -33,7 +33,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user"></i> Profile </a>
+                            <i class="fas fa-user"></i> @messages("header.profile") </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
                             <a class="dropdown-item" href="/account">@messages("header.myAccount")</a>
                             <a class="dropdown-item" href="/logout">@messages("header.logOut")</a>
@@ -48,13 +48,13 @@
                         <a class="nav-link font-weight-bold" href="/sign-up">@messages("header.register")</a>
                     </li></ul>
                 }
-            <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
+            <ul class="nav navbar-nav flex-row text-right justify-content-start flex-nowrap">
                     <li class="nav-item">
                 <a role="button" aria-disabled="true" class="btn btn-light" href="@routes.LanguageController.switchToLanguage(request.uri, "en")"/>
-                        English </a> </li>
+                        @messages("header.english") </a> </li>
                     <li class="nav-item">
                 <a role="button" aria-disabled="true" class="btn btn-light" href="@routes.LanguageController.switchToLanguage(request.uri, "cy")">
-                    Welsh </a>
+                @messages("header.welsh") </a>
                     </li>
                 </ul>
         </div>
