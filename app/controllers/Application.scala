@@ -18,4 +18,8 @@ class Application @Inject()(implicit val messagesApi: MessagesApi, langs: Langs)
   def contact: Action[AnyContent] = Action { implicit request =>
     Ok(views.html.contact())
   }
+
+  def termsOfUse: Action[AnyContent]  = Action { implicit request =>
+    Ok(views.html.termsOfUse())
+  }
 }
