@@ -11,7 +11,7 @@
                     <div class="card card-signin my-5">
                         <div class="card-body">
                             <h5 class="card-title text-center">@messages("login.welcome")</h5>
-                            <form class="form-signin">
+                            <div class="form-signin">
                                 <div class="form-label-group">
                                 @helper.form(routes.LoginController.loginSubmit()) {
                                     @flash.get("failed").getOrElse("")
@@ -31,7 +31,7 @@
                                 <div class="text-center">
                                     @messages("login.dont") <a class="small" href="/sign-up">@messages("login.join")</a></div>
                                 }
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

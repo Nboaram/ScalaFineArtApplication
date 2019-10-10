@@ -13,7 +13,7 @@
                     <div class="card card-signin my-5">
                         <div class="card-body">
                             <h5 class="card-title text-center">@messages("register.register")</h5>
-                            <form class="form-signin">
+                            <div class="form-signin">
                                 <div class="form-label-group">
                                     @* Global errors are not tied to any particular form field *@
                                     @if(form.hasGlobalErrors) {
@@ -71,7 +71,8 @@
                                         <div class="text-center">
                                             @messages("register.already")<a class="small" href="/login"> @messages("register.login")</a></div>
                                     }
-                            </form>
+                        </div>
+@*                            </form>*@
                         </div>
                     </div>
                 </div>
