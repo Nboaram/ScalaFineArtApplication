@@ -1,0 +1,23 @@
+@()(implicit messages:Messages, request: Request[AnyContent])
+@main("Contact") {
+    <div class="container">
+        <div class="row mt-5 mb-5">
+            <div class="col-12 text-center">
+                <i class="fas fa-envelope large-icon"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Recovery email has been sent.</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-2">
+                <p class="text-center">A verification link has been sent to your email address. <a href="@routes.Application.index">Return to index</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+}

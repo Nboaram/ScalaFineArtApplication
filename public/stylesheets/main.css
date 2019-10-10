@@ -59,3 +59,9 @@
 ol, ul, dl {
     width: 100%;
 }
+
+.large-icon {
+    font-size: 14em;
+    color: #CCC;
+    transform: rotate(20deg);
+}

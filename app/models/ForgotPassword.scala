@@ -8,6 +8,6 @@ case class ForgotPassword(email: String)
 
 object ForgotPassword {
   val forgotPasswordForm =
-    Form(mapping(Constants.email.toString -> nonEmptyText)(ForgotPassword.apply)(ForgotPassword.unapply)
+    Form(mapping(Constants.email.toString -> email)(ForgotPassword.apply)(ForgotPassword.unapply)
   )
 }

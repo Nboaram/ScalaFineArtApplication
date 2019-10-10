@@ -2,6 +2,7 @@ package controllers
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import akka.stream.Materializer
+import email.EmailClient
 import helpers.Constants
 import models.{ForgotPassword, LoginDetails}
 import play.api.i18n.{I18nSupport, MessagesApi}
@@ -14,7 +15,7 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
   with I18nSupport {
 
   def login: Action[AnyContent] = Action.async { implicit request =>
-    Future{
+    Future {
       Ok(views.html.login(LoginDetails.loginForm))
     }
   }
@@ -29,16 +30,25 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
     },
       {
         details =>
-          Future{Redirect(routes.Application.index())
-            .withSession(request.session + (Constants.username.toString -> details.username))
-            .flashing(Constants.login.toString -> Constants.loginMessage.toString)}
-    })
+          Future {
+            Redirect(routes.Application.index())
+              .withSession(request.session + (Constants.username.toString -> details.username))
+              .flashing(Constants.login.toString -> Constants.loginMessage.toString)
+          }
+      })
   }
 
   def forgotPassword: Action[AnyContent] = Action { implicit request =>
     Ok(views.html.forgot_password(ForgotPassword.forgotPasswordForm))
   }
 
-  def forgotPasswordHandler: Action[AnyContent] = TODO
+  def forgotPasswordHandler: Action[AnyContent] = Action { implicit request =>
+    ForgotPassword.forgotPasswordForm.bindFromRequest.fold({ formHasErrors =>
+      BadRequest(views.html.forgot_password(formHasErrors))
+    }, { success =>
+      EmailClient.sendPasswordRecoveryEmail(success.email)
+      Ok(views.html.recovery_email_sent())
+    })
+  }
 
 }
