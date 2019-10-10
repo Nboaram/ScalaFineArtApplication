@@ -14,6 +14,7 @@ GET         /logout                       controllers.LogoutController.logout
 GET         /login/forgot-password        controllers.LoginController.forgotPassword
 POST        /login/forgot-password        controllers.LoginController.forgotPasswordHandler
 GET         /login/reset-password/:id     controllers.LoginController.resetPassword(id)
+POST        /login/reset-password         controllers.LoginController.resetPasswordHandler(id)
 
 GET         /account                      controllers.UserController.account
 GET         /gallery                      controllers.GalleryController.gallery

@@ -4,7 +4,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import akka.stream.Materializer
 import email.EmailClient
 import helpers.Constants
-import models.{ForgotPassword, LoginDetails}
+import models.{ForgotPassword, LoginDetails, ResetPassword}
 import play.api.i18n.{I18nSupport, MessagesApi}
 import javax.inject.Inject
 import play.api.mvc.{Action, AnyContent, Controller}
@@ -52,7 +52,9 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
   }
 
   def resetPassword(id: String): Action[AnyContent] = Action { implicit request =>
-    Ok(views.html.reset_password(id))
+    Ok(views.html.reset_password(id, ResetPassword.resetPasswordForm))
   }
+
+  def resetPasswordHandler(id: String): Action[AnyContent] = TODO
 
 }

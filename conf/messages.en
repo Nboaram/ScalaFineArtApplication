@@ -25,3 +25,5 @@ login.cancel=Cancel
 login.pleaseLogIn=Please Login
 login.username=Username
 login.password=password
+reset_password.new_password=New Password
+reset_password.confirm_password=Confirm Password

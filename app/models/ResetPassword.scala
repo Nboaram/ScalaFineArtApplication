@@ -10,9 +10,7 @@ case class ResetPassword(newPassword: String, confirmPassword: String)
 object ResetPassword {
   val passwordText: Mapping[String] = nonEmptyText(minLength = 5, maxLength = 20)
   val resetPasswordForm = Form(
-    mapping(
-      "newPassword" -> passwordText,
-      "confirmPassword" -> passwordText
+    mapping("newPassword" -> passwordText, "confirmPassword" -> passwordText
     )(ResetPassword.apply)(ResetPassword.unapply).verifying(passwordsMatch)
   )
 
