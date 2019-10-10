@@ -5,7 +5,6 @@ class ArtType{
   def apply(artType: ArtType.Value*):List[(ArtType.Value, Boolean)]={
     artTypeChoices.map(value => if (artType.contains(value._1)) (value._1, true) else value)
   }
-
 }
 object ArtType extends Enumeration {
   type ArtType = Value

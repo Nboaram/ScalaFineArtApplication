@@ -18,6 +18,11 @@ class UserController @Inject()(implicit val messagesApi: MessagesApi, val materi
     Ok(views.html.main("Interests")(views.html.interests()))
   }
 
+  def interestsSubmit: Action[AnyContent] = AuthenticatedAction {implicit request =>{
+    println(request.body)
+    Ok(views.html.main("Your Interests")(views.html.interestsSubmit()))}
+  }
+
   def artTypesSubmit: Action[AnyContent] = AuthenticatedAction {implicit request =>
     Ok("hi")
   }

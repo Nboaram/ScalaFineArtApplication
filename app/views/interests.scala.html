@@ -4,26 +4,31 @@
 
 <div id="Interests" class="container">
     <h1>Your Interests</h1>
-    <div class="row">
-        <div class="col-6 col-sm"><h2>Art Types</h2>
-                    @for(artType <- ArtType.values) {
-                        <input type="checkbox" value=@artType.toString> @artType.toString</input>
-                        <br>
-                        }
-        </div>
-        <div class="col-6 col-sm"><h2>Art Genres</h2>
-                @for(artGenre <- ArtGenre.values) {
-                    <input type="checkbox" value=@artGenre.toString> @artGenre.toString</input>
+    <form action="/interestsSubmit" method="post">
+        <div class="row">
+            <fieldset class="col-6 col-sm"><legend>Art Types</legend>
+                <input type='hidden' name='artType' value='None'>
+                @for(artType <- ArtType.values) {
+                    <input type="checkbox" name="artType" value=@artType.toString> @artType.toString</input>
                     <br>
                     }
+                </fieldset>
+            <fieldset class="col-6 col-sm"><legend>Art Genres</legend>
+                <input type='hidden' name='artGenre' value='None'>
+                @for(artGenre <- ArtGenre.values) {
+                    <input type="checkbox" name="artGenre" value=@artGenre.toString> @artGenre.toString</input>
+                    <br>
+                    }
+            </fieldset>
+            <fieldset class="col-auto"><legend>Art Movements</legend>
+                <input type='hidden' name='artMovement' value='None'>
+                @for(artMovement <- ArtMovement.values) {
+                    <input type="checkbox" name="artMovement" value=@artMovement.toString> @artMovement.toString</input>
+                    <br>
+                    }
+            </fieldset>
         </div>
-        <div class="col-auto"><h2>Art Movements</h2>
-            @for(artMovement <- ArtMovement.values) {
-                <input type="checkbox" value=@artMovement.toString> @artMovement.toString</input>
-                <br>
-                }
-            </div>
-    </div>
-    <button type="submit" style="width: 100%">Submit</button>
+        <button type="submit" style="width: 100%">Submit</button>
+    </form>
 </div>
 
