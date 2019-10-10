@@ -8,6 +8,7 @@ import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
 
 case class LoginDetails(username: String, password: String)
 
+
 object LoginDetails {
 
   val loginForm = Form(
