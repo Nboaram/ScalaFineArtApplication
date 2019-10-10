@@ -1,12 +1,22 @@
-//package models.Interests
-//
-//import ArtGenre.ArtGenre
-//import ArtMovement.ArtMovement
-//import ArtType.ArtType
-//import helpers._
-//import play.api.data.Forms._
-//
-//case class Interests(artType:List[ArtType.Value], artGenre:List[ArtGenre.Value], artMovements:List[ArtMovement.Value])
+package models.Interests
+
+import ArtGenre.ArtGenre
+import ArtMovement.ArtMovement
+import ArtType.ArtType
+import helpers._
+import play.api.data.Form
+import play.api.data.Forms._
+
+case class Interests(artType:List[String], artGenre:List[String], artMovements:List[String])
+object  Interests{
+  val interestsForm: Form[Interests] = Form(
+    mapping(
+      "artType" -> list(text),
+      "artGenre" -> list(text),
+      "artMovement" -> list(text)
+    )(Interests.apply)(Interests.unapply)
+  )
+}
 //
 //object InterestLists{
 ////  val artTypeForm: Form[List[ArtType.Value]] = Form(
