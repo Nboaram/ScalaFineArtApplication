@@ -26,3 +26,5 @@ login.cancel=Canslo
 login.pleaseLogIn=Mewngofnodi
 login.username=Enw defnyddiwr
 login.password=Cyfrinair
+
+privacyPolicy.EffDate=Dyddiad dod i rym: 10fed Hydref, 2019

@@ -1,0 +1,24 @@
+h2.privacyHeader {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -1%);
+    text-align: center;
+}
+
+div.privacyTextContainer {
+    height: 80em;
+    width: 50em;
+    position: relative;
+    background-color: #f7f7f7;
+}
+
+.effDate{
+    margin: 0;
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -7%)
+
+}

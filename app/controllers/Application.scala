@@ -22,4 +22,8 @@ class Application @Inject()(implicit val messagesApi: MessagesApi, langs: Langs)
   def termsOfUse: Action[AnyContent]  = Action { implicit request =>
     Ok(views.html.termsOfUse())
   }
+
+  def privacyPolicy: Action[AnyContent]  = Action { implicit request =>
+    Ok(views.html.privacyPolicy())
+  }
 }
