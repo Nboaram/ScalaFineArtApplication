@@ -8,6 +8,7 @@ import scala.reflect.io.File
 
 case class Art(
                 id: Int,
+                customerId: Int,
                 image: File,
                 title: String,
                 artist: String,
@@ -18,6 +19,7 @@ case class Art(
                 original: Boolean
               ) {
   def this (
+             customerId: Int,
              image: File,
              title: String,
              artist: String,
@@ -28,6 +30,7 @@ case class Art(
              original: Boolean
            ) = this (
     Art.generateId(), //TODO create object and trait for generate ID functionality
+    customerId: Int,
     image,
     title,
     artist,
@@ -39,6 +42,7 @@ case class Art(
   )
   override def toString: String =
     s"""$id
+       |$customerId
        |$image
        |$title $artist
        |$description

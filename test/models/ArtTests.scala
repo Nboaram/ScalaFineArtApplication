@@ -13,7 +13,8 @@ class ArtTests extends BaseTestingClass {
 //
 //  "A developer" should "be able to use the Art constructor to generate an Art Object" in {
 //    val artTest = new Art(File("C:/Users/Admin/IdeaProjects/ScalaFineArtApplication/public/images/favicon.png"),
-//      "Test Art",
+//      "1"
+  //    "Test Art",
 //      "Test Artist",
 //      "This is a test description",
 //      "Test Genre",
