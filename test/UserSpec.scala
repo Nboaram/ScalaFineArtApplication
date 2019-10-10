@@ -1,10 +1,7 @@
-  import controllers.routes
+  import helpers.Constants
   import org.specs2.mutable._
-  import play.api.mvc.Result
   import play.api.test.Helpers._
   import play.api.test.{WithApplication, _}
-
-  import scala.concurrent.Future
 
 
   class UserSpec extends Specification {
@@ -12,17 +9,17 @@
     "User" should {
 
       "render the login page" in new WithApplication {
-        val login: Future[Result] = route(FakeRequest(GET, routes.LoginController.login().path())).get
+        val login = route(FakeRequest(GET, Constants.loginUrl.toString)).get
 
         status(login) must equalTo(OK)
-        contentType(login) must beSome.which(_ == HTML)
+        contentType(login) must beSome.which(_ == Constants.text_html.toString)
       }
 
-      "be redirected if not logged in" in new WithApplication {
-        val account: Future[Result] = route(FakeRequest(GET, routes.UserController.account().path())).get
+      "render the account page" in new WithApplication {
+        val account = route(FakeRequest(GET, Constants.accountUrl.toString).withSession("username" -> "user")).get  //TODO make this a better test
 
-        status(account) must equalTo(SEE_OTHER)
-        contentType(account) must beNone
+        status(account) must equalTo(OK)
+        contentType(account) must beSome.which(_ == Constants.text_html.toString)
       }
     }
 
