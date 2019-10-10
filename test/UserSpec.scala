@@ -16,7 +16,7 @@
       }
 
       "render the account page" in new WithApplication {
-        val account = route(FakeRequest(GET, Constants.accountUrl.toString)).get
+        val account = route(FakeRequest(GET, Constants.accountUrl.toString).withSession("username" -> "user")).get  //TODO make this a better test
 
         status(account) must equalTo(OK)
         contentType(account) must beSome.which(_ == Constants.text_html.toString)
