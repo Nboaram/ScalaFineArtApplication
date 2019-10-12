@@ -44,10 +44,12 @@ gallery.gallery=QArt Gallery
 # !---Forgot Password---!
 forgot_password.title=Please enter your email
 forgot_password.submit=Submit
+forgot_password.serious_error=There was a server error. Please contact the administrator for further information.
 
 # !---Recovery Email Sent---!
 recovery_email_sent.title=Recovery email has been sent.
 recovery_email_sent.verification=A verification link has been sent to your email address.
+recovery_email_sent.return_to_index=Return to index
 
 # !---Reset Password---!
 reset_password.title=Reset your password

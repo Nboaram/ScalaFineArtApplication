@@ -1,8 +1,11 @@
   import controllers.routes
   import helpers.Constants
   import org.specs2.mutable._
+  import play.api.mvc.Result
   import play.api.test.Helpers._
   import play.api.test.{WithApplication, _}
+
+  import scala.concurrent.Future
 
 
   class UserSpec extends Specification {
@@ -21,6 +24,13 @@
 
         status(account) must equalTo(OK)
         contentType(account) must beSome.which(_ == HTML)
+      }
+
+      "render the password reset page" in new WithApplication() {
+        val forgotPassword: Future[Result] = route(app, FakeRequest(GET, routes.LoginController.forgotPassword().path)).get
+
+        status(forgotPassword) must equalTo(OK)
+        contentType(forgotPassword) must beSome.which(_ == HTML)
       }
     }
 

@@ -8,6 +8,7 @@ import models.{ForgotPassword, LoginDetails, ResetPassword}
 import play.api.i18n.{I18nSupport, MessagesApi}
 import javax.inject.Inject
 import play.api.mvc.{Action, AnyContent, Controller}
+import scala.concurrent.duration._
 
 import scala.concurrent.Future
 
@@ -46,12 +47,19 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
     ForgotPassword.forgotPasswordForm.bindFromRequest.fold({ formHasErrors =>
       BadRequest(views.html.forgot_password(formHasErrors))
     }, { success =>
-      EmailClient.sendPasswordRecoveryEmail(success.email, System.currentTimeMillis().toString)
-      Ok(views.html.recovery_email_sent())
+      try {
+        // TODO: search the users for someone with a matching email address. If found, update their mongodb record with a unique id assigned to 'resetId'. Then send this to the user in an email.
+        EmailClient.sendPasswordRecoveryEmail(success.email, System.currentTimeMillis().toString)
+        Ok(views.html.recovery_email_sent())
+      } catch {
+        case e: Throwable => BadRequest(views.html.forgot_password(ForgotPassword.forgotPasswordForm, seriousErrorOccured = true))
+      }
+
     })
   }
 
   def resetPassword(id: String): Action[AnyContent] = Action { implicit request =>
+    // TODO: Search the users for someone with a matching 'resetId' field. If not found, redirect to error page/ show error.
     Ok(views.html.reset_password(id, ResetPassword.resetPasswordForm))
   }
 
@@ -59,6 +67,7 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
     ResetPassword.resetPasswordForm.bindFromRequest.fold({ formHasErrors =>
       BadRequest(views.html.reset_password(id, formHasErrors))
     }, { success =>
+      // TODO: Find the user with a matching 'resetId' and change their password to the new one. Send a confirmation email.
       Ok(views.html.password_successfully_reset())
     })
   }
