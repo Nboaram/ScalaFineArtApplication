@@ -1,7 +1,12 @@
 package models.Interests
 
+import java.io
+
+import models.SignUp
 import play.api.data.Form
 import play.api.data.Forms._
+
+import scala.collection.mutable
 
 case class Interests(artType:List[String], artGenre:List[String], artMovements:List[String])
 object  Interests{
@@ -12,7 +17,15 @@ object  Interests{
       "artMovement" -> list(text)
     )(Interests.apply)(Interests.unapply)
   )
+  //TODO Change this to use database
+  val interestsDatabase: mutable.Map[String,Interests] =
+    mutable.Map("Fab" -> Interests(List(""), ArtGenre.values.map(value=>value.toString).toList, List("")))
+  def addElement(username:String, interests: Interests):Unit = {
+    Interests.interestsDatabase += (username -> interests)
+    for (elem <- interestsDatabase) {println(elem)}
+  }
 }
+
 //
 //object InterestLists{
 ////  val artTypeForm: Form[List[ArtType.Value]] = Form(

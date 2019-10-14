@@ -35,4 +35,5 @@ object Constants extends Enumeration {
   val incorrectUsername: Value = Value("Incorrect username or password")
   val imagesPlaceholder: Value = Value("Placeholder to get images from DB")
   val appraisal: Value = Value("Appraisal")
+  val interestsUpdated: Value = Value("Your interests have been updated")
 }

@@ -18,36 +18,28 @@ class UserController @Inject()(implicit val messagesApi: MessagesApi, val materi
     Ok(views.html.account(request.session.get(Constants.username.toString).getOrElse(Constants.emptyString.toString)))
   }
 
-  def interests: Action[AnyContent] = AuthenticatedAction {implicit request =>
-    Ok(views.html.main("Interests")(views.html.interests()))
-  }
-
-  def interests2: Action[AnyContent] = AuthenticatedAction.async {implicit request =>
-    val filledInterests = Interests(ArtType.values.map(value=>value.toString).toList,
-      ArtGenre.values.map(value=>value.toString).toList, ArtMovement.values.map(value=>value.toString).toList)
-    println(filledInterests.toString)
-    println(Interests.interestsForm)
-    println(Interests.interestsForm.fill(filledInterests))
-    Future {
-      Ok(views.html.main("Interests")(views.html.interests2(Interests.interestsForm.fill(filledInterests))))
+  def interests: Action[AnyContent] = AuthenticatedAction.async { implicit request =>
+    val myInterests = Interests.interestsDatabase.get(request.session.get(Constants.username.toString).getOrElse(""))
+    if (myInterests.isDefined) {
+      Future(Ok(views.html.main("Interests")(views.html.interests(Interests.interestsForm.fill(myInterests.get)))))
     }
+    else Future(Ok(views.html.main("Interests")(views.html.interests(Interests.interestsForm))))
   }
 
-  def interestsSubmit: Action[AnyContent] = AuthenticatedAction {implicit request =>{
-    println(request.body)
-    Ok(views.html.main("Your Interests")(views.html.interestsSubmit()))}
-  }
 
-  def artTypesSubmit: Action[AnyContent] = AuthenticatedAction {implicit request =>
-    Ok("hi")
-  }
+    def interestsSubmit: Action[AnyContent] = AuthenticatedAction.async {
+      implicit request => {
+        Interests.interestsForm.bindFromRequest.fold({
+          formWithErrors => Future(BadRequest(views.html.interests(formWithErrors)))
+        }, {
+          interests =>
+            Interests.addElement(request.session.get(Constants.username.toString).get, interests)
+            Future {
+              Redirect(routes.Application.index())
+                .flashing(Constants.login.toString -> Constants.interestsUpdated.toString)
+            }
+        })
+      }
+    }
 
-  def artGenresSubmit: Action[AnyContent] = AuthenticatedAction {implicit request =>
-    Ok("hi")
   }
-
-  def artMovementsSubmit: Action[AnyContent] = AuthenticatedAction {implicit request =>
-    Ok("hi")
-  }
-
-}
