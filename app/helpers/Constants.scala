@@ -36,4 +36,5 @@ object Constants extends Enumeration {
   val zero: Value = Value("0")
   val confirmPasswordsMatchName: Value = Value("Confirm Password Match")
   val confirmPasswordMismatchDescription: Value = Value("Passwords must match")
+  val placeholderPasswordResetId: Value = Value("000000")
 }

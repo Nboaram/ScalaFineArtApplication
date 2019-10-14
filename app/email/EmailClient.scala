@@ -17,8 +17,8 @@ object EmailClient {
     .auth(true)
     .as(hostEmail, sys.env(Constants.environmentEmailPassword.toString))
     .startTls(true)()
-  def sendPasswordRecoveryEmail(userEmailAddress: String, passwordHash: String): Unit = {
-    val resetLink = routes.LoginController.resetPassword(passwordHash).path()
+  def sendPasswordRecoveryEmail(userEmailAddress: String, passwordResetId: String): Unit = {
+    val resetLink = routes.LoginController.resetPassword(passwordResetId).path()
     sendEmail(userEmailAddress, s"Copy this link into your address bar to reset your password: $resetLink")
   }
 

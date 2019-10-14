@@ -59,8 +59,13 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
   }
 
   def resetPassword(id: String): Action[AnyContent] = Action { implicit request =>
-    // TODO: Search the users for someone with a matching 'resetId' field. If not found, redirect to error page/ show error.
-    Ok(views.html.reset_password(id, ResetPassword.resetPasswordForm))
+    // TODO: Search the users for someone with a matching 'resetId' field. If not found, show 404.
+    val placeholderPasswordResetId = Constants.placeholderPasswordResetId.toString
+    if(id.equals(placeholderPasswordResetId)) {
+      Ok(views.html.reset_password(id, ResetPassword.resetPasswordForm))
+    } else {
+      NotFound
+    }
   }
 
   def resetPasswordHandler(id: String): Action[AnyContent] = Action { implicit request =>
