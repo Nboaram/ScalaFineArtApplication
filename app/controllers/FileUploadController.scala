@@ -8,12 +8,12 @@ import play.api.mvc.{Action, Controller}
 
 class FileUploadController @Inject()(implicit val messagesApi: MessagesApi) extends Controller with I18nSupport {
 
-  def fileUpload = Action(parse.multipartFormData) { implicit request =>
+  def uploadFile = Action(parse.multipartFormData) { implicit request =>
     request.body.file("file").map { file =>
       file.ref.moveTo(Paths.get(s"public/temp/gallery/"+file.filename).toFile, replace = true)
       Ok("Upload successful")
     }.getOrElse {
-      Redirect(routes.controllers.GalleryController.appraisal).flashing(
+      Redirect(routes.GalleryController.appraisal()).flashing(
         "error" -> "File not found")
     }
   }

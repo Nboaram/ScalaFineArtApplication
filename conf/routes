@@ -18,6 +18,9 @@ GET         /view                     controllers.GalleryController.view
 GET         /appraisal                controllers.GalleryController.appraisal
 POST        /appraisal-handler        controllers.GalleryController.appraisalHandler
 
+#   image uploader
+POST        /uploadfile               controllers.FileUploadController.uploadFile
+
 GET         /checkout                 controllers.PaymentController.checkout
 
 GET         /contact                  controllers.Application.contact
