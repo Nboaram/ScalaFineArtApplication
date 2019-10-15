@@ -13,7 +13,7 @@ class FileUploadController @Inject()(implicit val messagesApi: MessagesApi) exte
       file.ref.moveTo(Paths.get(s"public/temp/gallery/"+file.filename).toFile, replace = true)
       Ok("Upload successful")
     }.getOrElse {
-      Redirect(routes.FileUploadController.index).flashing(
+      Redirect(routes.controllers.GalleryController.appraisal).flashing(
         "error" -> "File not found")
     }
   }
