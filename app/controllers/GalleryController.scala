@@ -17,10 +17,4 @@ class GalleryController @Inject()(implicit val messagesApi: MessagesApi) extends
     Ok(views.html.view())
   }
 
-  def appraisal = AuthenticatedAction { implicit request =>
-    Ok(views.html.appraisal())
-  }
-
-  def appraisalHandler = TODO
-
 }
