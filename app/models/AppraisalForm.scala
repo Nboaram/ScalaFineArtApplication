@@ -5,6 +5,8 @@ import helpers.Constants
 import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
 import play.api.data.Forms._
 
+import scala.collection.mutable.ArrayBuffer
+
 case class AppraisalForm(title: String, artist: String, description: String, genre: String, artType: String, movement: String)
 
 object AppraisalForm {
@@ -20,7 +22,23 @@ object AppraisalForm {
 
 
     )(AppraisalForm.apply)(AppraisalForm.unapply)
+ )
+
+  //TODO Replace with mongoDB
+  val art: ArrayBuffer[AppraisalForm] = ArrayBuffer(
+    AppraisalForm(
+      "test",
+      "Test Artist",
+      "This is a test description",
+      "Test Genre",
+      "Test Art Type",
+      "Test Movement"
+    )
   )
+
+  def addElement(appraisalForm: AppraisalForm): Unit = {
+    AppraisalForm.art.append(appraisalForm)
+  }
 }
 
 
