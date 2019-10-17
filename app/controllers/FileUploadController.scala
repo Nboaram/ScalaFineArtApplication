@@ -12,7 +12,7 @@ class FileUploadController @Inject()(implicit val messagesApi: MessagesApi) exte
 
   def uploadFile = Action(parse.multipartFormData) { implicit request =>
     request.body.file("file").map { file =>
-      file.ref.moveTo(Paths.get(s"C:/Users/Johnny/Downloads/"+file.filename).toFile, replace = true)
+      file.ref.moveTo(Paths.get(s"app/public/temp/gallery/"+file.filename).toFile, replace = true)
       Ok("Upload successful")
     }.getOrElse {
       Redirect(routes.AppraisalController.appraisal()).flashing(
