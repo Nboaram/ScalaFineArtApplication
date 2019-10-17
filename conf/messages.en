@@ -1,1 +1,84 @@
+# !---Terms Of Use---!
+termsOfUse.firstParagraph=Welcome to QArts. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern QArts relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.
+termsOfUse.secondParagraph=The use of this website is subject to the following terms of use:
+termsOfUse.bulletOne=The content of the pages of this website is for your general information and use only. It is subject to change without notice.
+termsOfUse.bulletTwo=This website uses cookies to monitor browsing preferences. If you do allow cookies to be used, the following personal information may be stored by us for use by third parties.
+termsOfUse.bulletThree=Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.
+termsOfUse.bulletFour=Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.
+termsOfUse.bulletFive=This website contains material which is owned by or licensed to us. This material includes, but is not limited to, the design, layout, look, appearance and graphics. Reproduction is prohibited other than in accordance with the copyright notice, which forms part of these terms and conditions.
+termsOfUse.bulletSix=All trademarks reproduced in this website, which are not the property of, or licensed to the operator, are acknowledged on the website.
+termsOfUse.bulletSeven=Unauthorised use of this website may give rise to a claim for damages and/or be a criminal offence.
+termsOfUse.bulletEight=From time to time, this website may also include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s).
+termsOfUse.bulletNine=Your use of this website and any dispute arising out of such use of the website is subject to the laws of England, Northern Ireland, Scotland and Wales.
+header.appraisals=Appraisals
+header.contact=Contact
+header.myAccount=My Account
+header.login=Login
+header.logOut=Log Out
+header.register=Register
+footer.termsOfUse=Terms of Use
+footer.privacyPolicy=Privacy Policy
+footer.conditionsOfSale=Conditions of Sale
 header.gallery=Gallery
+
+# !---Login---!
+login.welcome=Welcome Back! 
+login.join=Join
+login.remember=Remember password
+login.submit=Sign In
+login.dont=Don't have an account?
+login.username=Username :
+login.password=Password :
+login.reset_password=Reset Password
+
+# !---Register---!
+register.register=Register :
+register.button=Register
+register.already=Already have an account?
+register.login=Login
+
+reset_password.new_password=New Password
+reset_password.confirm_password=Confirm Password
+
+#!---Gallery---!
+gallery.gallery=QArt Gallery
+
+# !---Forgot Password---!
+forgot_password.title=Please enter your email
+forgot_password.submit=Submit
+forgot_password.serious_error=There was a server error. Please contact the administrator for further information.
+
+# !---Recovery Email Sent---!
+recovery_email_sent.title=Recovery email has been sent.
+recovery_email_sent.verification=A verification link has been sent to your email address.
+recovery_email_sent.return_to_index=Return to index
+
+# !---Reset Password---!
+reset_password.title=Reset your password
+reset_password.submit=Submit
+
+# !---Password Successfully Reset---!
+password_successfully_reset.title=Password successfully reset.
+password_successfully_reset.back=Back to Login
+
+# !---Appraisals---!
+appraisals.page_title=Appraisals
+appraisals.page_description=Upload a piece of art for appraisal.
+appraisals.image=Image
+appraisals.title=Title
+appraisals.artist=Artist
+appraisals.description=Description
+appraisals.category=Category
+appraisals.please_select_a_category=Please select a category
+appraisals.original=Original
+appraisals.print=Print
+appraisals.submit=Submit
+
+# !---Privacy Policy---!
+privacyPolicy.EffDate=Effective Date: 10th October, 2019
+privacyPolicy.whoWeAre=Who we are
+privacyPolicy.firstPara=Our website address is: 
+privacyPolicy.whatData=What personal data we collect and why we collect it
+privacyPolicy.secondPara=Information a user gives us is encrypted and stored in a database. We also keep data regarding sales and appraisals of art. In accordance with legal requirements, personal data can be removed from our database if requested. Please allow a time window for this request. You can find contact information on the contact page. 
+
+

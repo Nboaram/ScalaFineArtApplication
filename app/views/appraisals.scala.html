@@ -1,20 +1,20 @@
 @()(implicit messages:Messages, request: Request[AnyContent])
-@main("Appraisal"){
+@main(messages("appraisals.page_title")){
 <div class="container">
     <div class="row mt-5 mb-5">
         <div class="col-12">
-            <h1 class="text-center">Appraisal</h1>
+            <h1 class="text-center">@messages("appraisals.page_title")</h1>
         </div>
     </div>
     <div class="row mt-5 mb-5">
         <div class="col">
-            <h5 class="text-center">Upload a piece of art for appraisal.</h5>
+            <h5 class="text-center">@messages("appraisals.page_description")</h5>
         </div>
     </div>
     <form method="post" action="@routes.GalleryController.appraisalHandler()" enctype="multipart/form-data">
     <div class="row mb-5">
         <div class="col-2 field-title">
-            <h4>Image:</h4>
+            <h4>@messages("appraisals.image"):</h4>
         </div>
         <div class="col-8">
             <div class="input-group">
@@ -24,7 +24,7 @@
     </div>
     <div class="row mb-5">
         <div class="col-2">
-            <h4>Title:</h4>
+            <h4>@messages("appraisals.title"):</h4>
         </div>
         <div class="col-8">
             <div class="input-group">
@@ -34,7 +34,7 @@
     </div>
     <div class="row mb-5">
         <div class="col-2">
-            <h4>Artist:</h4>
+            <h4>@messages("appraisals.artist"):</h4>
         </div>
         <div class="col-8">
             <div class="input-group">
@@ -44,7 +44,7 @@
     </div>
     <div class="row mb-5">
         <div class="col-2">
-            <h4>Description:</h4>
+            <h4>@messages("appraisals.description"):</h4>
         </div>
         <div class="col-8">
             <div class="input-group">
@@ -54,12 +54,12 @@
     </div>
     <div class="row mb-5">
         <div class="col-2">
-            <h4><label for="inputGroupSelect01">Category:</label></h4>
+            <h4><label for="inputGroupSelect01">@messages("appraisals.category"):</label></h4>
         </div>
         <div class="col-8">
             <div class="input-group">
                 <select class="custom-select" id="inputGroupSelect01">
-                    <option selected>Please select a category</option>
+                    <option selected>@messages("appraisals.please_select_a_category")</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -72,11 +72,11 @@
             <div class="input-group artpiece-type-container">
                 <div>
                     <input id="artpiece-type-original" name="artpiece-type" type="radio" aria-label="Original">
-                    <p> <label for="artpiece-type-original">Original</label></p>
+                    <p> <label for="artpiece-type-original">@messages("appraisals.original")</label></p>
                 </div>
                 <div>
                     <input id="artpiece-type-print" name="artpiece-type" type="radio" aria-label="Print">
-                    <p><label for="artpiece-type-print">Print </label></p>
+                    <p><label for="artpiece-type-print">@messages("appraisals.print") </label></p>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
         <div class="row mb-5">
             <div class="col-1 offset-9">
                 <button type="submit" class="btn btn-primary">
-                Submit
+                @messages("appraisals.submit")
                 </button>
             </div>
         </div>
