@@ -1,17 +1,43 @@
 @(form: Form[LoginDetails])(implicit messages: Messages, request: Request[AnyContent], flash: Flash)
 
 @main("Login") {
+<head>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/forms.css")">
+</head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">@messages("login.welcome")</h5>
+                            <div class="form-signin">
+                                <div class="form-label-group">
+                                @helper.form(routes.LoginController.loginSubmit()) {
+                                    @flash.get("failed").getOrElse("")
+                                    @helper.inputText(form("username"), '_label -> "Username :", '_showConstraints -> false, 'class-> "form-control")
+                                </div>
 
-    <div>
-        <h3>@messages("login.pleaseLogIn")</h3>
-        @helper.form(routes.LoginController.loginSubmit()){
-        @flash.get("failed").getOrElse("")
-        @helper.inputText(form("username"), '_label -> messages("login.username"), '_showConstraints -> false)
-        @helper.inputPassword(form("password"), '_label -> messages("login.password"), '_showConstraints -> false)
-        <button type="submit">@messages("login.login")</button>
-        <a href="/sign-up"><button type="button">@messages("login.signUp")</button></a>
-        <a href="/"><button type="button">@messages("login.cancel")</button></a>
-        }
-    </div>
+                                <div class="form-label-group">
+                                @helper.inputPassword(form("password"), '_label -> "Password :", '_showConstraints -> false, 'class-> "form-control")
+                                </div>
+
+                                <div class="custom-control custom-checkbox mb-3">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">@messages("login.remember")</label>
+                                </div>
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">@messages("login.submit")</button>
+                                <div class="text-center mt-4"><a class="small" href="@routes.LoginController.forgotPassword()">@messages("login.reset_password")</a></div>
+                                <hr class="my-4">
+                                <div class="text-center">
+                                    @messages("login.dont") <a class="small" href="/sign-up">@messages("login.join")</a></div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 
 }
