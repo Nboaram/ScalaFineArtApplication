@@ -5,13 +5,13 @@ import org.scalatest.{Matchers, WordSpec}
 import play.api.libs.json.Json
 
 class SignUpTestsSpec extends WordSpec with Matchers {
-  "Parsing valid JSON to a SignUP model" should {
+  "Parsing valid JSON to a SignUp model" should {
     "result in a valid model" in {
       val json = Json.obj(
         "firstName" -> "a first name",
         "lastName" -> "a second name",
         "email" -> "an email",
-        "userName" -> "a username",
+        "username" -> "a username",
         "password" -> "the password"
       )
 
