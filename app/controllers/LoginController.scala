@@ -34,7 +34,7 @@ class LoginController @Inject()(implicit val messagesApi: MessagesApi, val mater
           Future {
             Redirect(routes.Application.index())
               .withSession(request.session + (Constants.username.toString -> details.username))
-              .flashing(Constants.login.toString -> Constants.loginMessage.toString)
+              .flashing(Constants.success.toString -> Constants.loginMessage.toString)
           }
       })
   }

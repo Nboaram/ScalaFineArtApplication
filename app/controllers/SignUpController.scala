@@ -25,7 +25,7 @@ class SignUpController @Inject()(implicit val messagesApi: MessagesApi, val mate
       Future {
         Redirect(routes.Application.index())
           .withSession(Constants.username.toString -> signUpDetails.username)
-          .flashing(Constants.login.toString -> Constants.signUpMessage.toString)
+          .flashing(Constants.success.toString -> Constants.signUpMessage.toString)
       }
     })
 

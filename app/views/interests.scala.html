@@ -12,30 +12,30 @@
 }
 
 <div id="Interests" class="container">
-    <h1>Your Interests</h1>
+    <h1>@messages("interests.yourInterests")</h1>
     @helper.form(routes.UserController.interestsSubmit(), 'class -> "row") {
-        <fieldset class="col-6 col-sm"><legend>Art Types</legend>
+        <fieldset class="col-6 col-sm"><legend>@messages("interests.artTypes")</legend>
             <input type='hidden' name='artType' value='None'>
             @helper.repeatWithIndex(form("artType"), min = 1) { (artType, index) =>
                 <input type="checkbox" name=@{"artType[" + index + "]"} value= @artType.value.get.replaceAll("\\s", "")
-            @if(myInterests.contains(artType.value.get.replaceAll("\\s", ""))) {checked}> @artType.value.get <br>
+            @if(myInterests.contains(artType.value.get.replaceAll("\\s", ""))) {checked}> @messages("interests."+{artType.value.get}) <br>
             }
         </fieldset>
-        <fieldset class="col-6 col-sm"><legend>Art Genres</legend>
+        <fieldset class="col-6 col-sm"><legend>@messages("interests.artGenres")</legend>
             <input type='hidden' name='artType' value='None'>
             @helper.repeatWithIndex(form("artGenre"), min = 1) { (artGenre, index) =>
                 <input type="checkbox" name=@{"artGenre[" + index + "]"} value= @artGenre.value.get.replaceAll("\\s", "")
-            @if(myInterests.contains(artGenre.value.get.replaceAll(" ", ""))) {checked}> @artGenre.value.get <br>
+            @if(myInterests.contains(artGenre.value.get.replaceAll(" ", ""))) {checked}> @messages("interests."+{artGenre.value.get}) <br>
             }
         </fieldset>
-        <fieldset class="col-auto"><legend>Art Movements</legend>
+        <fieldset class="col-auto"><legend>@messages("interests.artMovements")</legend>
             <input type='hidden' name='artType' value='None'>
             @helper.repeatWithIndex(form("artMovement"), min = 1) { (artMovement, index) =>
                 <input type="checkbox" name=@{"artMovement[" + index + "]"} value= @artMovement.value.get.replaceAll("\\s", "")
-            @if(myInterests.contains(artMovement.value.get.replaceAll("\\s", ""))) {checked}> @artMovement.value.get <br>
+            @if(myInterests.contains(artMovement.value.get.replaceAll("\\s", ""))) {checked}> @messages("interests."+{artMovement.value.get}) <br>
             }
         </fieldset>
-        <button type="submit" style="width: 100%">Submit</button>
+        <button type="submit" style="width: 100%">@messages("interests.submit")</button>
     }
     <br>
     <br>

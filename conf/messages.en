@@ -22,7 +22,7 @@ footer.conditionsOfSale=Conditions of Sale
 header.gallery=Gallery
 
 # !---Login---!
-login.welcome=Welcome Back! 
+login.welcome=Welcome Back!
 login.join=Join
 login.remember=Remember password
 login.submit=Sign In
@@ -79,6 +79,37 @@ privacyPolicy.EffDate=Effective Date: 10th October, 2019
 privacyPolicy.whoWeAre=Who we are
 privacyPolicy.firstPara=Our website address is: 
 privacyPolicy.whatData=What personal data we collect and why we collect it
-privacyPolicy.secondPara=Information a user gives us is encrypted and stored in a database. We also keep data regarding sales and appraisals of art. In accordance with legal requirements, personal data can be removed from our database if requested. Please allow a time window for this request. You can find contact information on the contact page. 
+privacyPolicy.secondPara=Information a user gives us is encrypted and stored in a database. We also keep data regarding sales and appraisals of art. In accordance with legal requirements, personal data can be removed from our database if requested. Please allow a time window for this request. You can find contact information on the contact page.
 
-
+# !---Interests---!
+interests.yourInterests=Your Interests
+interests.artTypes=Art Types
+interests.artGenres=Art Genres
+interests.artMovements=Art Movements
+interests.Paintings=Paintings
+interests.Sculptures=Sculptures
+interests.Prints=Prints
+interests.Drawings=Drawings
+interests.Photographs=Photographs
+interests.Abstract=Abstract
+interests.Cityscape=Cityscape
+interests.Genre=Genre
+interests.Illustration=Illustration
+interests.Landscape=Landscape
+interests.Nude=Nude
+interests.Portrait=Portrait
+interests.Religious=Religious
+interests.SketchAndStudy=Sketch and Study
+interests.StillLife=Still Life
+interests.Impressionism=Impressionism
+interests.Cubism=Cubism
+interests.Contemporary=Contemporary 
+interests.Fauvism=Fauvism
+interests.Expressionism=Expressionism
+interests.Dadaism=Dadaism
+interests.Surrealism=Surrealism
+interests.Realism=Realism
+interests.Memes=Memes
+interests.PostImpressionism=Post-Impressionism
+interests.PopArt=Pop Art
+interests.submit=Submit

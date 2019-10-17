@@ -36,7 +36,7 @@ class UserController @Inject()(implicit val messagesApi: MessagesApi, val materi
             Interests.addElement(request.session.get(Constants.username.toString).get, interests)
             Future {
               Redirect(routes.Application.index())
-                .flashing(Constants.login.toString -> Constants.interestsUpdated.toString)
+                .flashing(Constants.success.toString -> Constants.interestsUpdated.toString)
             }
         })
       }
