@@ -23,9 +23,7 @@ class SignUpTestsSpec extends WordSpec with Matchers {
         "the password"
       )
 
-      println(model.toString())
-      println(json.as[SignUp].toString())
-      //json.as[SignUp] shouldBe model
+      json.as[SignUp] shouldBe model
     }
   }
 }
