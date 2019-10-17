@@ -39,4 +39,6 @@ object SignUp {
       Invalid(ValidationError(Constants.signUpInvalid.toString))
     else Valid
   })
+
+  override def toString = s"SignUp($signUpForm, $users, $formats)"
 }
