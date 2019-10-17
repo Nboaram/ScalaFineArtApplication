@@ -2,15 +2,7 @@ package helpers
 
 object Constants extends Enumeration {
 
-  val contactUrl: Value = Value("/contact")
-  val accountUrl: Value = Value("/account")
-  val appraisalUrl: Value = Value("/appraisal")
-  val checkoutUrl: Value = Value("/checkout")
-  val galleryUrl: Value = Value("/gallery")
-  val loginUrl: Value = Value("/login")
-  val registerUrl: Value = Value("/register")
-  val viewUrl: Value = Value("/view")
-  val text_html: Value = Value("text/html")
+  val badUrl: Value = Value("/boum")
   val space: Value = Value(" ")
   val localHost: Value = Value("localhost")
   val username: Value = Value("username")
@@ -36,4 +28,13 @@ object Constants extends Enumeration {
   val qaArt: Value = Value("QArt")
   val imagesPlaceholder: Value = Value("Placeholder to get images from DB")
   val appraisal: Value = Value("Appraisal")
+  val emailUrl: Value = Value("smtp.gmail.com")
+  val emailPort: Value = Value("587")
+  val environmentEmailAddress: Value = Value("QA_FINE_ART_EMAIL_ADDRESS")
+  val environmentEmailPassword: Value = Value("QA_FINE_ART_EMAIL_PASSWORD")
+  val passwordRecoveryTitle: Value = Value("Password Recovery")
+  val zero: Value = Value("0")
+  val confirmPasswordsMatchName: Value = Value("Confirm Password Match")
+  val confirmPasswordMismatchDescription: Value = Value("Passwords must match")
+  val placeholderPasswordResetId: Value = Value("000000")
 }

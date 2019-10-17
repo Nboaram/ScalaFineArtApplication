@@ -29,6 +29,7 @@ login.submit=Sign In
 login.dont=Don't have an account?
 login.username=Username :
 login.password=Password :
+login.reset_password=Reset Password
 
 # !---Register---!
 register.register=Register :
@@ -36,8 +37,42 @@ register.button=Register
 register.already=Already have an account?
 register.login=Login
 
+reset_password.new_password=New Password
+reset_password.confirm_password=Confirm Password
+
 #!---Gallery---!
 gallery.gallery=QArt Gallery
+
+# !---Forgot Password---!
+forgot_password.title=Please enter your email
+forgot_password.submit=Submit
+forgot_password.serious_error=There was a server error. Please contact the administrator for further information.
+
+# !---Recovery Email Sent---!
+recovery_email_sent.title=Recovery email has been sent.
+recovery_email_sent.verification=A verification link has been sent to your email address.
+recovery_email_sent.return_to_index=Return to index
+
+# !---Reset Password---!
+reset_password.title=Reset your password
+reset_password.submit=Submit
+
+# !---Password Successfully Reset---!
+password_successfully_reset.title=Password successfully reset.
+password_successfully_reset.back=Back to Login
+
+# !---Appraisals---!
+appraisals.page_title=Appraisals
+appraisals.page_description=Upload a piece of art for appraisal.
+appraisals.image=Image
+appraisals.title=Title
+appraisals.artist=Artist
+appraisals.description=Description
+appraisals.category=Category
+appraisals.please_select_a_category=Please select a category
+appraisals.original=Original
+appraisals.print=Print
+appraisals.submit=Submit
 
 # !---Privacy Policy---!
 privacyPolicy.EffDate=Effective Date: 10th October, 2019

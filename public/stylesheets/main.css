@@ -1,5 +1,14 @@
 @import url("appraisal.css");
 
+html {
+    margin-bottom: 62px;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 * {
     font-family: "Montserrat",Arial,Helvetica,sans-serif;
 }
@@ -71,3 +80,17 @@
 
 .form-elegant .modal-body, .form-elegant .modal-footer {
     font-weight: 400; }
+
+dl {
+    width: 100%;
+}
+
+.large-icon {
+    font-size: 14em;
+    color: #CCC;
+}
+
+.tilt-icon {
+    transform: rotate(20deg);
+}
+

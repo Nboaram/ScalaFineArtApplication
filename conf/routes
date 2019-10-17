@@ -3,20 +3,24 @@
 # ~~~~
 
 # Home page
-GET         /                         controllers.Application.index
+GET         /                             controllers.Application.index
 
-GET         /sign-up                  controllers.SignUpController.signUp
-POST        /sign-up                  controllers.SignUpController.signUpSubmit
+GET         /sign-up                      controllers.SignUpController.signUp
+POST        /sign-up                      controllers.SignUpController.signUpSubmit
 
-GET         /login                    controllers.LoginController.login
-POST        /login                    controllers.LoginController.loginSubmit
-GET         /logout                   controllers.LogoutController.logout
+GET         /login                        controllers.LoginController.login
+POST        /login                        controllers.LoginController.loginSubmit
+GET         /logout                       controllers.LogoutController.logout
+GET         /login/forgot-password        controllers.LoginController.forgotPassword
+POST        /login/forgot-password        controllers.LoginController.forgotPasswordHandler
+GET         /login/reset-password/:id     controllers.LoginController.resetPassword(id)
+POST        /login/reset-password         controllers.LoginController.resetPasswordHandler(id)
 
-GET         /account                  controllers.UserController.account
-GET         /gallery                  controllers.GalleryController.gallery
-GET         /view                     controllers.GalleryController.view
-GET         /appraisal                controllers.GalleryController.appraisal
-POST        /appraisal-handler        controllers.GalleryController.appraisalHandler
+GET         /account                      controllers.UserController.account
+GET         /gallery                      controllers.GalleryController.gallery
+GET         /view                         controllers.GalleryController.view
+GET         /appraisal                    controllers.GalleryController.appraisals
+POST        /appraisal-handler            controllers.GalleryController.appraisalHandler
 
 GET         /checkout                 controllers.PaymentController.checkout
 

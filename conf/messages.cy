@@ -29,17 +29,52 @@ login.join=Ymunwch
 login.remember=Cofiwch gyfrinair
 login.submit=Mewngofnodi
 login.dont=Peidiwch â chael cyfrif?
-login.username=Enw defnyddiwr :
-login.password=Cyfrinair :
+login.username=Enw defnyddiwr:
+login.password=Cyfrinair:
+login.reset_password=Ailosod cyfrinair
 
 # !---Register---!
-register.register=Cofrestrwch :
+register.register=Cofrestrwch:
 register.button=Cofrestrwch
 register.already=Eisoes â chyfrif?
-register.login=Mewngofnodi 
+register.login=Mewngofnodi
+
+reset_password.new_password=Cyfrinair newydd
+reset_password.confirm_password=Cadarnhau Cyfrinair
 
 # !---Gallery---!
 gallery.gallery=Oriel QArt
+
+# !---Forgot Password---!
+forgot_password.title=Rhowch eich e-bost
+forgot_password.submit=Cyflwyno
+forgot_password.serious_error=Roedd gwall gweinydd. Cysylltwch â&#39;r gweinyddwr i gael mwy o wybodaeth.
+
+# !---Recovery Email Sent---!
+recovery_email_sent.title=Mae e-bost adfer wedi&#39;i anfon.
+recovery_email_sent.verification=Mae dolen wirio wedi&#39;i hanfon i&#39;ch cyfeiriad e-bost.
+recovery_email_sent.return_to_index=Dychwelwch i&#39;r mynegai
+
+# !---Reset Password---!
+reset_password.title=Ailosod eich cyfrinair
+reset_password.submit=Cyflwyno
+
+# !---Password Successfully Reset---!
+password_successfully_reset.title=Ailosod cyfrinair yn llwyddiannus.
+password_successfully_reset.back=Yn ôl i Mewngofnodi
+
+# !---Appraisals---!
+appraisals.page_title=Gwerthusiadau
+appraisals.page_description=Llwythwch ddarn o gelf i&#39;w werthuso.
+appraisals.image=Delwedd
+appraisals.title=Teitl
+appraisals.artist=Artist
+appraisals.description=Disgrifiad
+appraisals.category=Categori
+appraisals.please_select_a_category=Dewiswch gategori
+appraisals.original=Gwreiddiol
+appraisals.print=Argraffu
+appraisals.submit=Cyflwyno
 
 # !---Privacy Policy---!
 privacyPolicy.EffDate=Dyddiad dod i rym: 10fed Hydref, 2019
