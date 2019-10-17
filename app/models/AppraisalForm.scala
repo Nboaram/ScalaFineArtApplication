@@ -14,9 +14,9 @@ object AppraisalForm {
       Constants.appraisalTitle.toString -> nonEmptyText(minLength = 2, maxLength = 20),
       Constants.appraisalArtist.toString -> nonEmptyText(minLength = 2, maxLength = 20),
       Constants.appraisalDescription.toString -> nonEmptyText(minLength = 2, maxLength = 100),
-      Constants.appraisalGenre.toString -> nonEmptyText(minLength = 3, maxLength = 20),
-      Constants.appraisalArtType.toString -> nonEmptyText(minLength = 5, maxLength = 20),
-      Constants.appraisalMovement.toString -> nonEmptyText(minLength = 5, maxLength = 20),
+      Constants.appraisalGenre.toString -> nonEmptyText(minLength = 2, maxLength = 20),
+      Constants.appraisalArtType.toString -> nonEmptyText(minLength = 2, maxLength = 20),
+      Constants.appraisalMovement.toString -> nonEmptyText(minLength = 2, maxLength = 20),
       Constants.appraisalOriginal.toString -> boolean
 
     )(AppraisalForm.apply)(AppraisalForm.unapply)

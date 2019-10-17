@@ -24,7 +24,7 @@ class AppraisalController @Inject()(implicit val messagesApi: MessagesApi) exten
     }, { appraisalDetails =>
       AppraisalForm.addElement(appraisalDetails)
       Future {
-        Redirect(routes.Application.index())
+        Redirect(routes.GalleryController.gallery())
       }
     })
 
