@@ -6,7 +6,7 @@ import play.api.data.Forms._
 
 import scala.collection.mutable.ArrayBuffer
 
-case class AppraisalForm(title: String, artist: String, description: String, genre: String, artType: String, movement: String)
+case class AppraisalForm(title: String, artist: String, description: String, genre: String, artType: String, movement: String, original:Boolean = false)
 
 object AppraisalForm {
   val appraisalForm: Form[AppraisalForm] = Form(
@@ -16,9 +16,8 @@ object AppraisalForm {
       Constants.appraisalDescription.toString -> nonEmptyText(minLength = 2, maxLength = 100),
       Constants.appraisalGenre.toString -> nonEmptyText(minLength = 3, maxLength = 20),
       Constants.appraisalArtType.toString -> nonEmptyText(minLength = 5, maxLength = 20),
-      Constants.appraisalMovement.toString -> nonEmptyText(minLength = 5, maxLength = 20)
-      //Constants.appraisalOriginal -> boolean)
-
+      Constants.appraisalMovement.toString -> nonEmptyText(minLength = 5, maxLength = 20),
+      Constants.appraisalOriginal.toString -> boolean
 
     )(AppraisalForm.apply)(AppraisalForm.unapply)
  )
@@ -31,7 +30,8 @@ object AppraisalForm {
       "This is a test description",
       "Test Genre",
       "Test Art Type",
-      "Test Movement"
+      "Test Movement",
+      true
     )
   )
 

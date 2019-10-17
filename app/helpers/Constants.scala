@@ -44,5 +44,5 @@ object Constants extends Enumeration {
   val appraisalGenre: Value = Value("genre")
   val appraisalArtType: Value = Value("artType")
   val appraisalMovement: Value = Value("movement")
-  val appraisalOriginal: Boolean = true
+  val appraisalOriginal: Value = Value("original")
 }
