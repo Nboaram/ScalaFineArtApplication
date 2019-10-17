@@ -48,7 +48,7 @@ forgot_password.serious_error=Roedd gwall gweinydd. Cysylltwch â&#39;r gweinydd
 
 # !---Recovery Email Sent---!
 recovery_email_sent.title=Mae e-bost adfer wedi&#39;i anfon.
-recovery_email_sent.verification=Mae dolen ddilysu wedi&#39;i hanfon i&#39;ch cyfeiriad e-bost.
+recovery_email_sent.verification=Mae dolen wirio wedi&#39;i hanfon i&#39;ch cyfeiriad e-bost.
 recovery_email_sent.return_to_index=Dychwelwch i&#39;r mynegai
 
 # !---Reset Password---!
@@ -58,3 +58,16 @@ reset_password.submit=Cyflwyno
 # !---Password Successfully Reset---!
 password_successfully_reset.title=Ailosod cyfrinair yn llwyddiannus.
 password_successfully_reset.back=Yn ôl i Mewngofnodi
+
+# !---Appraisals---!
+appraisals.page_title=Gwerthusiadau
+appraisals.page_description=Llwythwch ddarn o gelf i&#39;w werthuso.
+appraisals.image=Delwedd
+appraisals.title=Teitl
+appraisals.artist=Artist
+appraisals.description=Disgrifiad
+appraisals.category=Categori
+appraisals.please_select_a_category=Dewiswch gategori
+appraisals.original=Gwreiddiol
+appraisals.print=Argraffu
+appraisals.submit=Cyflwyno

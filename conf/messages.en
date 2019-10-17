@@ -58,3 +58,16 @@ reset_password.submit=Submit
 # !---Password Successfully Reset---!
 password_successfully_reset.title=Password successfully reset.
 password_successfully_reset.back=Back to Login
+
+# !---Appraisals---!
+appraisals.page_title=Appraisals
+appraisals.page_description=Upload a piece of art for appraisal.
+appraisals.image=Image
+appraisals.title=Title
+appraisals.artist=Artist
+appraisals.description=Description
+appraisals.category=Category
+appraisals.please_select_a_category=Please select a category
+appraisals.original=Original
+appraisals.print=Print
+appraisals.submit=Submit

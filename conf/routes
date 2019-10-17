@@ -19,7 +19,7 @@ POST        /login/reset-password         controllers.LoginController.resetPassw
 GET         /account                      controllers.UserController.account
 GET         /gallery                      controllers.GalleryController.gallery
 GET         /view                         controllers.GalleryController.view
-GET         /appraisal                    controllers.GalleryController.appraisal
+GET         /appraisal                    controllers.GalleryController.appraisals
 POST        /appraisal-handler            controllers.GalleryController.appraisalHandler
 
 GET         /checkout                 controllers.PaymentController.checkout
