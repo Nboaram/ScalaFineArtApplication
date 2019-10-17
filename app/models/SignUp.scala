@@ -21,9 +21,9 @@ object SignUp {
   )
   //TODO Replace with mongoDB
   val users: ArrayBuffer[SignUp] = ArrayBuffer(
-    SignUp("Fabian", "Lewis", "abc@123.uk", "Fab", "password"),
-    SignUp("Rameez", "J", "abcd@123.uk", "Rico", "password"),
-    SignUp("Steven", "B", "abcde@123.uk", "Steve", "password")
+    //user: Fab
+    // pw: password
+    SignUp("Fabian", "Lewis", "abc@123.uk", "Fab", "$2a$10$SQxd9FSTlEdbopBcCxOZhOpmk.8E1EYQs06JfxSPXfJJE3UoNqKGe")
   )
 
   def addElement(signUp: SignUp): Unit = {
