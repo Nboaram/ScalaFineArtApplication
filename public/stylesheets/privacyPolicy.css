@@ -1,0 +1,51 @@
+h2.privacyHeader {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -1%);
+    text-align: center;
+}
+
+div.privacyTextContainer {
+    height: 80em;
+    width: 50em;
+    position: relative;
+    background-color: #f7f7f7;
+}
+
+.effDate{
+    top: 5%;
+    position: absolute;
+    transform: translate(0%,-5%);
+    text-align:left
+
+}
+.whoWeAre{
+    top: 7%;
+    position: absolute;
+    transform: translate(0%,-7%);
+    text-align:left
+}
+.firstPara {
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    transform: translate(0%, -10%);
+    text-align:left
+}
+.whatData{
+    margin: 0;
+    position: absolute;
+    top: 12%;
+    transform: translate(0%, -12%);
+    text-align:left
+}
+
+.secondPara {
+    margin: 0;
+    position: absolute;
+    top: 15%;
+    transform: translate(0%, -15%);
+    text-align:left
+}
+

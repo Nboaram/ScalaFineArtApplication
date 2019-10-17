@@ -1,4 +1,4 @@
-header.gallery=Gallery
+# !---Terms Of Use---!
 termsOfUse.firstParagraph=Welcome to QArts. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern QArts relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.
 termsOfUse.secondParagraph=The use of this website is subject to the following terms of use:
 termsOfUse.bulletOne=The content of the pages of this website is for your general information and use only. It is subject to change without notice.
@@ -19,6 +19,7 @@ header.register=Register
 footer.termsOfUse=Terms of Use
 footer.privacyPolicy=Privacy Policy
 footer.conditionsOfSale=Conditions of Sale
+header.gallery=Gallery
 
 # !---Login---!
 login.welcome=Welcome Back! 
@@ -35,6 +36,14 @@ register.button=Register
 register.already=Already have an account?
 register.login=Login
 
-
-
+#!---Gallery---!
 gallery.gallery=QArt Gallery
+
+# !---Privacy Policy---!
+privacyPolicy.EffDate=Effective Date: 10th October, 2019
+privacyPolicy.whoWeAre=Who we are
+privacyPolicy.firstPara=Our website address is: 
+privacyPolicy.whatData=What personal data we collect and why we collect it
+privacyPolicy.secondPara=Information a user gives us is encrypted and stored in a database. We also keep data regarding sales and appraisals of art. In accordance with legal requirements, personal data can be removed from our database if requested. Please allow a time window for this request. You can find contact information on the contact page. 
+
+
