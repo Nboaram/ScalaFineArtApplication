@@ -20,5 +20,4 @@ class FileUploadController @Inject()(implicit val messagesApi: MessagesApi) exte
     }
   }
 
-
 }
