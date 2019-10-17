@@ -4,7 +4,7 @@ import akka.stream.Materializer
 import authentication.AuthenticatedAction
 import helpers.Constants
 import javax.inject.Inject
-import models.Interests.{ArtGenre, ArtMovement, ArtType, Interests}
+import models.Interests.Interests
 import play.api.i18n.{I18nSupport, MessagesApi}
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.mvc.{Action, AnyContent, Controller}
