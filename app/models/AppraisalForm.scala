@@ -6,7 +6,7 @@ import play.api.data.Forms._
 
 import scala.collection.mutable.ArrayBuffer
 
-case class AppraisalForm(title: String, artist: String, description: String, genre: String, artType: String, movement: String, original:Boolean = false)
+case class AppraisalForm(title: String, artist: String, description: String, genre: String, artType: String, movement: String, original: Boolean = false)
 
 object AppraisalForm {
   val appraisalForm: Form[AppraisalForm] = Form(
@@ -20,7 +20,7 @@ object AppraisalForm {
       Constants.appraisalOriginal.toString -> boolean
 
     )(AppraisalForm.apply)(AppraisalForm.unapply)
- )
+  )
 
   //TODO Replace with mongoDB
   val art: ArrayBuffer[AppraisalForm] = ArrayBuffer(
@@ -40,6 +40,15 @@ object AppraisalForm {
   }
 }
 
+case class UploadForm(filename: String)
+
+object UploadForm {
+  val uploadForm = Form(
+    mapping(
+      "filename" -> text
+    )(UploadForm.apply)(UploadForm.unapply)
+  )
+}
 
 
 // file, title, artist, description, genre, art type, movement, original

@@ -8,9 +8,11 @@ import play.api.mvc.{Action, Controller}
 
 class FileUploadController @Inject()(implicit val messagesApi: MessagesApi) extends Controller with I18nSupport {
 
+
+
   def uploadFile = Action(parse.multipartFormData) { implicit request =>
     request.body.file("file").map { file =>
-      file.ref.moveTo(Paths.get(s"public/temp/gallery/"+file.filename).toFile, replace = true)
+      file.ref.moveTo(Paths.get(s"C:/Users/Johnny/Downloads/"+file.filename).toFile, replace = true)
       Ok("Upload successful")
     }.getOrElse {
       Redirect(routes.AppraisalController.appraisal()).flashing(
