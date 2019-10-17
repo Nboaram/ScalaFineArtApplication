@@ -6,7 +6,7 @@ import org.mindrot.jbcrypt.BCrypt
 import play.api.data.Forms._
 import play.api.data._
 import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
-import utils.encryption.Encryption
+import play.api.libs.json.{Format, Json}
 
 case class LoginDetails(username: String, password: String)
 
@@ -26,6 +26,8 @@ object LoginDetails {
       Invalid(ValidationError(Constants.emptyString.toString))
     }
   })
+
+  implicit val formats: Format[LoginDetails] = Json.format[LoginDetails]
 
   def validUser(loginDetails: LoginDetails): Boolean = {
     println(SignUp.users)

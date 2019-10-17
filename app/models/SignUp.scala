@@ -4,6 +4,8 @@ import helpers.Constants
 import play.api.data.Form
 import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
 import play.api.data.Forms._
+import play.api.libs.json.{Format, Json}
+
 import scala.collection.mutable.ArrayBuffer
 
 
@@ -30,9 +32,13 @@ object SignUp {
     SignUp.users.append(signUp)
   }
 
+  implicit val formats: Format[SignUp] = Json.format[SignUp]
+
   def usernameConstraint: Constraint[String] = Constraint(Constants.signUpConstraint.toString)({ username =>
     if (users.map(details => details.username).contains(username))
       Invalid(ValidationError(Constants.signUpInvalid.toString))
     else Valid
   })
+
+  override def toString = s"SignUp($signUpForm, $users, $formats)"
 }
