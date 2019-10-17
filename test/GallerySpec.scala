@@ -24,7 +24,7 @@ class GallerySpec extends Specification {
     }
 
     "render the appraisal page" in new WithApplication {
-      val appraisal = route(FakeRequest(GET, routes.GalleryController.appraisal().path()).withSession("username" -> "user")).get //TODO make this a better test
+      val appraisal = route(FakeRequest(GET, routes.GalleryController.appraisals().path()).withSession("username" -> "user")).get //TODO make this a better test
 
       status(appraisal) must equalTo(OK)
       contentType(appraisal) must beSome.which(_ == HTML)
