@@ -1,0 +1,14 @@
+@()(implicit messages: Messages, request: Request[AnyContent])
+@main("Privacy Policy") {
+    <head>
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/privacyPolicy.css")">
+    </head>
+    <div class="privacyTextContainer">
+        <h2 class='privacyHeader'>@messages("footer.privacyPolicy")</h2>
+        <h4 class="whoWeAre">@messages("privacyPolicy.whoWeAre")</h4>
+        <p class="effDate"><i>@messages("privacyPolicy.EffDate")</i></p>
+        <p class="firstPara">@messages("privacyPolicy.firstPara") <a >https://QArts.co.uk</a>. (PLACEHOLDER LINK)</p>
+        <h4 class="whatData">@messages("privacyPolicy.whatData")</h4>
+        <p class="secondPara">@messages("privacyPolicy.secondPara")</p>
+    </div>
+}
