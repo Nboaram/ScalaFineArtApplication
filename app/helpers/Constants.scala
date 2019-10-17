@@ -37,4 +37,12 @@ object Constants extends Enumeration {
   val imagesPlaceholder: Value = Value("Placeholder to get images from DB")
   val appraisal: Value = Value("Appraisal")
   val tempImageGalleryLocation: Value = Value("public/temp/gallery/")
+  //Appraisal
+  val appraisalTitle: Value = Value("title")
+  val appraisalArtist: Value = Value("artist")
+  val appraisalDescription: Value = Value("description")
+  val appraisalGenre: Value = Value("genre")
+  val appraisalArtType: Value = Value("artType")
+  val appraisalMovement: Value = Value("movement")
+  val appraisalOriginal: Boolean = true
 }
