@@ -2,7 +2,6 @@ package models
 
 import play.api.data.Form
 import helpers.Constants
-import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
 import play.api.data.Forms._
 
 import scala.collection.mutable.ArrayBuffer
@@ -10,7 +9,7 @@ import scala.collection.mutable.ArrayBuffer
 case class AppraisalForm(title: String, artist: String, description: String, genre: String, artType: String, movement: String)
 
 object AppraisalForm {
-  val signUpForm: Form[AppraisalForm] = Form(
+  val appraisalForm: Form[AppraisalForm] = Form(
     mapping(
       Constants.appraisalTitle.toString -> nonEmptyText(minLength = 2, maxLength = 20),
       Constants.appraisalArtist.toString -> nonEmptyText(minLength = 2, maxLength = 20),

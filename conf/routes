@@ -15,8 +15,8 @@ GET         /logout                   controllers.LogoutController.logout
 GET         /account                  controllers.UserController.account
 GET         /gallery                  controllers.GalleryController.gallery
 GET         /view                     controllers.GalleryController.view
-GET         /appraisal                controllers.GalleryController.appraisal
-POST        /appraisal-handler        controllers.GalleryController.appraisalHandler
+GET         /appraisal                controllers.AppraisalController.appraisal
+POST        /appraisalsubmit        controllers.AppraisalController.appraisalSubmit
 
 #   image uploader
 POST        /uploadfile               controllers.FileUploadController.uploadFile
