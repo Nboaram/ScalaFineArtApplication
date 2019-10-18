@@ -37,4 +37,15 @@ object Constants extends Enumeration {
   val confirmPasswordsMatchName: Value = Value("Confirm Password Match")
   val confirmPasswordMismatchDescription: Value = Value("Passwords must match")
   val placeholderPasswordResetId: Value = Value("000000")
+  val tempImageGalleryLocation: Value = Value("public/temp/gallery/")
+  //Appraisal
+  val appraisalTitle: Value = Value("title")
+  val appraisalArtist: Value = Value("artist")
+  val appraisalDescription: Value = Value("description")
+  val appraisalGenre: Value = Value("genre")
+  val appraisalArtType: Value = Value("artType")
+  val appraisalMovement: Value = Value("movement")
+  val appraisalOriginal: Value = Value("original")
+  val fileUpload: Value = Value("file")
+  val pathToTempStorage: Value = Value("public/temp/gallery/")
 }
