@@ -19,7 +19,7 @@ class AppraisalController @Inject()(implicit val messagesApi: MessagesApi) exten
     Ok(views.html.appraisal(AppraisalForm.appraisalForm))
   }
 
-  def appraisalHandler = TODO
+  //def appraisalHandler = TODO
 
   def appraisalSubmit: Action[AnyContent] = Action.async { implicit request =>
     AppraisalForm.appraisalForm.bindFromRequest.fold({ formWithErrors =>
