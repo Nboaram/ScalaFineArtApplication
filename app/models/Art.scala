@@ -32,7 +32,7 @@ case class Art(
              original: Boolean
            ) = this (
     Art.generateId(),
-    customerId: Int,
+    customerId: Int, //TODO get from session storage/database
 //TODO get originalFilename directly from appraisal form
     originalFilename: String,
 
