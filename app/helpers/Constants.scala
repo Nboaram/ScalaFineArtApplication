@@ -46,4 +46,6 @@ object Constants extends Enumeration {
   val appraisalArtType: Value = Value("artType")
   val appraisalMovement: Value = Value("movement")
   val appraisalOriginal: Value = Value("original")
+  val fileUpload: Value = Value("file")
+  val pathToTempStorage: Value = Value("public/temp/gallery/")
 }
