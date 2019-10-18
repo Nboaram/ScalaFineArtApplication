@@ -1,14 +1,16 @@
 package models
 
 import helpers.GenerateId
-
-import scala.reflect.io.File
+import helpers.ImageHandler
 
 //TODO finalise filetype for image and link to file to data converter
 
 case class Art(
                 id: Int,
-                image: File,
+                customerId: Int,
+                originalFilename: String,
+                fileType: String,
+                image: Array[Byte],
                 title: String,
                 artist: String,
                 description: String,
@@ -18,7 +20,9 @@ case class Art(
                 original: Boolean
               ) {
   def this (
-             image: File,
+             customerId: Int,
+             originalFilename: String,
+             fileType: String = "jpg",
              title: String,
              artist: String,
              description: String,
@@ -27,8 +31,18 @@ case class Art(
              movement:String,
              original: Boolean
            ) = this (
-    Art.generateId(), //TODO create object and trait for generate ID functionality
-    image,
+    Art.generateId(),
+    customerId: Int, //TODO get from session storage/database
+//TODO get originalFilename directly from appraisal form
+    originalFilename: String,
+
+    // file type -->    getFilenameFromAppraisalForm.slice(getFilenameFromAppraisalForm.length-3, getFilenameFromAppraisalForm.length),      //TODO getFileType() from form,
+    originalFilename.slice(originalFilename.length-3, originalFilename.length),
+
+    ImageHandler.returnTempImageAsByteArray( filename =originalFilename),
+    //    ImageHandler.returnTempImageAsByteArray( filename = Art.idCount + "-" + title + "." + fileType),
+    // file name -->    ImageHandler.returnTempImageAsByteArray(filename = getFilenameFromAppraisalForm ), //TODO getFilenameFromAppraisalForm
+
     title,
     artist,
     description,
@@ -39,8 +53,9 @@ case class Art(
   )
   override def toString: String =
     s"""$id
+       |$customerId
        |$image
-       |$title $artist
+       |Title: $title, Artist: $artist
        |$description
        |$artType
        |$genre

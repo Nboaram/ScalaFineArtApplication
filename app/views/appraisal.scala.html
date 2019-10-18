@@ -1,0 +1,75 @@
+@(artAppraisalForm: Form[models.AppraisalForm])(implicit messages: Messages, request: Request[AnyContent], flash: Flash)
+@main("Appraisal") {
+    <body>
+        <div class="mx-auto" style="width: 500px;">
+        <div class = "container" id="appraisal-form">
+            <h1>Upload Art for Appraisal</h1>
+            @if(artAppraisalForm.hasGlobalErrors) {
+                @artAppraisalForm.globalErrors.map { error: FormError =>
+                    <div>
+                        Error: @error.key: @error.message
+                    </div>
+                }
+            }
+            @helper.form(routes.FileUploadController.uploadFile(), 'enctype -> "multipart/form-data") {
+                @helper.inputFile(artAppraisalForm("Upload an Image of The Artwork"))
+                <input type="submit" value="Upload"/>
+            }
+
+            @helper.form(routes.AppraisalController.appraisalSubmit()) {
+                @helper.inputText(
+                    artAppraisalForm("title"),
+                    '_label -> "Title",
+                    '_showConstraints -> false,
+                    'placeholder -> "Title",
+                    'size -> 60
+                )
+                @helper.inputText(
+                    artAppraisalForm("artist"),
+                    '_label -> "Artist",
+                    '_showConstraints -> false,
+                    'placeholder -> "Artist",
+                    'size -> 60
+                )
+                @helper.inputText(
+                    artAppraisalForm("description"),
+                    '_label -> "Description",
+                    '_showConstraints -> false,
+                    'placeholder -> "Enter a description for the piece",
+                    'size -> 60
+                )
+                @helper.inputText(
+                    artAppraisalForm("genre"),
+                    '_label -> "Genre",
+                    '_showConstraints -> false,
+                    'placeholder -> "Genre",
+                    'size -> 60
+                )
+                @helper.inputText(
+                    artAppraisalForm("artType"),
+                    '_label -> "Type",
+                    '_showConstraints -> false,
+                    'placeholder -> "Type e.g. painting, sculpture",
+                    'size -> 60
+                )
+                @helper.inputText(
+                    artAppraisalForm("movement"),
+                    '_label -> "Movement",
+                    '_showConstraints -> false,
+                    'placeholder -> "Movement",
+                    'size -> 60
+                )
+                @helper.checkbox(
+                    artAppraisalForm("original"),
+                    '_label -> "Original",
+                    'class -> "input-block-level",
+                    'placeholder -> "",
+                    '_help -> " ",
+                    'size -> 50)
+                <button type="submit">Submit</button>
+            }
+            }
+</div>
+</div>
+<div class="col-xs-12" style="height:100px;"></div>
+</body>
