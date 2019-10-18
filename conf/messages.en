@@ -20,6 +20,7 @@ footer.termsOfUse=Terms of Use
 footer.privacyPolicy=Privacy Policy
 footer.conditionsOfSale=Conditions of Sale
 header.gallery=Gallery
+header.interests=Interests
 
 # !---Login---!
 login.welcome=Welcome Back!

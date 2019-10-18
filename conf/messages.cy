@@ -19,6 +19,7 @@ header.myAccount=Fy nghyfrif
 header.login=Mewngofnodi
 header.logOut=Allgofnodi
 header.register=Cofrestrwch
+header.interests=Diddordebau
 footer.termsOfUse=Telerau Defnyddio
 footer.privacyPolicy=Polisi Preifatrwydd
 footer.conditionsOfSale=Amodau Gwerthu

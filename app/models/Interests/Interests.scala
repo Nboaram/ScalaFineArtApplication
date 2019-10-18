@@ -15,7 +15,7 @@ object  Interests{
   )
   //TODO Change this to use database
   val interestsDatabase: mutable.Map[String,Interests] =
-    mutable.Map("Fab" -> Interests(List(""), ArtGenre.values.map(value=>value.toString).toList, List("")))
+    mutable.Map("Fab" -> Interests(List("Paintings"), ArtGenre.values.map(value=>value.toString).toList, List("Memes")))
   def addElement(username:String, interests: Interests):Unit = {
     Interests.interestsDatabase += (username -> interests)
     for (elem <- interestsDatabase) {println(elem)}
