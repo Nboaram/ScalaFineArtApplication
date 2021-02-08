@@ -2,6 +2,7 @@ package models
 
 import helpers.Constants
 import models.SignUp.users
+import org.mindrot.jbcrypt.BCrypt
 import play.api.data.Forms._
 import play.api.data._
 import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
@@ -29,9 +30,8 @@ object LoginDetails {
   implicit val formats: Format[LoginDetails] = Json.format[LoginDetails]
 
   def validUser(loginDetails: LoginDetails): Boolean = {
-    users.exists(result =>
-      result.username.equals(loginDetails.username) && result.password.equals(loginDetails.password)
-    )
+    println(SignUp.users)
+    users.exists(user => user.username.equals(loginDetails.username) && BCrypt.checkpw(loginDetails.password, user.password))
   }
 
 }

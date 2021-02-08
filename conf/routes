@@ -27,6 +27,9 @@ POST        /uploadfile             controllers.FileUploadController.uploadFile
 
 GET         /checkout               controllers.PaymentController.checkout
 
+GET         /interests                controllers.UserController.interests
+POST        /interestsSubmit          controllers.UserController.interestsSubmit
+
 GET         /contact             controllers.Application.contact
 GET         /termsOfUse             controllers.Application.termsOfUse
 GET         /privacyPolicy             controllers.Application.privacyPolicy

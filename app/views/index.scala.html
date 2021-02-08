@@ -1,5 +1,8 @@
+@import helpers.Constants
 @(message: String)(implicit messages: Messages, request: Request[AnyContent])
 
 @main(message) {
-    Your new application is ready
+    <div>Your new application is ready<br>
+    @{request.flash.get(Constants.success.toString)}
+    </div>
 }

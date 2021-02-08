@@ -7,6 +7,7 @@ import models.SignUp
 import play.api.i18n.{I18nSupport, MessagesApi}
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.mvc.{Action, AnyContent, Controller}
+import utils.encryption.Encryption
 
 import scala.concurrent.Future
 class SignUpController @Inject()(implicit val messagesApi: MessagesApi, val materializer: Materializer) extends Controller with I18nSupport {
@@ -21,11 +22,13 @@ class SignUpController @Inject()(implicit val messagesApi: MessagesApi, val mate
     SignUp.signUpForm.bindFromRequest.fold({ formWithErrors =>
       Future(BadRequest(views.html.signUp(formWithErrors)))
     }, { signUpDetails =>
-      SignUp.addElement(signUpDetails)
+      println(SignUp.users)
+      SignUp.addElement(signUpDetails.copy(password = Encryption.hashPassword(signUpDetails.password)))
+      println(SignUp.users)
       Future {
         Redirect(routes.Application.index())
           .withSession(Constants.username.toString -> signUpDetails.username)
-          .flashing(Constants.login.toString -> Constants.signUpMessage.toString)
+          .flashing(Constants.success.toString -> Constants.signUpMessage.toString)
       }
     })
 

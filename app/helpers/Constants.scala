@@ -16,6 +16,7 @@ object Constants extends Enumeration {
   val created: Value = Value("created")
   val login: Value = Value("login")
   val loginMessage: Value = Value("You have successfully logged in")
+  val logoutMessage: Value = Value("You have successfully logged out")
   val id: Value = Value("id")
   val email: Value = Value("email")
   val signUp: Value = Value("signUp")
@@ -48,4 +49,6 @@ object Constants extends Enumeration {
   val appraisalOriginal: Value = Value("original")
   val fileUpload: Value = Value("file")
   val pathToTempStorage: Value = Value("public/temp/gallery/")
+  val interestsUpdated: Value = Value("Your interests have been updated")
+  val success: Value = Value("success")
 }

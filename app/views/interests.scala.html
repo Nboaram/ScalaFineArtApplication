@@ -1,0 +1,43 @@
+@import helpers.Constants
+@import models.Interests.{Interests, ArtType, ArtGenre, ArtMovement}
+@(formChoices: Form[models.Interests.Interests])(implicit messages: Messages, request: Request[AnyContent])
+@form = @{
+    Interests.interestsForm.fill(
+        Interests(ArtType.values.map(value => value.toString).toList, ArtGenre.values.map(value => value.toString).toList,
+            ArtMovement.values.map(value => value.toString).toList)
+    )
+}
+@myInterests = @{
+    "(?<=>)[a-zA-Z-]*(?=[,)])".r.findAllIn(formChoices.toString.replaceAll("\\s", "")).toList
+}
+
+<div id="Interests" class="container">
+    <h1>@messages("interests.yourInterests")</h1>
+    @helper.form(routes.UserController.interestsSubmit(), 'class -> "row") {
+        <fieldset class="col-6 col-sm"><legend>@messages("interests.artTypes")</legend>
+            <input type='hidden' name='artType' value='None'>
+            @helper.repeatWithIndex(form("artType"), min = 1) { (artType, index) =>
+                <input type="checkbox" name=@{"artType[" + index + "]"} value= @artType.value.get.replaceAll("\\s", "")
+            @if(myInterests.contains(artType.value.get.replaceAll("\\s", ""))) {checked}> @messages("interests."+{artType.value.get}) <br>
+            }
+        </fieldset>
+        <fieldset class="col-6 col-sm"><legend>@messages("interests.artGenres")</legend>
+            <input type='hidden' name='artType' value='None'>
+            @helper.repeatWithIndex(form("artGenre"), min = 1) { (artGenre, index) =>
+                <input type="checkbox" name=@{"artGenre[" + index + "]"} value= @artGenre.value.get.replaceAll("\\s", "")
+            @if(myInterests.contains(artGenre.value.get.replaceAll(" ", ""))) {checked}> @messages("interests."+{artGenre.value.get}) <br>
+            }
+        </fieldset>
+        <fieldset class="col-auto"><legend>@messages("interests.artMovements")</legend>
+            <input type='hidden' name='artType' value='None'>
+            @helper.repeatWithIndex(form("artMovement"), min = 1) { (artMovement, index) =>
+                <input type="checkbox" name=@{"artMovement[" + index + "]"} value= @artMovement.value.get.replaceAll("\\s", "")
+            @if(myInterests.contains(artMovement.value.get.replaceAll("\\s", ""))) {checked}> @messages("interests."+{artMovement.value.get}) <br>
+            }
+        </fieldset>
+        <button type="submit" style="width: 100%">@messages("interests.submit")</button>
+    }
+    <br>
+    <br>
+    <br>
+</div>
